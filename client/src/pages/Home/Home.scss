@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.bodyHome {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  min-height: 85vh;
+  background-color: #f7f7f7;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  margin-top: 33px;
+  margin-bottom: 42px;
+  z-index: 2;
+  cursor: grab;
+}
+
+.container .card {
+  width: 450px !important;
+  background-color: #ffffff;
+  height: 700px;
+}
+
+.container .card .imgBx {
+  position: relative;
+  width: 100%;
+  height: 18.94rem;
+  overflow: hidden;
+}
+
+.container .card .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: 0.5s ease-in-out;
+  transform-origin: center;
+  cursor: pointer;
+  pointer-events: none;
+}
+
+.container .card:hover .imgBx img {
+  transform: scale(1.21);
+}
+
+.container .card .content {
+  padding: 10px;
+}
+
+.precio {
+  margin-top: 180px;
+}
+
+.stock {
+  margin-top: 176px;
+}
+
+.container .card .content .productName h3 {
+  font-size: 17px;
+  font-weight: 900;
+  color: rgb(0, 0, 0);
+  margin: 5px 0;
+  object-fit: contain;
+  position: absolute;
+  bottom: 220px;
+
+  max-width: 428px;
+}
+
+.imagez {
+}
+
+.productName {
+}
+
+.container .card .content .price_rating {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .card .content .price_rating h2 {
+  font-size: 21px;
+  color: #004c87;
+  font-weight: bold;
+}
+
+.container .card .content .price_rating .fa {
+  color: #ffd513;
+  cursor: pointer;
+}
+
+.container .card .content .price_rating .fa.grey {
+  color: #ccc;
+}
+
+.stock {
+  color: #02ae02;
+}
+
+.action {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+
+  li {
+    position: relative;
+    list-style: none;
+    height: 40px;
+    width: 40px;
+    background-color: rgb(242, 242, 242);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin: 4px;
+    cursor: pointer;
+    transform: translateX(60px);
+    transition: transform 0.5s;
+    &:hover {
+      background-color: #000000;
+      color: #fff;
+    }
+
+    &:hover span {
+      opacity: 1;
+      transform: translateY(-50%) translateX(-20px);
+    }
+
+    span {
+      position: absolute;
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%) translateX(-20px);
+      white-space: nowrap;
+      padding: 4px 6px;
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+      font-weight: 500;
+      font-size: 14px;
+      border-radius: 4px;
+      pointer-events: none;
+      opacity: 0;
+      transition: 0.5s;
+    }
+  }
+}
+
+.container .card:hover .action li {
+  transform: translateX(0px);
+}
+
+.action li:nth-child(2) {
+  transition-delay: 0.15s;
+}
+
+.action li:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.action li span::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -4px;
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.pic {
+  width: 100%;
+  height: 100vh;
+  object-fit: fill;
+}
+
+.home-title {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 42px;
+  background-color: #060b26;
+}
+
+.logo-img {
+  position: absolute;
+  bottom: 0;
+
+  height: 40px;
+
+  object-fit: contain;
+}
+
+.code-small {
+  position: absolute;
+  bottom: 0;
+  margin-left: 380px;
+  margin-bottom: 12px;
+}
+
+.btn-product-home {
+  position: absolute;
+  bottom: 0;
+  margin: 63px 16px;
+  text-align: center;
+  width: 100%;
+  z-index: 999999999;
+  height: 60px;
+  width: 400px;
+  background-color: #02ae02;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+  font-size: 21px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: 0.5s;
+  &:hover {
+    background-color: #00d700;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover span {
+    opacity: 1;
+    transform: translateY(-50%) translateX(-20px);
+  }
+}
+
+.date-small {
+  position: absolute;
+  bottom: 0;
+  margin: 10px 155px;
+}
+
+.cuotes-home {
+  text-align: left;
+  bottom: 0;
+  color: #004c87;
+  font-weight: bold;
+  margin: 0 2px;
+  font-size: 17px;
+}
+
+.nav-cuotas-home {
+  color: whitesmoke;
+  background: rgba(0, 0, 0, 0.7);
+  position: relative;
+  text-align: center;
+  padding: 6px;
+  font-size: 14px;
+}

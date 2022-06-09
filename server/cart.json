@@ -1,0 +1,29 @@
+[
+  {
+    "id": 62542,
+    "date": "6/4/2022, 6:35:41 AM",
+    "products": [
+      {
+        "id": 63734,
+        "title": "FETCH VUE",
+        "price": 1300,
+        "image": "https://static.dafiti.com.ar/p/viamo-9561-762709-1-product.jpg",
+        "description": "the best shoe in the World!",
+        "stock": 2,
+        "date": "6/4/2022, 6:35:41 AM",
+        "code": "CCD92"
+      },
+      {
+        "id": 1606,
+        "title": "FETCH SVELTE",
+        "price": 1300,
+        "image": "https://static.dafiti.com.ar/p/viamo-9561-762709-1-product.jpg",
+        "description": "the best shoe in the World!",
+        "stock": 2,
+        "date": "6/4/2022, 6:59:13 PM",
+        "code": "CCD92",
+        "category": "frameworks"
+      }
+    ]
+  }
+]
