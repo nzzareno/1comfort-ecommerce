@@ -1,66 +1,78 @@
-const Cart = require("../models/cart");
-const carrito = new Cart("cart.json");
+const { cart: cartInStorage } = require("../DAO")();
 const isAdmin = true;
 
 const creatingCartsWithProducts = async (req, res) => {
-  const carts = carrito.createCart(req.body);
+  const carts = cartInStorage.save(req.body);
   if (isAdmin) {
-    res.status(200).json({
+    return res.status(200).json({
       message: "Cart created",
       data: await carts,
     });
   } else {
-    res.status(500).json({
+    return res.status(500).json({
       message: "Error creating cart",
     });
   }
 };
 
 const listOfProducts = async (req, res) => {
-  const carts = carrito.getProductsInCart(req.params.id);
+  const carts = cartInStorage.getProducts(req.params.id);
   if (isAdmin) {
-    res.status(200).json(await carts);
+    return res.status(200).json(await carts);
   } else {
-    res.status(500).json({
+    return res.status(500).json({
+      message: "Error finding cart",
+    });
+  }
+};
+
+const entireCart = async (req, res) => {
+  const carts = cartInStorage.getCarts();
+  if (isAdmin) {
+    return res.status(200).json(await carts);
+  }
+  return res.status(500).json({
+    message: "Error finding cart",
+  });
+};
+
+const getOne = async (req, res) => {
+  const carts = cartInStorage.getOneProduct(req.params.id, req.params.idProd);
+  if (isAdmin) {
+    return res.status(200).json(await carts);
+  } else {
+    return res.status(500).json({
       message: "Error finding cart",
     });
   }
 };
 
 const addProductByID = async (req, res) => {
-  const carts = carrito.addProduct(req.params.id, req.body);
-
+  const carts = cartInStorage.addProductAsignedById(req.params.id, req.body);
   if (isAdmin) {
-    res.status(200).json({
-      message: "Product added",
-      data: await carts,
-    });
-  } else {
-    res.status(500).json({
-      message: "Error adding product",
-    });
+    return res.status(200).json(await carts);
   }
+  return res.status(500).json({
+    message: "Error adding product",
+  });
 };
 
 const deleteCartx = async (req, res) => {
-  const carts = carrito.deleteCart(req.params.id);
+  const carts = cartInStorage.deleteCart(req.params.id);
   if (isAdmin) {
-    res.status(200).json({
+    return res.status(200).json({
       message: "Cart deleted",
       data: await carts,
     });
   } else {
-    res.status(500).json({
+    return res.status(500).json({
       message: "Error deleting cart",
     });
   }
 };
 
 const deleteProductAndCartByID = async (req, res) => {
-  const carts = carrito.deleteAllProductAndCart(
-    req.params.id,
-    req.params.id_prod
-  );
+  const carts = cartInStorage.deleteOne(req.params.id, req.params.id_prod);
   if (isAdmin) {
     return {
       message: "Product deleted",
@@ -79,5 +91,7 @@ module.exports = {
   listOfProducts,
   addProductByID,
   deleteCartx,
+  getOne,
   deleteProductAndCartByID,
+  entireCart,
 };

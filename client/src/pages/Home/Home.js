@@ -26,7 +26,7 @@ const Home = () => {
         setData(data);
       });
   }, []);
-
+  console.log(data);
   const deleteSingleProduct = async (id) => {
     const response = await axios.delete(
       `http://localhost:8080/api/productos/${id}`
@@ -119,7 +119,6 @@ const Home = () => {
 
   return (
     <>
-
       <motion.div
         initial="hidden"
         animate="visible"
@@ -146,7 +145,7 @@ const Home = () => {
           </Slider>
         </motion.div>
       </motion.div>
-    
+
       <div className="pic-container"></div>
       <h3 className="home-title txt anim-text-flow">NEW ARRIVALS </h3>
       <motion.div
@@ -169,14 +168,14 @@ const Home = () => {
                     initial="hidden"
                     animate="visible"
                     variants={variants}
-                    key={item.id}
+                    key={item._id || item.id}
                     className="card"
                   >
                     <motion.div
                       initial="hidden"
                       animate="visible"
                       variants={variants}
-                      key={item.id}
+                      key={item._id || item.id}
                     >
                       <div className="imgBx">
                         <img className="imagez" src={item.image} alt="imagex" />

@@ -1,19 +1,5 @@
 [
   {
-    "id": 87837,
-    "price": 50,
-    "title": "NIKE TEE SUMMER MAN",
-    "date": "6/6/2022, 3:27:47 AM",
-    "description": "The Nike Sportswear T-Shirt features soft cotton for all-day comfort and a bold, colorful graphic across the chest, 100% cotton.",
-    "stock": "5",
-    "code": "9891A0",
-    "image": "https://sevensport.vteximg.com.br/arquivos/ids/388410-1000-1000/CW0428-010_1.jpg?v=637599893243430000",
-    "category": "t-shirts",
-    "new": true,
-    "logo": "https://chelsea.vteximg.com.br/arquivos/chelsea-nike.png",
-    "genre": "men"
-  },
-  {
     "id": 23448,
     "price": 60,
     "title": "ADIDAS TEE HULK",
@@ -123,6 +109,20 @@
     "category": "hats",
     "new": true,
     "logo": "https://www.chelsea.com.ar/arquivos/handloose.jpg",
+    "genre": "men"
+  },
+  {
+    "id": 53224,
+    "price": 50,
+    "title": "SANTA CRUZ SH MC HAWAII SHIRT",
+    "date": "6/26/2022, 3:44:18 AM",
+    "description": "SANTA CRUZ SH MC HAWAII SHIRT 02128G8 MAN",
+    "stock": "5",
+    "code": "02128G8",
+    "image": "https://sevensport.vteximg.com.br/arquivos/ids/414267-1000-1000/02128G8_1.jpg?v=637659506619730000",
+    "category": "t-shirts",
+    "new": true,
+    "logo": "https://www.chelsea.com.ar/arquivos/SantaCruz.png",
     "genre": "men"
   }
 ]

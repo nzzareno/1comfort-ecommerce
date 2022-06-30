@@ -2,9 +2,13 @@ const express = require("express");
 const morgan = require("morgan");
 const path = require("path");
 const cors = require("cors");
+const mongoConnection = require("../services/MONGODB/config");
+// const { knexConfig } = require("../services/MYSQL/config");
+// const knex = require("knex")(knexConfig);
+const knex =  require("../services/MYSQL/config");
+const containerMySql = require("../services/MYSQL/containerMySql");
 const productRouter = require("../routes/product");
 const cartRouter = require("../routes/cart");
- 
 
 class Server {
   constructor() {
@@ -16,6 +20,7 @@ class Server {
     this.middlewares();
     this.routes();
     this.static();
+    this.startMongo();
   }
 
   settings() {
@@ -46,6 +51,10 @@ class Server {
 
   static() {
     this.app.use(express.static("public"));
+  }
+
+  async startMongo() {
+    await mongoConnection(process.env.MONGO_URI);
   }
 
   listener() {
