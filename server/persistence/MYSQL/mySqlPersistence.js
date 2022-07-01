@@ -17,23 +17,13 @@ knex.schema
     table.string("genre");
   })
   .then(() => {
-    return knex.schema.createTableIfNotExists("cart", (table) => {
-      table.increments("idCart").primary();
-      table.timestamp("dateCart").defaultTo(knex.fn.now());
-      table.json("products");
-
-      
-      table.integer("product_id");
-      table.string("title");
-      table.string("description");
-      table.integer("price");
-      table.integer("stock");
-      table.string("image");
-      table.string("code");
-      table.string("category");
-      table.boolean("new");
-      table.string("logo");
-      table.string("genre");
+    return knex.schema.createTableIfNotExists("cart", (t) => {
+      t.increments("idCart").primary();
+      t.timestamp("dateCart").defaultTo(knex.fn.now());
+      t.json("products");
+      t.integer("product_id").unsigned().defaultTo(0);
+      t.timestamp("date").defaultTo(knex.fn.now());
+      // t.foreign("product_id").references("id").inTable("products");
     });
   })
   .catch((err) => {

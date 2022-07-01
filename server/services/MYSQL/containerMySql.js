@@ -78,46 +78,27 @@ class KnexCartContainer extends Container {
   }
 
   async save(data) {
-    // const newCart = {
-    //   idCart: Number(nanoid()),
-    //   products: [],
-    // };
-
-    // newCart.products.push({
-    //   product_id: Number(nanoid()),
-    //   title: data.title,
-    //   price: data.price,
-    //   logo: data.logo,
-    //   stock: data.stock,
-    //   description: data.description,
-    //   category: data.category,
-    //   genre: data.genre,
-    //   image: data.image,
-    //   code: data.code,
-    // });
-
-    // await knex(this.table).insert(newCart);
-    // return newCart;
-    const newCart = {
-      idCart: Number(nanoid()),
+    const carrito = {
       products: [],
     };
 
-    newCart.products.push({
-      product_id: Number(nanoid()),
+    carrito.products.push({
+      product_id: data.product_id,
+      date: data.date,
       title: data.title,
       price: data.price,
-      logo: data.logo,
-      stock: data.stock,
-      description: data.description,
-      category: data.category,
-      genre: data.genre,
       image: data.image,
+      description: data.description,
+      stock: data.stock,
       code: data.code,
+      category: data.category,
+      new: data.new,
+      logo: data.logo,
+      genre: data.genre,
     });
-    console.log(newCart) // Esto es lo que me deberia devolver
-    await knex(this.table).insert(newCart); // Esto tira error, creo que es por que me falta una relacion, o algo de la clave foreana, no supe como implementarlo
 
+    carrito.products = JSON.stringify(carrito.products);
+    await knex(this.table).insert(carrito);
   }
 
   async update(id, data) {
