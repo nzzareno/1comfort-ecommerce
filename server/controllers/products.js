@@ -19,23 +19,6 @@ const getSingleProduct = async (req, res) => {
 
 const creatingProducts = async (req, res) => {
   try {
-    // if (
-    //   !req.body.title &&
-    //   !req.body.price &&
-    //   !req.body.image &&
-    //   !req.body.description &&
-    //   !req.body.stock &&
-    //   !req.body.code &&
-    //   !req.body.category &&
-    //   !req.body.new &&
-    //   !req.body.logo &&
-    //   !req.body.genre
-    // ) {
-    //   res.status(400).json({
-    //     error: "Bad Request",
-    //     message: "All data are required",
-    //   });
-    // }
     productsInStorage.save(req.body);
     return res.json({
       message: "Product created!",

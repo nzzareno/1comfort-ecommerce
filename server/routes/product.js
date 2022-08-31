@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+
 const {
   getAllProducts,
   getSingleProduct,
@@ -8,6 +9,7 @@ const {
   deletingProducts,
   deletingProduct,
 } = require("../controllers/products");
+const { authVerified } = require("../utils/keys");
 
 router.get("/", getAllProducts);
 

@@ -1,6 +1,5 @@
-
-const { ProductModel } = require("../../persistence/MONGODB/models/mongoPersistence");
-const {ProductsMongoContainer} = require("../../services/MONGODB/containerMongo");
+const { ProductModel } = require("../../persistence/models/mongoPersistence");
+const { ProductsMongoContainer } = require("../../services/containerMongo");
 
 class DaoMongoProductsContainer extends ProductsMongoContainer {
   constructor() {

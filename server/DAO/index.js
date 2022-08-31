@@ -1,11 +1,12 @@
-const daoArchiveCart = require("./carts/daoArchive");
-const daoArchiveProducts = require("./products/daoArchive");
+// const daoArchiveCart = require("./carts/daoArchive");
+// const daoArchiveProducts = require("./products/daoArchive");
 const DaoMongoProductsContainer = require("./products/daoMongo");
 const DaoMongoCartContainer = require("./carts/daoMongo");
-const DaoFirebaseProducts = require("./products/daoFirebase");
-const DaoFirebaseCart = require("./carts/daoFirebase");
-const DaoMySqlProductsContainer = require("./products/daoMySql");
-const DaoMySqlCartContainer = require("./carts/daoMySql");
+const DaoMongoUsersContainer = require("./users/daoMongo");
+// const DaoFirebaseProducts = require("./products/daoFirebase");
+// const DaoFirebaseCart = require("./carts/daoFirebase");
+// const DaoMySqlProductsContainer = require("./products/daoMySql");
+// const DaoMySqlCartContainer = require("./carts/daoMySql");
 
 const getStorage = () => {
   const storage = process.env.STORAGE;
@@ -20,6 +21,7 @@ const getStorage = () => {
       return {
         products: new DaoMongoProductsContainer(),
         cart: new DaoMongoCartContainer(),
+        users: new DaoMongoUsersContainer(),
       };
     case "fs":
       return {

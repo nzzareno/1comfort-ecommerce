@@ -11,6 +11,8 @@ import Footwear from "./pages/Footwear/Footwear";
 import Men from "./pages/Men/Men";
 import Women from "./pages/Women/Women";
 import Sidebar from "./components/Sidebar/Sidebar";
+import Login from "./pages/Login/Login";
+import Register from "./pages/Register/Register";
 
 const App = () => {
   return (
@@ -26,7 +28,8 @@ const App = () => {
         <Route path="/tshirts" element={<Tshirts />} />
         <Route path="/men" element={<Men />} />
         <Route path="/women" element={<Women />} />
-        <Route path="/women" element={<Tshirts />} />
+        <Route path="/signup" element={<Login />} />
+        <Route path="/signin" element={<Register />} />
         <Route path="*" element={<NotFound404 />} />
       </Routes>
     </div>
