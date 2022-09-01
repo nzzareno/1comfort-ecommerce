@@ -12,22 +12,16 @@ import Men from "../../assets/fondomen.jpg";
 import BlondeGirl from "../../assets/fondoblonde.jpg";
 import GirlsFriends from "../../assets//fondofriends.jpg";
 import Sidebar from "../../components/Sidebar/Sidebar";
-import {useNavigate} from 'react-router-dom'
-
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [data, setData] = useState([]);
   const [deleteSingleData, setDeleteSingleData] = useState({});
   const [editButton, setEditButton] = useState(true);
-  
-  let { saveData } = useContext(ContextOfProduct);
-  const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   axios.get("http://localhost:8080/signin").then((res) => {
-  //     setData(res.data);
-  //   });
-  // }, []);
+  // let { saveData } = useContext(ContextOfProduct);
+  const { users } = useContext(ContextOfProduct);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios.get("http://localhost:8080/api/productos").then((res) => {
@@ -125,6 +119,8 @@ const Home = () => {
     visible: { opacity: 1 },
   };
 
+  console.log(users);
+
   return (
     <>
       <motion.div
@@ -169,7 +165,7 @@ const Home = () => {
           className="container"
         >
           <Slider {...settingsV2}>
-            {/* {!data
+            {!data
               ? "Loading..."
               : data.map((item) => (
                   <motion.div
@@ -255,7 +251,7 @@ const Home = () => {
                       </div>
                     </motion.div>
                   </motion.div>
-                ))} */}
+                ))}
           </Slider>
         </motion.div>
       </motion.div>

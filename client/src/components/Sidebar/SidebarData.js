@@ -45,8 +45,8 @@ export const SidebarData = [
     cName: "nav-text",
   },
   {
-    title: "SIGN IN",
-    path: "/signin",
+    title: "SIGN UP",
+    path: "/signup",
     icon: <FaIcons.FaUserFriends />,
     cName: "nav-text",
   },

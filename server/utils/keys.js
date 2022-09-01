@@ -11,9 +11,8 @@ const comparePassword = (hash, password) => {
 const authVerified = (req, res, next) => {
   if (req.isAuthenticated()) {
     return next();
-  } else {
-    res.redirect("/signin");
   }
+  res.redirect("/login");
 };
 
 module.exports = {

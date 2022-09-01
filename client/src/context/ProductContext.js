@@ -5,7 +5,34 @@ export const ContextOfProduct = createContext();
 export default function ProductContext({ children }) {
   const [data, setData] = useState([]);
   const [saveData, setSaveData] = useState({});
-  const [error, setError] = useState(false);
+  const [users, setUsers] = useState({});
+  const [auth, setAuth] = useState(false);
+
+  // const [isAuthenticated, setIsAuthenticated] = useState(
+  //   () => JSON.parse(localStorage.getItem("auth")) || false
+  // );
+
+  // const setAuth = (value) => {
+  //   setIsAuthenticated(value);
+  //   //alert(value);
+  // };
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/user/getDetails")
+      .then(({ data: { nombre, age, avatar, phone, address } }) => {
+        setUsers({
+          nombre,
+          age,
+          avatar,
+          phone,
+          address,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,11 +49,10 @@ export default function ProductContext({ children }) {
     });
   }, [data]);
 
-  if (error) {
-    setError(true);
-  }
+  console.log(users);
+
   return (
-    <ContextOfProduct.Provider value={{ data, saveData }}>
+    <ContextOfProduct.Provider value={{ data, saveData, users, auth, setAuth }}>
       {children}
     </ContextOfProduct.Provider>
   );

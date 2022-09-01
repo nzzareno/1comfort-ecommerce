@@ -4,10 +4,10 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import { motion } from "framer-motion";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState({});
 
   const variants = {
     hidden: { opacity: 0 },
@@ -35,34 +35,61 @@ const Register = () => {
       phone: Yup.string().trim().required("Required"),
       avatar: Yup.string().trim().required("Required"),
     }),
-    onSubmit: async (values) => {
-      try {
-        await axios
-          .post("http://localhost:8080/signin", {
-            email: values.email,
-            password: values.password,
-            age: values.age,
-            nombre: values.nombre,
-            address: values.address,
-            phone: values.phone,
-            avatar: values.avatar,
-          })
-          .then((res) => {
-            setData(res.data);
-            if (res.data.message === "User created") {
-              navigate("/signup");
-            } else {
-              navigate("/");
-            }
-          })
-          .catch((err) => {
-            console.log(err);
+    onSubmit: (values) => {
+      // await axios
+      //   .post("http://localhost:8080/auth/register", {
+      //     email: values.email,
+      //     password: values.password,
+      //     age: values.age,
+      //     nombre: values.nombre,
+      //     address: values.address,
+      //     phone: values.phone,
+      //     avatar: values.avatar,
+      //   })
+      //   .then((res) => {
+      //      const isAuthenticated = res.data.isAuthenticated;
+      //      window.localStorage.setItem("isAuthenticated", isAuthenticated);
+      //     setData({
+      //       success: true,
+      //       error: false,
+      //       data: res.data,
+      //     });
+      //     navigate("/signin");
+      //   });
+
+      axios({
+        url: "http://localhost:8080/auth/register",
+        method: "POST",
+        data: {
+          email: values.email,
+          password: values.password,
+          age: values.age,
+          nombre: values.nombre,
+          address: values.address,
+          phone: values.phone,
+          avatar: values.avatar,
+        },
+      })
+        .then((res) => {
+          window.localStorage.setItem("isAuthenticated", true);
+          if (res.status === 200) {
+            setData({
+              success: true,
+              error: false,
+            });
+            navigate("/signin");
+          }
+        })
+        .catch(({ response }) => {
+          setData({
+            success: false,
+            error: response.data.message,
           });
-      } catch (err) {
-        console.log(err);
-      }
+        });
     },
   });
+  console.log(data);
+  const { success, error } = data;
   return (
     <motion.div
       initial="hidden"
@@ -169,9 +196,21 @@ const Register = () => {
           {formik.touched.password && formik.errors.password ? (
             <small style={{ color: "red" }}>{formik.errors.password}</small>
           ) : null}
+          <div
+            style={{
+              color: "red",
+              margin: "5px 0 12px 0",
+            }}
+          >
+            {success && "User created successfully"}
+            {error && "This user already exists"}
+          </div>
           <button type="submit" className="btn btn-primary btn-block btn-large">
             Let me in.
           </button>
+          <p className="mt-2">
+            Already have an account? <Link to={"/signin"}>Login</Link>
+          </p>
         </form>
       </div>
     </motion.div>

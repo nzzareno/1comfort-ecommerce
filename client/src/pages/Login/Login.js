@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Login.scss";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { motion } from "framer-motion";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { ContextOfProduct } from "../../context/ProductContext";
 
-const Login = () => {
-  const [data, setData] = useState(null);
+const Login = ({ setAuth }) => {
+  const [data, setData] = useState({});
+  // let { auth, setAuth } = useContext(ContextOfProduct);
 
   const variants = {
     hidden: { opacity: 0 },
@@ -25,25 +27,59 @@ const Login = () => {
       password: Yup.string().trim().required("Required"),
     }),
 
-    onSubmit: async (values) => {
-      try {
-        await axios
-          .post("http://localhost:8080/signup", {
-            email: values.email,
-            password: values.password,
-          })
-          .then((res) => {
-            setData(res.data);
+    onSubmit: (values) => {
+      // await axios
+      //   .post("http://localhost:8080/auth/login", {
+      //     email: values.email,
+      //     password: values.password,
+      //   })
+      //   .then((res) => {
+      //     // window.localStorage.setItem("isAuthenticated", true);
+      //     if (res.status === 200) {
+      //       setData({
+      //         success: true,
+      //         error: false,
+      //         data: res.data,
+      //       });
+      //       console.log(res)
+      //       navigate("/");
+      //     } else {
+      //       navigate("/signup");
+      //       console.log("error en el registro");
+      //     }
+      //   })
+      //   .catch((err) => {
+      //     console.log(err);
+      //     setData({ error: err.message, success: false });
+      //   });
+
+      axios({
+        url: "http://localhost:8080/auth/login",
+        method: "POST",
+        data: {
+          email: values.email,
+          password: values.password,
+          
+        },
+      })
+        .then((res) => {
+          window.localStorage.setItem("isAuthenticated", true);
+          if (res.status === 200) {
+            setData({
+              success: true,
+              error: false,
+            });
+            console.log(res);
             navigate("/");
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      } catch (err) {
-        console.log(err);
-      }
+          }
+        })
+        .catch(({ response }) => {
+          console.log(response);
+          setData({ error: response.data.message, success: false });
+        });
     },
   });
+  const { success, error } = data;
   return (
     <motion.div
       initial="hidden"
@@ -78,9 +114,23 @@ const Login = () => {
           {formik.touched.password && formik.errors.password ? (
             <small style={{ color: "red" }}>{formik.errors.password}</small>
           ) : null}
+          <div
+            style={{
+              color: "red",
+              margin: "5px 0 12px 0",
+            }}
+          >
+            {" "}
+            {success && "You are login successful"}
+            {error && "Your email or password is incorrect"}
+          </div>
+
           <button type="submit" className="btn btn-primary btn-block btn-large">
             Let me in.
           </button>
+          <p className="mt-2">
+            Don’t have an account? Sign up! <Link to={"/signup"}>Register</Link>
+          </p>
         </form>
       </div>
     </motion.div>

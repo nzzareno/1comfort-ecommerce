@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import Home from "./pages/Home/Home";
 import ProductForm from "./pages/ProductForm/ProductForm";
 import NotFound404 from "./pages/NotFound/NotFound404";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import "./App.scss";
 import Accessories from "./pages/Accessories/Accessories";
@@ -13,8 +13,11 @@ import Women from "./pages/Women/Women";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
+// import { ContextOfProduct } from "./context/ProductContext";
 
 const App = () => {
+   
+
   return (
     <div className="App">
       <Navbar className="original-nav" />
@@ -28,8 +31,8 @@ const App = () => {
         <Route path="/tshirts" element={<Tshirts />} />
         <Route path="/men" element={<Men />} />
         <Route path="/women" element={<Women />} />
-        <Route path="/signup" element={<Login />} />
-        <Route path="/signin" element={<Register />} />
+        <Route path="/signin" element={<Login />} />
+        <Route path="/signup" element={<Register />} />
         <Route path="*" element={<NotFound404 />} />
       </Routes>
     </div>

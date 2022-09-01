@@ -32,6 +32,8 @@
     "nodemon": "^2.0.16",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^7.1.2",
+    "react-engine": "^4.5.1",
     "sequelize": "^6.21.1",
     "session-file-store": "^1.5.0",
     "twilio": "^3.81.0",

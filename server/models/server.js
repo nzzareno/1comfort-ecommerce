@@ -8,9 +8,10 @@ const cartRouter = require("../routes/cart");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
-const { authVerified } = require("../utils/keys");
 const logger = require("../logs/winston");
-const passport = require("../services/passport");
+const passport = require("../Auth");
+const Authentication = require("../routes/auth");
+const User = require("../routes/user");
 
 class Server {
   constructor() {
@@ -18,6 +19,8 @@ class Server {
     this.port = 8080;
     this.productsRoute = "/api/productos";
     this.cartRoute = "/api/carrito";
+    this.authRoute = "/auth";
+    this.userRoute = "/user";
     this.settings();
     this.middlewares();
     this.routes();
@@ -31,6 +34,7 @@ class Server {
 
   middlewares() {
     this.app.use(cors());
+
     this.app.use(express.static(path.resolve(__dirname, "../../client/build")));
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
@@ -43,7 +47,6 @@ class Server {
       }
       next();
     });
-
     this.app.use(
       session({
         secret: process.env.MY_SECRET,
@@ -62,77 +65,8 @@ class Server {
   routes() {
     this.app.use(this.productsRoute, productRouter);
     this.app.use(this.cartRoute, cartRouter);
-
-    this.app.get("/", authVerified, (req, res) => {
-      console.log("HE AQUI");
-      return res.send("ALOHA");
-    });
-
-    this.app.get(
-      "/signin",
-      (req, res, next) => {
-        logger.info(` ${req.method} ${req.url} with port ${process.env.PORT}`);
-        next();
-      },
-      async (req, res) => {
-        await passport.authenticate("register");
-        return res.redirect("/signup");
-      }
-    );
-
-    this.app.get(
-      "/signup",
-      (req, res, next) => {
-        logger.info(` ${req.method} ${req.url} with port ${process.env.PORT}`);
-        next();
-      },
-      async (req, res) => {
-        await passport.authenticate("login");
-        return res.redirect("/");
-      }
-    );
-
-    this.app.post(
-      "/signin",
-      (req, res, next) => {
-        logger.info(` ${req.method} ${req.url} with port ${process.env.PORT}`);
-        next();
-      },
-      passport.authenticate("register", {
-        successRedirect: "/signup",
-        failureRedirect: "/signin",
-        failureFlash: true,
-      })
-    );
-
-    this.app.post(
-      "/signup",
-      (req, res, next) => {
-        logger.info(` ${req.method} ${req.url} with port ${process.env.PORT}`);
-        next();
-      },
-      passport.authenticate("login", {
-        successRedirect: "/",
-        failureRedirect: "/signup",
-        failureFlash: true,
-      })
-    );
-
-    this.app.get(
-      "/logout",
-      (req, res, next) => {
-        logger.info(` ${req.method} ${req.url} with port ${process.env.PORT}`);
-        next();
-      },
-      (req, res) => {
-        req.logout((err) => {
-          if (err) {
-            console.log(err);
-          }
-          res.redirect("/");
-        });
-      }
-    );
+    this.app.use(this.authRoute, Authentication);
+    this.app.use(this.userRoute, User);
   }
 
   static() {

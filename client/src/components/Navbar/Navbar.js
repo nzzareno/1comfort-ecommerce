@@ -64,7 +64,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className={show ? "navbar__li" : "navbar--li"}>
-                <Link to="/signin">SIGN IN</Link>
+                <Link to="/signup">SIGN UP</Link>
               </li>
               <li className={show ? "navbar__li" : "navbar--li"}>
                 <Link to="/cart">
