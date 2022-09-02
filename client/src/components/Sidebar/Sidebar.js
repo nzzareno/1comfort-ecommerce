@@ -1,18 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../Navbar/Navbar.scss";
 import { FaBars } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import { SidebarData } from "./SidebarData";
 import { IconContext } from "react-icons";
+import { ContextOfProduct } from "../../context/ProductContext";
 
-const Sidebar = () => {
+const Sidebar = ({ auth, setAuth }) => {
   const [sidebar, setSidebar] = React.useState(false);
   const [disableBtn, setDisableBtn] = React.useState(false);
-
+  // let { auth, setAuth } = useContext(ContextOfProduct);
   const toggleSidebar = (e) => {
     setSidebar(!sidebar);
-
   };
 
   const showSidebar = () => {
@@ -24,8 +24,7 @@ const Sidebar = () => {
       setSidebar(false);
     }
   };
- 
-
+  console.log(auth);
   return (
     <div className="contexto-side">
       <IconContext.Provider value={{ color: " #fff" }}>
@@ -42,15 +41,17 @@ const Sidebar = () => {
           <ul className="nav-menu-items" onClick={showSidebar}>
             <li className="navbar-toggle">
               <Link to="#" className="menu-bars">
-                <AiOutlineClose className="x-sidebar"/>
+                <AiOutlineClose className="x-sidebar" />
               </Link>
             </li>
             {SidebarData.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>
-                  <Link to={item.path}>
+                  <Link to={auth ? item.pathAuth : item.path}>
                     {item.icon}
-                    <span className="span-sidebar">{item.title}</span>
+                    <span className="span-sidebar">
+                      {auth ? item.titleAuth : item.title}
+                    </span>
                   </Link>
                 </li>
               );

@@ -27,10 +27,11 @@ login.post("/login", function (req, res) {
 });
 
 login.get("/logout", (req, res) => {
-  req.logout();
-  return res.json({
-    message: req.flash("message"),
-    success: true,
+  req.logout((err) => {
+    if (err) {
+      console.log(err);
+    }
+    res.redirect("/");
   });
 });
 

@@ -7,9 +7,9 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { ContextOfProduct } from "../../context/ProductContext";
 
-const Login = ({ setAuth }) => {
+const Login = ( ) => {
   const [data, setData] = useState({});
-  // let { auth, setAuth } = useContext(ContextOfProduct);
+  let { auth, setAuth } = useContext(ContextOfProduct);
 
   const variants = {
     hidden: { opacity: 0 },
@@ -59,7 +59,6 @@ const Login = ({ setAuth }) => {
         data: {
           email: values.email,
           password: values.password,
-          
         },
       })
         .then((res) => {
@@ -69,6 +68,7 @@ const Login = ({ setAuth }) => {
               success: true,
               error: false,
             });
+            setAuth(true)
             console.log(res);
             navigate("/");
           }

@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.scss";
 import Pantalla from "../../assets/Pantalla.webp";
 import { BsCart4 } from "react-icons/bs";
 import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
+import { ContextOfProduct } from "../../context/ProductContext";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
-
+  let { auth, setAuth } = useContext(ContextOfProduct);
   const changeBackground = () => {
     if (window.scrollY >= 101) {
       setShow(true);
@@ -64,7 +65,9 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className={show ? "navbar__li" : "navbar--li"}>
-                <Link to="/signup">SIGN UP</Link>
+                <Link to={auth ? "/auth/logout" : "/signin"}>
+                  {auth ? "DISCONNECT" : "SIGN UP"}
+                </Link>
               </li>
               <li className={show ? "navbar__li" : "navbar--li"}>
                 <Link to="/cart">

@@ -1,11 +1,10 @@
 const express = require("express");
 const register = express.Router();
 const flash = require("connect-flash");
-
+// const sendMail = require("../../services/nodemailer");
 //Passport file for login/register
 const passport = require("../../Auth");
 
-//Register passport authentication
 register.post("/register", (req, res) => {
   passport.authenticate("local-register", function (error, user, info) {
     if (error) {
@@ -21,6 +20,7 @@ register.post("/register", (req, res) => {
           error: error.message || "Server error",
         });
       }
+
       return res.json(user);
     });
   })(req, res);
