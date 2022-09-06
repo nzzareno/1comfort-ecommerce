@@ -10,9 +10,12 @@ const comparePassword = (hash, password) => {
 
 const authVerified = (req, res, next) => {
   if (req.isAuthenticated()) {
+    res.redirect("/user/getDetails");
     return next();
   }
-  res.redirect("/login");
+  return res.status(401).json({
+    message: "Unauthorized",
+  });
 };
 
 module.exports = {

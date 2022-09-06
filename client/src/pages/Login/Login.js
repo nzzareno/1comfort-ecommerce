@@ -69,7 +69,7 @@ const Login = ( ) => {
               error: false,
             });
             setAuth(true)
-            console.log(res);
+             
             navigate("/");
           }
         })

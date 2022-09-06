@@ -7,15 +7,21 @@ import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 import { ContextOfProduct } from "../../context/ProductContext";
 
 const Navbar = () => {
-  const [show, setShow] = useState(false);
-  let { auth, setAuth } = useContext(ContextOfProduct);
-  const changeBackground = () => {
-    if (window.scrollY >= 101) {
-      setShow(true);
-    } else {
-      setShow(false);
-    }
-  };
+  
+  let {
+    auth,
+    setAuth,
+    openCart,
+    cartQuantity,
+    productoSend,
+    cartNumber,
+    increaseCartNumber,
+    changeBackground,
+    show,
+    setShow,
+  } = useContext(ContextOfProduct);
+
+
 
   window.addEventListener("scroll", changeBackground);
 
@@ -71,8 +77,18 @@ const Navbar = () => {
               </li>
               <li className={show ? "navbar__li" : "navbar--li"}>
                 <Link to="/cart">
-                  <BsCart4 className="carritox" />
-                  <span className="carrito-span">14</span>
+                  <button
+                    style={{
+                      background: "none",
+                      border: "none",
+                      outline: "none",
+                      cursor: "pointer",
+                      color: "white",
+                    }}
+                  >
+                    <BsCart4 className="carritox" />
+                    <span className="carrito-span">{productoSend.length}</span>
+                  </button>
                 </Link>
               </li>
             </ul>

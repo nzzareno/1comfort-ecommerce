@@ -80,26 +80,34 @@ class CartMongoContainer extends Container {
   }
 
   async save(data) {
-    const element = new this.schema(data);
+    const newElement = new this.schema(data);
+    newElement.qtyProducts = newElement.products.length;
+    newElement.total = newElement.products.reduce(
+      (acc, product) => acc + product.price,
+      0
+    );
 
-    const productos = [
-      {
-        id: mongoose.Types.ObjectId().toString(),
-        title: data.title,
-        price: data.price,
-        image: data.image,
-        description: data.description,
-        stock: data.stock,
-        code: data.code,
-        category: data.category,
-        new: data.new,
-        logo: data.logo,
-        genre: data.genre,
-      },
-    ];
-    element.products = productos;
-    await element.save();
-    return element;
+    return newElement.save();
+
+    // const productos = [
+    //   {
+    //     id: mongoose.Types.ObjectId().toString(),
+    //     title: data.title,
+    //     price: data.price,
+    //     image: data.image,
+    //     description: data.description,
+    //     stock: data.stock,
+    //     code: data.code,
+    //     category: data.category,
+    //     new: data.new,
+    //     logo: data.logo,
+    //     genre: data.genre,
+    //   },
+    // ];
+    // element.products = productos;
+    // console.log(element)
+    // await element.save();
+    // return element;
   }
 
   async deleteCart(idCart) {

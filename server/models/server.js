@@ -54,7 +54,6 @@ class Server {
         saveUninitialized: false,
         store: MongoStore.create({
           mongoUrl: process.env.MONGO_URI,
-          ttl: 60 * 60 * 24,
         }),
       })
     );

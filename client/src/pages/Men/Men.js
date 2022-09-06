@@ -5,11 +5,13 @@ import HeaderPic from "../../assets/mens.jpg";
 import axios from "axios";
 import { motion } from "framer-motion";
 import EditPopUp from "../../components/EditPopUp/EditPopUp";
+import { useNavigate } from "react-router-dom";
 
 const Men = () => {
   const [editButton, setEditButton] = useState(false);
   const [deleteSingleData, setDeleteSingleData] = useState({});
   let { data } = useContext(ContextOfProduct);
+  const navigate = useNavigate();
 
   const variants = {
     hidden: { opacity: 0 },
@@ -47,6 +49,7 @@ const Men = () => {
                 initial="hidden"
                 animate="visible"
                 variants={variants}
+                key={item._id}
                 className={styles.bodyHome}
               >
                 <motion.div
@@ -117,8 +120,8 @@ const Men = () => {
                           }}
                         >
                           <h2 className={styles.precio}>
+                            <span> $</span>
                             {item.price}
-                            <span> US$</span>
                           </h2>
 
                           <img
@@ -139,14 +142,17 @@ const Men = () => {
                             {item.date}
                           </small>
                           <h3 className={styles.stock}>Stock: {item.stock}</h3>
-                          <button className={styles.btn_product_home}>
+                          <button
+                            onClick={() => navigate(`/details/${item._id}`)}
+                            className={styles.btn_product_home}
+                          >
                             SHOP NOW
                           </button>
                         </div>
                         <div className={styles.cuotasContainer}>
                           <h4 className={styles.cuotesHome}>
                             Or 6 installments of{" "}
-                            {parseFloat(item.price / 6).toFixed(2)} US$
+                            ${parseFloat(item.price / 6).toFixed(2)} 
                           </h4>
                         </div>
                       </div>

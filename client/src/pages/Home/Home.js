@@ -19,7 +19,7 @@ const Home = () => {
   const [deleteSingleData, setDeleteSingleData] = useState({});
   const [editButton, setEditButton] = useState(true);
 
-  // let { saveData } = useContext(ContextOfProduct);
+  let { saveData } = useContext(ContextOfProduct);
   const { users } = useContext(ContextOfProduct);
   const navigate = useNavigate();
 
@@ -119,8 +119,6 @@ const Home = () => {
     visible: { opacity: 1 },
   };
 
-  console.log(users);
-
   return (
     <>
       <motion.div
@@ -218,8 +216,8 @@ const Home = () => {
                           }}
                         >
                           <h2 className="precio">
+                            <span>$</span>
                             {item.price}
-                            <span> US$</span>
                           </h2>
 
                           <img
@@ -240,12 +238,17 @@ const Home = () => {
                             {item.date}
                           </small>
                           <h3 className="stock">Stock: {item.stock}</h3>
-                          <button className="btn-product-home">SHOP NOW</button>
+                          <button
+                            onClick={() => navigate(`/details/${item._id}`)}
+                            className="btn-product-home"
+                          >
+                            SHOP NOW
+                          </button>
                         </div>
                         <div className="cuotas_container">
                           <h4 className="cuotes-home">
                             Or 6 installments of{" "}
-                            {parseFloat(item.price / 6).toFixed(2)} US$
+                            ${parseFloat(item.price / 6).toFixed(2)} 
                           </h4>
                         </div>
                       </div>

@@ -24,7 +24,7 @@ const Sidebar = ({ auth, setAuth }) => {
       setSidebar(false);
     }
   };
-  console.log(auth);
+
   return (
     <div className="contexto-side">
       <IconContext.Provider value={{ color: " #fff" }}>

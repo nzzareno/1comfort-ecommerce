@@ -20,10 +20,13 @@ const ProductsSchema = new mongoose.Schema({
   new: { type: Boolean, default: true },
   logo: { type: String },
   genre: { type: String, required: true },
+  quantity: { type: Number },
 });
 
 const CartSchema = new mongoose.Schema({
   date: { type: Date, required: true, default: new Date().toUTCString() },
+  total: { type: Number, default: 0 },
+  qtyProducts: { type: Number },
   products: { type: Array, ref: "Product" },
 });
 
