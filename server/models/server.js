@@ -86,11 +86,9 @@ class Server {
       .listen(this.app.get("port"), () => {
         console.log(`Listening on port ${this.port}`);
       })
-      .on("error", (error) => {
-        res.status(503).json({
-          message: "Server error",
-          data: error,
-        });
+      .on("error", (err) => {
+        logger.error(err);
+        console.log(err);
       });
   }
 }
