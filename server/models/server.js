@@ -16,7 +16,7 @@ const User = require("../routes/user");
 class Server {
   constructor() {
     this.app = express();
-    this.port = process.env.PORT || 8080;
+    this.port = 8080;
     this.productsRoute = "/api/productos";
     this.cartRoute = "/api/carrito";
     this.authRoute = "/auth";
@@ -24,7 +24,6 @@ class Server {
     this.settings();
     this.middlewares();
     this.routes();
-
     this.startMongo();
   }
 
@@ -62,20 +61,19 @@ class Server {
   async startMongo() {
     try {
       await mongoConnection(process.env.MONGO_URI);
-      console.log("MongoDB connected");
+      logger.info("Connected to MongoDB");
     } catch (error) {
-      console.log(error);
+      logger.error(error);
     }
   }
 
   listener() {
     this.app
       .listen(this.app.get("port"), () => {
-        console.log(`Listening on port ${this.port}`);
+        logger.info(`Server listening on port ${this.app.get("port")}`);
       })
       .on("error", (err) => {
         logger.error(err);
-        console.log(err);
       });
   }
 }

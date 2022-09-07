@@ -2,6 +2,7 @@ const express = require("express");
 const login = express.Router();
 const flash = require("connect-flash");
 const passport = require("../../Auth");
+const logger = require("../../logs/winston");
 
 login.post("/login", function (req, res) {
   passport.authenticate("local-login", function (error, user, info) {
@@ -29,7 +30,7 @@ login.post("/login", function (req, res) {
 login.get("/logout", (req, res) => {
   req.logout((err) => {
     if (err) {
-      console.log(err);
+      logger.error(err);
     }
     res.redirect("/");
   });

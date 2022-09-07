@@ -1,8 +1,5 @@
 const express = require("express");
 const register = express.Router();
-const flash = require("connect-flash");
-// const sendMail = require("../../services/nodemailer");
-//Passport file for login/register
 const passport = require("../../Auth");
 
 register.post("/register", (req, res) => {

@@ -1,6 +1,7 @@
 const express = require("express");
 const getDetails = express.Router();
 const { UserModel } = require("../../persistence/models/mongoPersistence");
+const logger = require("../../logs/winston");
 
 getDetails.get("/getDetails", (req, res) => {
   UserModel.findOne({
@@ -20,7 +21,7 @@ getDetails.get("/getDetails", (req, res) => {
       });
     })
     .catch((err) => {
-      console.log(err);
+      logger.error(err);
       res.status(500).send({
         error: err,
       });

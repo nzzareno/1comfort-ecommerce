@@ -2,6 +2,7 @@ const { cart: cartInStorage } = require("../DAO")();
 const isAdmin = true;
 const nodemailer = require("nodemailer");
 const twilio = require("twilio");
+const logger = require('../logs/winston')
 require("dotenv").config();
 
 const creatingCartsWithProducts = async (req, res) => {
@@ -28,7 +29,7 @@ const creatingCartsWithProducts = async (req, res) => {
         from: process.env.TWILIO_PHONE_NUMBER,
         to: process.env.TEST_PHONE_NUMBER,
       })
-      .then((message) => console.log(message.sid));
+      .then((message) => logger.info(message.sid));
   };
 
   const mailOptions = {
@@ -73,9 +74,9 @@ const creatingCartsWithProducts = async (req, res) => {
           from: process.env.TWILIO_PHONE_NUMBER_WHATSAPP,
           to: process.env.TWILIO_PHONE_SANDBOX,
         });
-        console.log(message);
+       logger.info(message)
       } catch (error) {
-        console.log(error.message);
+        logger.error(error.message)
       }
     })();
     return res.status(200).json({
