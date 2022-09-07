@@ -60,10 +60,12 @@ class Server {
     this.app.use(flash());
     this.app.use(passport.initialize());
     this.app.use(passport.session());
-    if (process.env.NODE_ENV === 'production') {
-      app.use(express.static('client/build'));
-      app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    if (process.env.NODE_ENV === "production") {
+      this.app.use(express.static("client/build"));
+      this.app.get("*", (req, res) => {
+        res.sendFile(
+          path.resolve(__dirname, "../../client", "build", "index.html")
+        );
       });
     }
   }
