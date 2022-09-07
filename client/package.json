@@ -31,7 +31,7 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "devv": "react-scripts start",
+    "dev": "react-scripts start",
     "start": "serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test --env =jsdom",
