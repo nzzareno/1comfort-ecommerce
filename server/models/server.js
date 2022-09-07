@@ -51,13 +51,6 @@ class Server {
     this.app.use(flash());
     this.app.use(passport.initialize());
     this.app.use(passport.session());
-    if (process.env.NODE_ENV === "production") {
-      this.app.get("*", (req, res) => {
-        res.sendFile(
-          path.resolve(__dirname, "../../client", "build", "index.html")
-        );
-      });
-    }
   }
   routes() {
     this.app.use(this.productsRoute, productRouter);
