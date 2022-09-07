@@ -53,10 +53,6 @@ class Server {
     this.app.use(passport.session());
   }
   routes() {
-    this.app.get("*", function (req, res) {
-      const index = path.join(__dirname, "build", "index.html");
-      res.sendFile(index);
-    });
     this.app.use(this.productsRoute, productRouter);
     this.app.use(this.cartRoute, cartRouter);
     this.app.use(this.authRoute, Authentication);
