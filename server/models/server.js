@@ -16,7 +16,7 @@ const User = require("../routes/user");
 class Server {
   constructor() {
     this.app = express();
-    this.port = 8080;
+    this.port = 8080 || process.env.PORT;
     this.productsRoute = "/api/productos";
     this.cartRoute = "/api/carrito";
     this.authRoute = "/auth";
@@ -39,14 +39,7 @@ class Server {
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(morgan("dev"));
-    this.app.use((req, res, next) => {
-      if (req.originalUrl === "*") {
-        res.status(404).json({
-          message: "Not found",
-        });
-      }
-      next();
-    });
+  
     this.app.use(
       session({
         secret: process.env.MY_SECRET,
