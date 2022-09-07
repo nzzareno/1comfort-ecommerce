@@ -77,7 +77,7 @@ class Server {
   }
 
   static() {
-    this.app.use(express.static("public"));
+    this.app.use(express.static(path.resolve(__dirname, "../../client/build")));
   }
 
   async startMongo() {
