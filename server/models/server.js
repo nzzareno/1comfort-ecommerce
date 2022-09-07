@@ -34,12 +34,10 @@ class Server {
 
   middlewares() {
     this.app.use(cors());
-
-    this.app.use(express.static(path.resolve(__dirname, "../../client/build")));
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(morgan("dev"));
-  
+
     this.app.use(
       session({
         secret: process.env.MY_SECRET,
@@ -54,7 +52,6 @@ class Server {
     this.app.use(passport.initialize());
     this.app.use(passport.session());
     if (process.env.NODE_ENV === "production") {
-      this.app.use(express.static("client/build"));
       this.app.get("*", (req, res) => {
         res.sendFile(
           path.resolve(__dirname, "../../client", "build", "index.html")
