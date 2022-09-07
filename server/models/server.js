@@ -16,7 +16,7 @@ const User = require("../routes/user");
 class Server {
   constructor() {
     this.app = express();
-    this.port = 8080 || process.env.PORT;
+    this.port = process.env.PORT || 8080;
     this.productsRoute = "/api/productos";
     this.cartRoute = "/api/carrito";
     this.authRoute = "/auth";
@@ -24,7 +24,7 @@ class Server {
     this.settings();
     this.middlewares();
     this.routes();
-    this.static();
+
     this.startMongo();
   }
 
@@ -57,10 +57,6 @@ class Server {
     this.app.use(this.cartRoute, cartRouter);
     this.app.use(this.authRoute, Authentication);
     this.app.use(this.userRoute, User);
-  }
-
-  static() {
-    this.app.use(express.static(path.resolve(__dirname, "../../client/build")));
   }
 
   async startMongo() {
