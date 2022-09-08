@@ -5,6 +5,16 @@ import { useFormik } from "formik";
 import { motion } from "framer-motion";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+import {
+  FaAddressCard,
+  FaHandPointRight,
+  FaImage,
+  FaInfoCircle,
+  FaLock,
+  FaPhone,
+  FaUser,
+} from "react-icons/fa";
+import { IoArrowRedo } from "react-icons/io5";
 
 const Register = () => {
   const [data, setData] = useState({});
@@ -36,27 +46,6 @@ const Register = () => {
       avatar: Yup.string().trim().required("Required"),
     }),
     onSubmit: (values) => {
-      // await axios
-      //   .post("http://localhost:8080/auth/register", {
-      //     email: values.email,
-      //     password: values.password,
-      //     age: values.age,
-      //     nombre: values.nombre,
-      //     address: values.address,
-      //     phone: values.phone,
-      //     avatar: values.avatar,
-      //   })
-      //   .then((res) => {
-      //      const isAuthenticated = res.data.isAuthenticated;
-      //      window.localStorage.setItem("isAuthenticated", isAuthenticated);
-      //     setData({
-      //       success: true,
-      //       error: false,
-      //       data: res.data,
-      //     });
-      //     navigate("/signin");
-      //   });
-
       axios({
         url: "http://localhost:8080/auth/register",
         method: "POST",
@@ -88,133 +77,208 @@ const Register = () => {
         });
     },
   });
-  console.log(data);
+
   const { success, error } = data;
   return (
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={variants}
-      className="product__form-body"
-    >
-      <div className="capa-form">
-        <form onSubmit={formik.handleSubmit}>
-          <input
-            type="text"
-            name="nombre"
-            id="nombre"
-            placeholder="Your name"
-            required="required"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.nombre}
-          />
-          {formik.touched.nombre && formik.errors.nombre ? (
-            <small style={{ color: "red" }}>{formik.errors.nombre}</small>
-          ) : null}
-
-          <input
-            type="number"
-            name="age"
-            id="age"
-            placeholder="Your age"
-            required="required"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.age}
-          />
-          {formik.touched.age && formik.errors.age ? (
-            <small style={{ color: "red" }}>{formik.errors.age}</small>
-          ) : null}
-
-          <input
-            type="text"
-            name="address"
-            id="address"
-            placeholder="Your address"
-            required="required"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.address}
-          />
-          {formik.touched.address && formik.errors.address ? (
-            <small style={{ color: "red" }}>{formik.errors.address}</small>
-          ) : null}
-
-          <input
-            type="text"
-            name="avatar"
-            id="avatar"
-            placeholder="Your avatar"
-            required="required"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.avatar}
-          />
-          {formik.touched.avatar && formik.errors.avatar ? (
-            <small style={{ color: "red" }}>{formik.errors.avatar}</small>
-          ) : null}
-
-          <input
-            type="text"
-            name="email"
-            id="email"
-            placeholder="Your email"
-            required="required"
-            onChange={formik.handleChange}
-            onBlur={formik.handleBlur}
-            value={formik.values.email}
-          />
-          {formik.touched.email && formik.errors.email ? (
-            <small style={{ color: "red" }}>{formik.errors.email}</small>
-          ) : null}
-
-          <input
-            type="text"
-            name="phone"
-            id="phone"
-            pattern="\(?\+[0-9]{1,3}\)? ?-?[0-9]{1,3} ?-?[0-9]{3,5} ?-?[0-9]{4}( ?-?[0-9]{3})? ?(\w{1,10}\s?\d{1,6})?"
-            placeholder="Your phone"
-            required="required"
-            onBlur={formik.handleBlur}
-            onChange={formik.handleChange}
-            value={formik.values.phone}
-          />
-          {formik.touched.phone && formik.errors.phone ? (
-            <small style={{ color: "red" }}>{formik.errors.phone}</small>
-          ) : null}
-
-          <input
-            type="password"
-            name="password"
-            id="password"
-            onChange={formik.handleChange}
-            placeholder="Your password"
-            required="required"
-            onBlur={formik.handleBlur}
-            value={formik.values.password}
-          />
-          {formik.touched.password && formik.errors.password ? (
-            <small style={{ color: "red" }}>{formik.errors.password}</small>
-          ) : null}
-          <div
-            style={{
-              color: "red",
-              margin: "5px 0 12px 0",
-            }}
-          >
-            {success && "User created successfully"}
-            {error && "This user already exists"}
+    <div className="align-register">
+      <motion.div
+        initial={{
+          opacity: 0,
+          x: -100,
+        }}
+        animate={{
+          opacity: 1,
+          x: 0,
+        }}
+        transition={{
+          delay: 1.5,
+          duration: 1.5,
+        }}
+        className="animate-div"
+      >
+        <h1>One Comfort</h1>
+      </motion.div>
+      <motion.div
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+        }}
+        transition={{
+          delay: 0.1,
+          duration: 2.7,
+        }}
+        className="grid-register"
+      >
+        <form onSubmit={formik.handleSubmit} className="form login">
+          <div className="form__field">
+            <label htmlFor="login__username">
+              <svg className="icon">
+                <FaInfoCircle />
+              </svg>
+              <span className="hidden">Name</span>
+            </label>
+            <input
+              autoComplete="nombre"
+              type="text"
+              name="nombre"
+              id="nombre"
+              className="form__input"
+              placeholder="Your name"
+              required="required"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.nombre}
+            />
           </div>
-          <button type="submit" className="btn btn-primary btn-block btn-large">
-            Let me in.
-          </button>
-          <p className="mt-2">
-            Already have an account? <Link to={"/signin"}>Login</Link>
-          </p>
+
+          <div className="form__field">
+            <label htmlFor="login__username">
+              <svg className="icon">
+                <FaHandPointRight />
+              </svg>
+              <span className="hidden">Age</span>
+            </label>
+            <input
+              type="number"
+              name="age"
+              id="age"
+              className="form__input"
+              placeholder="Your age"
+              required="required"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.age}
+              pattern="[0-9]*"
+            />
+          </div>
+
+          <div className="form__field">
+            <label htmlFor="login__username">
+              <svg className="icon">
+                <FaAddressCard />
+              </svg>
+              <span className="hidden">Address</span>
+            </label>
+            <input
+              type="text"
+              name="address"
+              id="address"
+              className="form__input"
+              placeholder="Your address"
+              required="required"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.address}
+            />
+          </div>
+          <div className="form__field">
+            <label htmlFor="login__username">
+              <svg className="icon">
+                <FaImage />
+              </svg>
+              <span className="hidden">Avatar (URL)</span>
+            </label>
+            <input
+              type="text"
+              name="avatar"
+              id="avatar"
+              className="form__input"
+              placeholder="Your avatar"
+              required="required"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.avatar}
+            />
+          </div>
+          <div className="form__field">
+            <label htmlFor="login__username">
+              <svg className="icon">
+                <FaPhone />
+              </svg>
+              <span className="hidden">Phone</span>
+            </label>
+            <input
+              type="text"
+              name="phone"
+              id="phone"
+              pattern="\(?\+[0-9]{1,3}\)? ?-?[0-9]{1,3} ?-?[0-9]{3,5} ?-?[0-9]{4}( ?-?[0-9]{3})? ?(\w{1,10}\s?\d{1,6})?"
+              placeholder="Your phone"
+              required="required"
+              className="form__input"
+              onBlur={formik.handleBlur}
+              onChange={formik.handleChange}
+              value={formik.values.phone}
+            />
+          </div>
+          <div className="form__field">
+            <label htmlFor="login__username">
+              <svg className="icon">
+                <FaUser />
+              </svg>
+              <span className="hidden">Email</span>
+            </label>
+            <input
+              autoComplete="email"
+              type="text"
+              className="form__input"
+              name="email"
+              id="email"
+              placeholder="Your email"
+              required="required"
+              onChange={formik.handleChange}
+              value={formik.values.email}
+              onBlur={formik.handleBlur}
+            />
+          </div>
+          <div className="form__field">
+            <label htmlFor="login__password">
+              <svg className="icon">
+                <FaLock />
+              </svg>
+              <span className="hidden">Password</span>
+            </label>
+            <input
+              autoComplete="current-password"
+              type="password"
+              className="form__input"
+              name="password"
+              id="password"
+              onChange={formik.handleChange}
+              placeholder="Your password"
+              required="required"
+              onBlur={formik.handleBlur}
+              value={formik.values.password}
+            />
+
+            <div
+              style={{
+                color: "red",
+                margin: "5px 0 12px 0",
+              }}
+            >
+              {success && "You are register successfully"}
+              {error && "Something went wrong"}
+            </div>
+          </div>
+          <div className="form__field">
+            <input type="submit" value="Sign Up" />
+          </div>
         </form>
-      </div>
-    </motion.div>
+
+        <p className="text--center">
+          Already have a account ? <Link to="/signin">Sign in now </Link>
+          <svg className="icon">
+            <IoArrowRedo
+              style={{
+                color: "white",
+              }}
+            />
+          </svg>
+        </p>
+      </motion.div>
+    </div>
   );
 };
 

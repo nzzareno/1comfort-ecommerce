@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./ProductForm.scss";
+import styles from "./ProductForm.module.scss";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { motion } from "framer-motion";
@@ -57,12 +57,12 @@ const ProductForm = () => {
       initial="hidden"
       animate="visible"
       variants={variants}
-      className="product__form-body"
+      className={styles.product__form}
     >
-      <div className="sub__product-form">
+      <div className={styles.sub__product}>
         <h4>generate your product, what are you waiting for?</h4>
       </div>
-      <div className="capa-form">
+      <div className={styles.capa}>
         <form
           onSubmit={formik.handleSubmit}
           action="api/productos"
@@ -76,10 +76,9 @@ const ProductForm = () => {
             required="required"
             onChange={formik.handleChange}
             value={formik.values.title}
+            className={styles.productForm}
           />
-          {formik.touched.title && formik.errors.title ? (
-            <small style={{ color: "red" }}>{formik.errors.title}</small>
-          ) : null}
+
           <input
             type="text"
             name="price"
@@ -89,10 +88,9 @@ const ProductForm = () => {
             required="required"
             onBlur={formik.handleBlur}
             value={formik.values.price}
+            className={styles.productForm}
           />
-          {formik.touched.price && formik.errors.price ? (
-            <small style={{ color: "red" }}>{formik.errors.price}</small>
-          ) : null}
+
           <input
             type="text"
             name="description"
@@ -102,10 +100,9 @@ const ProductForm = () => {
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
             value={formik.values.description}
+            className={styles.productForm}
           />
-          {formik.touched.description && formik.errors.description ? (
-            <small style={{ color: "red" }}>{formik.errors.description}</small>
-          ) : null}
+
           <input
             type="url"
             name="image"
@@ -115,10 +112,9 @@ const ProductForm = () => {
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
             value={formik.values.image}
+            className={styles.productForm}
           />
-          {formik.touched.image && formik.errors.image ? (
-            <small style={{ color: "red" }}>{formik.errors.image}</small>
-          ) : null}
+
           <input
             type="url"
             name="logo"
@@ -128,10 +124,9 @@ const ProductForm = () => {
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
             value={formik.values.logo}
+            className={styles.productForm}
           />
-          {formik.touched.image && formik.errors.image ? (
-            <small style={{ color: "red" }}>{formik.errors.image}</small>
-          ) : null}
+
           <input
             type="text"
             name="code"
@@ -141,10 +136,9 @@ const ProductForm = () => {
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
             value={formik.values.code}
+            className={styles.productForm}
           />
-          {formik.touched.code && formik.errors.code ? (
-            <small style={{ color: "red" }}>{formik.errors.code}</small>
-          ) : null}
+
           <input
             type="text"
             name="stock"
@@ -154,15 +148,15 @@ const ProductForm = () => {
             onBlur={formik.handleBlur}
             onChange={formik.handleChange}
             value={formik.values.stock}
+            className={styles.productForm}
           />
-          {formik.touched.stock && formik.errors.stock ? (
-            <small style={{ color: "red" }}>{formik.errors.stock}</small>
-          ) : null}
+
           <select
             name="category"
             value={formik.values.category}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
+            className={styles.productForm}
             id="category"
           >
             <option
@@ -176,7 +170,7 @@ const ProductForm = () => {
               Footwear
             </option>
             <option label="t-shirts" value="t-shirts">
-              T-Shirts
+              Tshirts
             </option>
             <option label="men" value="men">
               Men
@@ -185,15 +179,14 @@ const ProductForm = () => {
               Women
             </option>
           </select>
-          {formik.touched.category && formik.errors.category ? (
-            <small style={{ color: "red" }}>{formik.errors.category}</small>
-          ) : null}
+
           <select
             name="genre"
             value={formik.values.genre}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             id="genre"
+            className={styles.productForm}
           >
             <option
               label="Select the gender this product will target "
@@ -206,10 +199,8 @@ const ProductForm = () => {
               Women
             </option>
           </select>
-          {formik.touched.genre && formik.errors.genre ? (
-            <small style={{ color: "red" }}>{formik.errors.genre}</small>
-          ) : null}
-          <button type="submit" className="btn btn-primary btn-block btn-large">
+
+          <button type="submit" className={`${styles.btn} ${styles.btnPrimary} ${styles.btnBlock} ${styles.btnLarge}`}>
             Share my product.
           </button>
         </form>

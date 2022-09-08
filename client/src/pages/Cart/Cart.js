@@ -22,9 +22,7 @@ const Cart = ({ isOpenCart }) => {
   const navigate = useNavigate();
   setShow(true);
 
-  // function setTimeOut 3s navigate to home
-
-  function timeOut(){
+  function timeOut() {
     setTimeout(() => {
       navigate("/");
     }, 1400);

@@ -38,24 +38,64 @@ const App = () => {
         draggable
         pauseOnHover={false}
       />
-      <Navbar className="original-nav" />
-      <Sidebar id="small-nav" auth={auth} setAuth={setAuth} />
+      {auth ? (
+        <>
+          <Navbar className="original-nav" />
+          <Sidebar id="small-nav" auth={auth} setAuth={setAuth} />
+        </>
+      ) : null}
       <Routes>
         <Route
           path="/"
           element={auth ? <Home /> : <Navigate to="/signin" replace />}
         />
-        <Route path="/make-product" element={<ProductForm />} />
+        <Route
+          path="/make-product"
+          element={auth ? <ProductForm /> : <Navigate to="/signin" replace />}
+        />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/accessories" element={<Accessories />} />
-        <Route path="/footwear" element={<Footwear />} />
-        <Route path="/t-shirts" element={<Tshirts />} />
-        <Route path="/men" element={<Men />} />
-        <Route path="/women" element={<Women />} />
+        <Route
+          path="/accessories"
+          element={auth ? <Accessories /> : <Navigate to="/signin" replace />}
+        />
+        <Route
+          path="/footwear"
+          element={auth ? <Footwear /> : <Navigate to="/signin" replace />}
+        />
+        <Route
+          path="/t-shirts"
+          element={auth ? <Tshirts /> : <Navigate to="/signin" replace />}
+        />
+        <Route
+          path="/men"
+          element={auth ? <Men /> : <Navigate to="/signin" replace />}
+        />
+        <Route
+          path="/women"
+          element={auth ? <Women /> : <Navigate to="/signin" replace />}
+        />
         <Route path="/signin" element={<Login setAuth={setAuth} />} />
         <Route path="/signup" element={<Register />} />
-        <Route path="/details/:id" element={<ProductDetailsContainer />} />
-        <Route path="/cart" element={<Cart setAuth={setAuth} />} />
+        <Route
+          path="/details/:id"
+          element={
+            auth ? (
+              <ProductDetailsContainer />
+            ) : (
+              <Navigate to="/signin" replace />
+            )
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            auth ? (
+              <Cart setAuth={setAuth} />
+            ) : (
+              <Navigate to="/signin" replace />
+            )
+          }
+        />
         <Route path="*" element={<NotFound404 />} />
         <Route
           path="/auth/logout"

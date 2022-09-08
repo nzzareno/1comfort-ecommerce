@@ -37,7 +37,7 @@ const MenuItem = () => {
           </div>
         </Link>
 
-        <Link to="/tshirts" className="menu-item small">
+        <Link to="/t-shirts" className="menu-item small">
           <div
             className="background-image"
             style={{
