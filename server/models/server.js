@@ -25,7 +25,7 @@ class Sv {
         origin: "*",
       },
     });
-    this.port = 8080;
+    this.port = process.env.PORT || 8080;
     this.productsRoute = "/api/productos";
     this.cartRoute = "/api/carrito";
     this.userRoute = "/api/users";
@@ -42,20 +42,26 @@ class Sv {
   }
 
   settings() {
-    this.app.set("port", process.env.PORT || this.port);
+    this.app.set("port", this.port);
   }
 
   middlewares() {
     this.app.use(cors());
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
-    this.app.use(express.static(path.resolve(__dirname, "../../client/build")));
     this.app.use(morgan("dev"));
+    if (process.env.NODE_ENV === "production") {
+      this.app.use(
+        express.static(path.resolve(__dirname, "../../client/build"))
+      );
+      this.app.get("*", function (req, res) {
+        res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+      });
+    } else {
+      this.app.use(express.static(path.resolve(__dirname, "../../public")));
+    }
   }
   routes() {
-    this.app.get("*", function (req, res) {
-      res.sendFile(path.resolve(__dirname, "../../client/build/index.html"));
-    });
     this.app.use(this.productsRoute, productRouter);
     this.app.use(this.cartRoute, cartRouter);
     this.app.use(this.userRoute, userRouter);

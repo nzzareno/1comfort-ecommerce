@@ -1,6 +1,4 @@
 const { orders: orderInStorage } = require("../DAO")();
-const logger = require("../logs/winston");
-const axios = require("axios");
 const productsDTO = require("../DTO/products");
 const sendMailPhone = require("../middlewares/nodemailer-twilio");
 require("dotenv").config();

@@ -16,7 +16,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import { IoChatbubbles } from "react-icons/io5";
 
-// execute reducer
+ 
 
 const Home = () => {
   const [deleteSingleData, setDeleteSingleData] = useState({});
@@ -108,7 +108,7 @@ const Home = () => {
     const newDate = new Date(date);
     return newDate.toLocaleString();
   };
-
+console.log(data, users)
   return (
     <>
       <motion.div
@@ -160,7 +160,7 @@ const Home = () => {
           className="container"
         >
           <Slider {...settingsV2}>
-            {!data
+            {/* {!data
               ? "Loading..."
               : data.map((item) => (
                   <motion.div
@@ -247,7 +247,7 @@ const Home = () => {
                       </div>
                     </motion.div>
                   </motion.div>
-                ))}
+                ))} */}
           </Slider>
         </motion.div>
       </motion.div>

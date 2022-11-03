@@ -1,9 +1,5 @@
 import { createContext, useState, useEffect } from "react";
 import axios from "axios";
-// let localStorage = new LocalStorage("../../../server/scratch/tokenback");
-
-// auto generate token
-
 export const ContextOfProduct = createContext();
 
 export default function ProductContext({ children }) {
@@ -34,15 +30,15 @@ export default function ProductContext({ children }) {
 
   async function gettingUser() {
     const token = JSON.parse(localStorage.getItem("token"));
-    console.log(token);
+
     if (token) {
       try {
-        const resp = await axios.get("http://localhost:8080/api/auth", {
+        const resp = await axios.get("/api/auth", {
           headers: {
             Authorization: `Bearer ${token.token}`,
           },
         });
-        console.log(resp.data);
+
         setUsers(resp.data);
       } catch (err) {
         console.error(err);
@@ -54,7 +50,7 @@ export default function ProductContext({ children }) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/orders")
+      .get("/api/orders")
       .then(({ data }) => {
         setOrder(data);
       })
@@ -62,17 +58,19 @@ export default function ProductContext({ children }) {
   }, []);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/api/productos").then((res) => {
+    axios.get("/api/productos").then((res) => {
       setData(res.data);
     });
   }, []);
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/carrito")
+      .get("/api/carrito")
       .then((res) => {
         setCarroData(res.data);
-        res.data.map((i) => setProductosCarro(i.products));
+
+        const products = carroData.map((p) => p.products);
+        setProductosCarro(products);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -84,7 +82,7 @@ export default function ProductContext({ children }) {
     const body = JSON.stringify(user);
     try {
       const resp = await axios.post(
-        "http://localhost:8080/api/auth",
+        "/api/auth",
         body,
         config
       );
@@ -103,7 +101,7 @@ export default function ProductContext({ children }) {
     };
     const body = JSON.stringify(user);
     try {
-      await axios.post("http://localhost:8080/api/users", body, config);
+      await axios.post("/api/users", body, config);
       setIsSignedUp(true);
       await gettingUser();
       setAuth(true);
@@ -118,7 +116,7 @@ export default function ProductContext({ children }) {
     });
     await axios({
       method: "POST",
-      url: "http://localhost:8080/api/carrito",
+      url: "/api/carrito",
       data: {
         products: JSON.parse(localStorage.getItem("products")),
         users: users,
@@ -134,7 +132,7 @@ export default function ProductContext({ children }) {
     const newQuantity = product.quantity;
     await axios({
       method: "PATCH",
-      url: `http://localhost:8080/api/productos/${id}`,
+      url: `/api/productos/${id}`,
       data: {
         stock: newStock,
         quantity: newQuantity,
@@ -154,7 +152,7 @@ export default function ProductContext({ children }) {
   async function addCartOrder() {
     await axios({
       method: "POST",
-      url: "http://localhost:8080/api/orders",
+      url: "/api/orders",
       data: {
         user: users._id,
         status: "generated",
@@ -197,10 +195,7 @@ export default function ProductContext({ children }) {
     setProductoSend(newProd);
   }
 
-  const cartQuantity = carroData.reduce((quantity, item) => {
-    item.qtyProducts = item.products.length;
-    return quantity + item.qtyProducts;
-  }, 0);
+  const cartQuantity =  productoSend.reduce((acc, item) => acc + item.quantity, 0);
 
   const removeFromCart = async (id) => {
     if (

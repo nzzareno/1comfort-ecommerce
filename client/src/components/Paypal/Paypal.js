@@ -47,7 +47,6 @@ export default function Paypal() {
           const itemsInOrder = cart[cart.length - 1];
           const productsInCart = itemsInOrder.products;
 
-          // handler stock
           productsInCart.map((p) => {
             return handlerStock(p._id);
           });

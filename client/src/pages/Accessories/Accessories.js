@@ -20,7 +20,7 @@ const Accessories = () => {
 
   const deleteSingleProduct = async (id) => {
     const response = await axios.delete(
-      `http://localhost:8080/api/productos/${id}`
+      `/api/productos/${id}`
     );
     const data = await response.data;
     setDeleteSingleData(data);
