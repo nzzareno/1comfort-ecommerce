@@ -58,9 +58,12 @@ export default function ProductContext({ children }) {
   }, []);
 
   useEffect(() => {
-    axios.get("/api/productos").then((res) => {
-      setData(res.data);
-    });
+    axios
+      .get("/api/productos")
+      .then((res) => {
+        setData(res.data);
+      })
+      .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
@@ -81,11 +84,7 @@ export default function ProductContext({ children }) {
     };
     const body = JSON.stringify(user);
     try {
-      const resp = await axios.post(
-        "/api/auth",
-        body,
-        config
-      );
+      const resp = await axios.post("/api/auth", body, config);
       setIsSignedIn(true);
       localStorage.setItem("token", JSON.stringify(resp.data));
       await gettingUser();
@@ -195,7 +194,10 @@ export default function ProductContext({ children }) {
     setProductoSend(newProd);
   }
 
-  const cartQuantity =  productoSend.reduce((acc, item) => acc + item.quantity, 0);
+  const cartQuantity = productoSend.reduce(
+    (acc, item) => acc + item.quantity,
+    0
+  );
 
   const removeFromCart = async (id) => {
     if (
