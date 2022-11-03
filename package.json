@@ -7,7 +7,7 @@
   "scripts": {
     "webpack": "webpack --mode development",
     "start": "node server/index.js",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "heroku-postbuild": "cd client && yarn && yarn build"
   },
   "keywords": [],
   "author": "",
@@ -53,7 +53,8 @@
     "socket.io": "^4.5.3",
     "twilio": "^3.81.0",
     "winston": "^3.8.1",
-    "yargs": "^17.5.1"
+    "yargs": "^17.5.1",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "webpack": "^5.72.1",
