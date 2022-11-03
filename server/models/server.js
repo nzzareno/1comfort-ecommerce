@@ -49,7 +49,7 @@ class Sv {
     this.app.use(cors());
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
-    this.app.use(express.static(path.join(__dirname, "build"));
+    this.app.use(express.static(path.join(__dirname, "build")));
     this.app.use(morgan("dev"));
   }
   routes() {
