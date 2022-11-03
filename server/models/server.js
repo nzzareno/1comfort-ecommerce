@@ -49,12 +49,13 @@ class Sv {
     this.app.use(cors());
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
-    this.app.use(express.static(path.join(__dirname, "client" + "/build")));
+    this.app.use(express.static(path.join(__dirname, "build"));
     this.app.use(morgan("dev"));
   }
   routes() {
-    this.app.get("*", (req, res) => {
-      res.sendFile(path.join(__dirname, "client" + "/build/index.html"));
+    this.app.get("*", function (req, res) {
+      const index = path.join(__dirname, "build", "index.html");
+      res.sendFile(index);
     });
     this.app.use(this.productsRoute, productRouter);
     this.app.use(this.cartRoute, cartRouter);
