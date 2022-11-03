@@ -33,7 +33,7 @@ export default function ProductContext({ children }) {
 
     if (token) {
       try {
-        const resp = await axios.get("/api/auth", {
+        const resp = await axios.get("https://one-comfort.herokuapp.com/api/auth", {
           headers: {
             Authorization: `Bearer ${token.token}`,
           },
@@ -50,7 +50,7 @@ export default function ProductContext({ children }) {
 
   useEffect(() => {
     axios
-      .get("/api/orders")
+      .get("https://one-comfort.herokuapp.com/api/orders")
       .then(({ data }) => {
         setOrder(data);
       })
@@ -59,7 +59,7 @@ export default function ProductContext({ children }) {
 
   useEffect(() => {
     axios
-      .get("/api/productos")
+      .get("https://one-comfort.herokuapp.com/api/productos")
       .then((res) => {
         setData(res.data);
       })
@@ -68,7 +68,7 @@ export default function ProductContext({ children }) {
 
   useEffect(() => {
     axios
-      .get("/api/carrito")
+      .get("https://one-comfort.herokuapp.com/api/carrito")
       .then((res) => {
         setCarroData(res.data);
 
@@ -84,7 +84,7 @@ export default function ProductContext({ children }) {
     };
     const body = JSON.stringify(user);
     try {
-      const resp = await axios.post("/api/auth", body, config);
+      const resp = await axios.post("https://one-comfort.herokuapp.com/api/auth", body, config);
       setIsSignedIn(true);
       localStorage.setItem("token", JSON.stringify(resp.data));
       await gettingUser();
@@ -100,7 +100,7 @@ export default function ProductContext({ children }) {
     };
     const body = JSON.stringify(user);
     try {
-      await axios.post("/api/users", body, config);
+      await axios.post("https://one-comfort.herokuapp.com/api/users", body, config);
       setIsSignedUp(true);
       await gettingUser();
       setAuth(true);
@@ -115,7 +115,7 @@ export default function ProductContext({ children }) {
     });
     await axios({
       method: "POST",
-      url: "/api/carrito",
+      url: "https://one-comfort.herokuapp.com/api/carrito",
       data: {
         products: JSON.parse(localStorage.getItem("products")),
         users: users,
@@ -131,7 +131,7 @@ export default function ProductContext({ children }) {
     const newQuantity = product.quantity;
     await axios({
       method: "PATCH",
-      url: `/api/productos/${id}`,
+      url: `https://one-comfort.herokuapp.com/api/productos/${id}`,
       data: {
         stock: newStock,
         quantity: newQuantity,
@@ -151,7 +151,7 @@ export default function ProductContext({ children }) {
   async function addCartOrder() {
     await axios({
       method: "POST",
-      url: "/api/orders",
+      url: "https://one-comfort.herokuapp.com/api/orders",
       data: {
         user: users._id,
         status: "generated",
