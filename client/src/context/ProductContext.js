@@ -268,7 +268,7 @@ export default function ProductContext({ children }) {
         setProductoSend,
         removeFromCart,
         carroData,
-        cartQuantity,
+         
         productosCarro,
         increaseCartNumber,
         cartNumber,
