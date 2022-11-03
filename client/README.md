@@ -1,7 +1,11 @@
 # One Comfort Clothes
 
-## Proyecto ecommerce realizado para el curso de desarrollo backend en Coderhouse
+# Proyecto ecommerce realizado para el curso de Backend con JS en Coderhouse
 
-# Tools 
+## Stack usado
 
--
+- React
+- Redux
+- MongoDB
+- NodeJS
+- Express
