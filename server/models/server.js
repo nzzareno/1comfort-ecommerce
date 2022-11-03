@@ -50,12 +50,14 @@ class Sv {
     this.app.use(cors());
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
-    this.app.use(express.static(this.root))
+    this.app.use(express.static(this.root));
     this.app.use(morgan("dev"));
   }
   routes() {
     this.app.get("*", (req, res) => {
-      res.sendFile('index.html', { root });
+      res.sendFile("index.html", {
+        root: this.root,
+      });
     });
     this.app.use(this.productsRoute, productRouter);
     this.app.use(this.cartRoute, cartRouter);
