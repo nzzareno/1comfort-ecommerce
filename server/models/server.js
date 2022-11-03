@@ -49,13 +49,12 @@ class Sv {
     this.app.use(cors());
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
-    this.app.use(express.static('../../client/build/index.html'));
+    this.app.use(express.static(path.resolve(__dirname, "../../client/build")));
     this.app.use(morgan("dev"));
   }
   routes() {
     this.app.get("*", function (req, res) {
       res.sendFile(path.resolve(__dirname, "../../client/build/index.html"));
- 
     });
     this.app.use(this.productsRoute, productRouter);
     this.app.use(this.cartRoute, cartRouter);
