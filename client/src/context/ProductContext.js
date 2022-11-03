@@ -23,7 +23,6 @@ export default function ProductContext({ children }) {
   const [googleUser, setGoogleUser] = useState(
     JSON.parse(localStorage.getItem("profile"))
   );
- 
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -43,7 +42,6 @@ export default function ProductContext({ children }) {
             Authorization: `Bearer ${token.token}`,
           },
         });
-        console.log(resp.data);
         setUsers(resp.data);
       } catch (err) {
         console.error(err);
@@ -68,15 +66,15 @@ export default function ProductContext({ children }) {
     });
   }, []);
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:8080/api/carrito")
-      .then((res) => {
-        setCarroData(res.data);
-        res.data.map((i) => setProductosCarro(i.products));
-      })
-      .catch((err) => console.log(err));
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:8080/api/carrito")
+  //     .then((res) => {
+  //       setCarroData(res.data);
+  //       res.data.map((i) => setProductosCarro(i.products));
+  //     })
+  //     .catch((err) => console.log(err));
+  // }, []);
 
   const logIn = async (user) => {
     const config = {
@@ -92,7 +90,7 @@ export default function ProductContext({ children }) {
       setIsSignedIn(true);
       localStorage.setItem("token", JSON.stringify(resp.data));
       await gettingUser();
-      setAuth(true)
+      setAuth(true);
     } catch (err) {
       console.error(err);
     }
@@ -268,7 +266,6 @@ export default function ProductContext({ children }) {
         setProductoSend,
         removeFromCart,
         carroData,
-         
         productosCarro,
         increaseCartNumber,
         cartNumber,
@@ -294,7 +291,6 @@ export default function ProductContext({ children }) {
         googleUser,
         setGoogleUser,
         handlerStock,
-        
       }}
     >
       {children}
