@@ -34,7 +34,6 @@ class Sv {
     this.processRoute = "/api/process";
     this.paypalRoute = "/api/paypal";
     this.messagesRoute = "/api/chat";
-    this.root = path.join(__dirname, "client", "build");
     this.settings();
     this.middlewares();
     this.routes();
@@ -50,14 +49,12 @@ class Sv {
     this.app.use(cors());
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
-    this.app.use(express.static(this.root));
+    this.app.use(express.static(path.join(__dirname, "../build")));
     this.app.use(morgan("dev"));
   }
   routes() {
     this.app.get("*", (req, res) => {
-      res.sendFile("index.html", {
-        root: this.root,
-      });
+      res.sendFile(path.join(__dirname, "../build"));
     });
     this.app.use(this.productsRoute, productRouter);
     this.app.use(this.cartRoute, cartRouter);
