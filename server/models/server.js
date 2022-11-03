@@ -3,6 +3,7 @@ const http = require("http");
 const socketio = require("socket.io");
 const cors = require("cors");
 const morgan = require("morgan");
+const path = require("path");
 const mongoConnection = require("../utils/config");
 const productRouter = require("../routes/product");
 const cartRouter = require("../routes/cart");
@@ -33,6 +34,7 @@ class Sv {
     this.processRoute = "/api/process";
     this.paypalRoute = "/api/paypal";
     this.messagesRoute = "/api/chat";
+    this.root = path.join(__dirname, "client", "build");
     this.settings();
     this.middlewares();
     this.routes();
@@ -48,9 +50,13 @@ class Sv {
     this.app.use(cors());
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
+    this.app.use(express.static(this.root))
     this.app.use(morgan("dev"));
   }
   routes() {
+    this.app.get("*", (req, res) => {
+      res.sendFile('index.html', { root });
+    });
     this.app.use(this.productsRoute, productRouter);
     this.app.use(this.cartRoute, cartRouter);
     this.app.use(this.userRoute, userRouter);
