@@ -42,7 +42,6 @@ class Sv {
 
   settings() {
     this.app.set("port", process.env.PORT || this.port);
-    this.app.use(express.static(path.resolve(__dirname, "./client/build")));
   }
 
   middlewares() {
@@ -60,9 +59,6 @@ class Sv {
     this.app.use(this.processRoute, processRouter);
     this.app.use(this.paypalRoute, paypalRouter);
     this.app.use(this.messagesRoute, messagesRouter);
-    this.app.get("*", function (request, response) {
-      response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
-    });
   }
 
   sockets() {
