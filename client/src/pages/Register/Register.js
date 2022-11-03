@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Register.scss";
 import * as Yup from "yup";
 import { useFormik } from "formik";
@@ -7,74 +7,73 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import {
   FaAddressCard,
-  FaHandPointRight,
-  FaImage,
   FaInfoCircle,
   FaLock,
   FaPhone,
   FaUser,
 } from "react-icons/fa";
 import { IoArrowRedo } from "react-icons/io5";
+import { ContextOfProduct } from "../../context/ProductContext";
+import { GoogleLogin } from "@react-oauth/google";
+import { useDispatch } from "react-redux";
+import jwt_decode from "jwt-decode";
 
 const Register = () => {
   const [data, setData] = useState({});
+  const { register } = useContext(ContextOfProduct);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
   };
 
-  const navigate = useNavigate();
+  if (localStorage.getItem("token") || localStorage.getItem("profile")) {
+    navigate("/");
+  }
 
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
-      age: "",
-      nombre: "",
-      address: "",
+      firstname: "",
+      lastname: "",
       phone: "",
-      avatar: "",
     },
     validationSchema: Yup.object({
-      email: Yup.string().trim().required("Required"),
+      email: Yup.string()
+        .email("Must be a valid email")
+        .trim()
+        .required("Required"),
       password: Yup.string().trim().required("Required"),
-      age: Yup.number().required("Required"),
-      nombre: Yup.string().trim().required("Required"),
-      address: Yup.string().trim().required("Required"),
+      firstname: Yup.string()
+        .min(4, "Four letters at least")
+        .required("First name is required")
+        .trim()
+        .matches(/^[aA-zZ\s]+$/, "Is not in correct format"),
+      lastname: Yup.string()
+        .min(4, "Four letters at least")
+        .required("First name is required")
+        .trim()
+        .matches(/^[aA-zZ\s]+$/, "Is not in correct format"),
       phone: Yup.string().trim().required("Required"),
-      avatar: Yup.string().trim().required("Required"),
     }),
-    onSubmit: (values) => {
-      axios({
-        url: "http://localhost:8080/auth/register",
-        method: "POST",
-        data: {
-          email: values.email,
-          password: values.password,
-          age: values.age,
-          nombre: values.nombre,
-          address: values.address,
-          phone: values.phone,
-          avatar: values.avatar,
-        },
-      })
-        .then((res) => {
-          window.localStorage.setItem("isAuthenticated", true);
-          if (res.status === 200) {
-            setData({
-              success: true,
-              error: false,
-            });
-            navigate("/signin");
-          }
-        })
-        .catch(({ response }) => {
-          setData({
-            success: false,
-            error: response.data.message,
-          });
+    onSubmit: async (values) => {
+      try {
+        await register(values);
+        setData({
+          success: true,
+          error: false,
         });
+        navigate("/signin");
+      } catch (err) {
+        setData({
+          success: false,
+          error: true,
+        });
+        console.error(err);
+      }
     },
   });
 
@@ -120,77 +119,62 @@ const Register = () => {
               <span className="hidden">Name</span>
             </label>
             <input
-              autoComplete="nombre"
+              autoComplete="firstname"
               type="text"
-              name="nombre"
-              id="nombre"
+              name="firstname"
+              id="firstname"
               className="form__input"
-              placeholder="Your name"
+              placeholder="Name"
               required="required"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              value={formik.values.nombre}
+              value={formik.values.firstname}
             />
           </div>
-
-          <div className="form__field">
-            <label htmlFor="login__username">
-              <svg className="icon">
-                <FaHandPointRight />
-              </svg>
-              <span className="hidden">Age</span>
-            </label>
-            <input
-              type="number"
-              name="age"
-              id="age"
-              className="form__input"
-              placeholder="Your age"
-              required="required"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.age}
-              pattern="[0-9]*"
-            />
+          <div
+            style={{
+              textAlign: "center",
+              color: "red",
+              fontSize: "15px",
+              fontWeight: "bold",
+            }}
+          >
+            {formik.touched.firstname && formik.errors.firstname ? (
+              <small className="formik-error">{formik.errors.firstname}</small>
+            ) : null}
           </div>
-
           <div className="form__field">
             <label htmlFor="login__username">
               <svg className="icon">
                 <FaAddressCard />
               </svg>
-              <span className="hidden">Address</span>
+              <span className="hidden">Last name</span>
             </label>
             <input
               type="text"
-              name="address"
-              id="address"
+              name="lastname"
+              id="lastname"
               className="form__input"
-              placeholder="Your address"
+              placeholder="Last name"
               required="required"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              value={formik.values.address}
+              value={formik.values.lastname}
             />
           </div>
-          <div className="form__field">
-            <label htmlFor="login__username">
-              <svg className="icon">
-                <FaImage />
-              </svg>
-              <span className="hidden">Avatar (URL)</span>
-            </label>
-            <input
-              type="text"
-              name="avatar"
-              id="avatar"
-              className="form__input"
-              placeholder="Your avatar"
-              required="required"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.avatar}
-            />
+          <div
+            style={{
+              textAlign: "center",
+              color: "red",
+              fontSize: "15px",
+              fontWeight: "bold",
+              margin: 0,
+              padding: 0,
+            }}
+          >
+            {formik.touched.lastname && formik.errors.lastname ? (
+              <small className="formik-error">{formik.errors.lastname}</small>
+            ) : null}
           </div>
           <div className="form__field">
             <label htmlFor="login__username">
@@ -204,13 +188,27 @@ const Register = () => {
               name="phone"
               id="phone"
               pattern="\(?\+[0-9]{1,3}\)? ?-?[0-9]{1,3} ?-?[0-9]{3,5} ?-?[0-9]{4}( ?-?[0-9]{3})? ?(\w{1,10}\s?\d{1,6})?"
-              placeholder="Your phone"
+              placeholder="Phone"
               required="required"
               className="form__input"
               onBlur={formik.handleBlur}
               onChange={formik.handleChange}
               value={formik.values.phone}
             />
+          </div>
+          <div
+            style={{
+              textAlign: "center",
+              color: "red",
+              fontSize: "15px",
+              fontWeight: "bold",
+              margin: 0,
+              padding: 0,
+            }}
+          >
+            {formik.touched.phone && formik.errors.phone ? (
+              <small className="formik-error">{formik.errors.phone}</small>
+            ) : null}
           </div>
           <div className="form__field">
             <label htmlFor="login__username">
@@ -225,12 +223,26 @@ const Register = () => {
               className="form__input"
               name="email"
               id="email"
-              placeholder="Your email"
+              placeholder="Email"
               required="required"
               onChange={formik.handleChange}
               value={formik.values.email}
               onBlur={formik.handleBlur}
             />
+          </div>
+          <div
+            style={{
+              textAlign: "center",
+              color: "red",
+              fontSize: "15px",
+              fontWeight: "bold",
+              margin: 0,
+              padding: 0,
+            }}
+          >
+            {formik.touched.email && formik.errors.email ? (
+              <small className="formik-error">{formik.errors.email}</small>
+            ) : null}
           </div>
           <div className="form__field">
             <label htmlFor="login__password">
@@ -246,7 +258,7 @@ const Register = () => {
               name="password"
               id="password"
               onChange={formik.handleChange}
-              placeholder="Your password"
+              placeholder="Password"
               required="required"
               onBlur={formik.handleBlur}
               value={formik.values.password}
@@ -254,17 +266,69 @@ const Register = () => {
 
             <div
               style={{
+                textAlign: "center",
                 color: "red",
-                margin: "5px 0 12px 0",
+                fontSize: "15px",
+                fontWeight: "bold",
+                margin: 0,
+                padding: 0,
               }}
             >
-              {success && "You are register successfully"}
-              {error && "Something went wrong"}
+              {formik.touched.password && formik.errors.password ? (
+                <small className="formik-error">{formik.errors.password}</small>
+              ) : null}
             </div>
           </div>
-          <div className="form__field">
-            <input type="submit" value="Sign Up" />
+          <div
+            style={{
+              color: "red",
+              margin: "5px 0 12px 0",
+            }}
+          >
+            {success && success}
+            {error && error}
           </div>
+          <div className="form__field">
+            <input
+              onKeyDown={(e) => {
+                if (e.key === "13") {
+                  formik.handleSubmit();
+                }
+              }}
+              type="submit"
+              value="Sign Up"
+            />
+          </div>
+ 
+          <GoogleLogin
+            className="loginBtn loginBtn--google"
+            onSuccess={(credentialResponse) => {
+              const client = credentialResponse?.clientId;
+              const token = credentialResponse?.credential;
+
+              const user = jwt_decode(token);
+              console.log(user);
+
+              try {
+                dispatch({ type: "AUTH", data: { client, token, user } });
+                navigate("/");
+              } catch (error) {
+                console.log(error);
+              }
+            }}
+            onError={() => {
+              console.log("Login Failed");
+            }}
+            type="standard"
+            theme="filled_blue"
+            text="signin"
+            ux_mode="popup"
+            size="large"
+            shape="square"
+            width="100%"
+            height="100%"
+            logo_alignment="center"
+          />
         </form>
 
         <p className="text--center">

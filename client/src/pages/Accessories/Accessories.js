@@ -27,6 +27,11 @@ const Accessories = () => {
     alert("Product removed");
   };
 
+  const dateFormatter = (date) => {
+    const newDate = new Date(date);
+    return newDate.toLocaleString()
+  }
+
   return (
     <>
       <motion.header
@@ -140,7 +145,7 @@ const Accessories = () => {
                             className={styles.dateSmall}
                             style={{ fontWeight: "lighter" }}
                           >
-                            {item.date}
+                            {dateFormatter(item.date)}
                           </small>
                           <h3 className={styles.stock}>Stock: {item.stock}</h3>
                           <button

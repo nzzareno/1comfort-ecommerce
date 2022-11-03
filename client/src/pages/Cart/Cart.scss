@@ -16,6 +16,11 @@
     color: #ff0000;
   }
 
+  #paypal-button-container::nth-child(1) {
+    display: none;
+    }
+ 
+
   .encuadre {
     min-height: 100vh !important;
     padding-top:6.5vh;

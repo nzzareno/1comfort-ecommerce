@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 import { AiOutlineGift } from "react-icons/ai";
 import { ContextOfProduct } from "../../context/ProductContext";
 import "./Cart.scss";
@@ -7,60 +7,50 @@ import { toast } from "react-toastify";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useNavigate } from "react-router-dom";
+import ReactDOM from "react-dom";
+import Paypal from "../../components/Paypal/Paypal";
 
-const Cart = ({ isOpenCart }) => {
+const Cart = () => {
+  const [checkout, setCheckOut] = useState(false);
   let {
-    data,
-    carroData,
-    closeCart,
-    productoSend,
-    users,
     addProductsToCart,
     removeFromCart,
     setShow,
+    show,
+    removeProductFromLocalStorage,
   } = useContext(ContextOfProduct);
-  const navigate = useNavigate();
-  setShow(true);
 
-  function timeOut() {
-    setTimeout(() => {
-      navigate("/");
-    }, 1400);
-  }
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    setShow(true);
+  }, [show]);
+
+  const storageProducts = JSON.parse(localStorage.getItem("products"));
 
   return (
     <div className="container-carro">
       <div className="encuadre">
-        {/* <div className="users">
-          <h1>Usuarios</h1>
-          <div className="users-container">
-            <div className="user">
-              <h1>{users.nombre}</h1>
-              <h1>{users.address}</h1>
-              <h4>{users.age}</h4>
-              <h3>{users.phone}</h3>
-            </div>
-          </div>
-        </div> */}
         <div className="disappear">
           <div className="cart-title">
             <div>
               <h1>Shopping Cart</h1>
-
               <p className="sub-title">
                 YOUR CART (
                 <span className="cart-count">
-                  {productoSend.length > 0 ? productoSend.length : 0}
+                  {storageProducts
+                    ? JSON.parse(localStorage.getItem("products")).length
+                    : 0}
                 </span>
                 )
               </p>
             </div>
-            <div className="close-cart" onClick={closeCart}>
+            <div className="close-cart">
               <AiOutlineGift
                 style={{
                   fontSize: "2rem",
                   color: "black",
-                  marginBottom: "2.14rem",
+                  marginBottom: "4.91rem",
                   marginLeft: ".07rem",
                   height: "1.8rem",
                 }}
@@ -71,11 +61,11 @@ const Cart = ({ isOpenCart }) => {
               <span className="total-txt">Total Amount</span>
               <span className="total-amount">
                 <span>
-                  {productoSend.length > 0 ? (
+                  {storageProducts ? (
                     <span className="total-amount">
                       $
-                      {productoSend
-                        .map((item) => item.price * item.quantity)
+                      {storageProducts
+                        .map((item) => item.price * item.quantity) // he aqui el error !!!
                         .reduce((a, b) => a + b)}
                     </span>
                   ) : (
@@ -89,57 +79,65 @@ const Cart = ({ isOpenCart }) => {
             </div>
           </div>
           <ul className="cart-listado">
-            {productoSend.map((p, idx) => {
-              return (
-                <li key={idx} className="cart-item">
-                  <div className="cart-img">
-                    <img src={p.image} alt="aleatorio" />
-                  </div>
-                  <div className="cart-info">
-                    <div className="titulo">
-                      <h1 className="cart-item-title">
-                        {p.title}
-                        <span className="cart-quantity">({p.quantity})</span>
-                      </h1>
+            {storageProducts &&
+              JSON.parse(localStorage.getItem("products")).map((p, idx) => {
+                return (
+                  <li key={idx} className="cart-item">
+                    <div className="cart-img">
+                      <img src={p.image} alt="aleatorio" />
                     </div>
-                    <div className="precioxe">
-                      <p className="cart-price">${p.price}</p>
+                    <div className="cart-info">
+                      <div className="titulo">
+                        <h1 className="cart-item-title">
+                          {p.title}
+                          <span className="cart-quantity">({p.quantity})</span>
+                        </h1>
+                      </div>
+                      <div className="precioxe">
+                        <p className="cart-price">${p.price}</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="cart-remove">
-                    <FontAwesomeIcon
-                      icon={faTimes}
-                      style={{
-                        cursor: "pointer",
-                      }}
-                      onClick={() => removeFromCart(p._id)}
-                    />
-                  </div>
-                </li>
-              );
-            })}
+                    <div className="cart-remove">
+                      <FontAwesomeIcon
+                        icon={faTimes}
+                        style={{
+                          cursor: "pointer",
+                        }}
+                        onClick={() => {
+                          removeProductFromLocalStorage(p._id);
+                          removeFromCart(p._id);
+                        }}
+                      />
+                    </div>
+                  </li>
+                );
+              })}
           </ul>
+
           <div className="checkout">
-            {productoSend.length > 0 ? (
-              <button
-                className="checkout-btn"
-                onClick={() => {
-                  addProductsToCart();
-                  toast.success("Buy success!", {
-                    position: "bottom-right",
-                    autoClose: 1000,
-                    hideProgressBar: true,
-                    closeOnClick: true,
-                    pauseOnHover: false,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "colored",
-                  });
-                  timeOut();
-                }}
-              >
-                Proceed to Checkout
-              </button>
+            {storageProducts ? (
+              <>
+                {checkout ? (
+                  <Paypal />
+                ) : (
+                  <button
+                    className="btn-checkout"
+                    onClick={() => {
+                      addProductsToCart();
+                      setCheckOut(true);
+                      toast.success("Your order has been placed successfully", {
+                        position: "bottom-right",
+                        autoClose: 1500,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                      });
+                    }}
+                  >
+                    Checkout
+                  </button>
+                )}
+              </>
             ) : (
               <h3 className="checkout-error-title">
                 The cart is empty, go through our catalog and come back later
@@ -153,42 +151,3 @@ const Cart = ({ isOpenCart }) => {
 };
 
 export default Cart;
-
-{
-  /* {carroData.map((item) => {
-        const productos = item.products.map((item) => {
-          return item;
-        });
-        return (
-          <div>
-            <h1>Carrito</h1>
-            <div>
-              {productos.map((item) => {
-                return (
-                  <div>
-                    <img src={item.img} alt="" />
-                    <h1>{item.title}</h1>
-                    <h1>{item.price}</h1>
-                  </div>
-                );
-              })}
-            </div>
-            );
-          </div>
-        );
-      })} */
-}
-
-{
-  /* {
-        productoSend.map((p) => {
-          return (
-            <div>
-              <img src={p.image} alt="" />
-              <h1>{p.title}</h1>
-              <h1>{p.price}</h1>
-            </div>
-          );
-        })
-      } */
-}

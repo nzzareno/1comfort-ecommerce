@@ -1,17 +1,20 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Login.scss";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { motion } from "framer-motion";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import { ContextOfProduct } from "../../context/ProductContext";
 import { FaUser, FaLock } from "react-icons/fa";
 import { IoArrowRedo } from "react-icons/io5";
+import { ContextOfProduct } from "../../context/ProductContext";
+import { GoogleLogin } from "@react-oauth/google";
+import { useDispatch } from "react-redux";
+import jwt_decode from "jwt-decode";
 
 const Login = () => {
-  const [data, setData] = useState({});
-  let { auth, setAuth } = useContext(ContextOfProduct);
+  const { logIn } = useContext(ContextOfProduct);
+  const dispatch = useDispatch();
 
   const variants = {
     hidden: { opacity: 0 },
@@ -19,44 +22,33 @@ const Login = () => {
   };
   const navigate = useNavigate();
 
+  if (localStorage.getItem("token") || localStorage.getItem("profile")) {
+    navigate("/");
+  }
+
   const formik = useFormik({
     initialValues: {
       email: "",
       password: "",
     },
     validationSchema: Yup.object({
-      email: Yup.string().trim().required("Required"),
+      email: Yup.string()
+        .email("Must be a valid email")
+        .trim()
+        .required("Required"),
       password: Yup.string().trim().required("Required"),
     }),
 
-    onSubmit: (values) => {
-      axios({
-        url: "http://localhost:8080/auth/login",
-        method: "POST",
-        data: {
-          email: values.email,
-          password: values.password,
-        },
-      })
-        .then((res) => {
-          window.localStorage.setItem("isAuthenticated", true);
-          if (res.status === 200) {
-            setData({
-              success: true,
-              error: false,
-            });
-            setAuth(true);
-
-            navigate("/");
-          }
-        })
-        .catch(({ response }) => {
-          console.log(response);
-          setData({ error: response.data.message, success: false });
-        });
+    onSubmit: async (values) => {
+      try {
+        await logIn(values);
+        navigate("/");
+      } catch (err) {
+        console.error(err);
+      }
     },
   });
-  const { success, error } = data;
+
   return (
     <div className="align-login">
       <motion.div
@@ -85,7 +77,7 @@ const Login = () => {
           opacity: 1,
         }}
         transition={{
-          delay: .1,
+          delay: 0.1,
           duration: 2.7,
         }}
         className="grid-login"
@@ -110,6 +102,13 @@ const Login = () => {
               value={formik.values.email}
               onBlur={formik.handleBlur}
             />
+            <div>
+              {formik.touched.firstname && formik.errors.firstname ? (
+                <small className="formik-error">
+                  {formik.errors.firstname}
+                </small>
+              ) : null}
+            </div>
           </div>
 
           <div className="form__field">
@@ -131,22 +130,64 @@ const Login = () => {
               onBlur={formik.handleBlur}
               value={formik.values.password}
             />
-
-            <div
-              style={{
-                color: "red",
-                margin: "5px 0 12px 0",
-              }}
-            >
-              {success && "You are login successful"}
-              {error && "Your email or password is incorrect"}
-            </div>
+            {formik.touched.password && formik.errors.password ? (
+              <small className="formik-error">{formik.errors.password}</small>
+            ) : null}
           </div>
+
           <div className="form__field">
-            <input type="submit" value="Sign In" />
+            <input
+              onKeyDown={(e) => {
+                if (e.key === "13") {
+                  formik.handleSubmit();
+                }
+              }}
+              type="submit"
+              value="Sign In"
+            />
           </div>
-        </form>
 
+          <GoogleLogin
+            className="loginBtn loginBtn--google"
+            onSuccess={async (credentialResponse) => {
+              const client = credentialResponse?.clientId;
+              const token = credentialResponse?.credential;
+
+              const user = await jwt_decode(token);
+
+              try {
+                dispatch({ type: "AUTH", data: { client, token, user } });
+                await axios
+                  .post("http://localhost:8080/api/auth/google", {
+                    token,
+                    user,
+                  })
+                  .then((res) => {
+                    console.log(res);
+                  });
+                navigate("/");
+              } catch (error) {
+                console.log(error);
+              }
+            }}
+            onError={() => {
+              console.log("Login Failed");
+            }}
+            type="standard"
+            theme="filled-dark"
+            text="signin"
+            ux_mode="popup"
+            width="100%"
+            height="100%"
+            logo_alignment="center"
+          />
+        </form>
+        <div
+          style={{
+            color: "red",
+            margin: "5px 0 12px 0",
+          }}
+        ></div>
         <p className="text--center">
           Not a member? <Link to="/signup">Sign up now </Link>
           <svg className="icon">

@@ -10,7 +10,7 @@
   align-content: center;
   align-items: center;
   min-height: 77vh;
-  background-color: #fcfafa;
+  background-color: #ffffff;
   overflow-x: hidden;
   text-align: center;
 }
@@ -37,6 +37,8 @@
   width: 450px !important;
   background-color: #ffffff;
   height: 700px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 
 .container .card .imgBx {

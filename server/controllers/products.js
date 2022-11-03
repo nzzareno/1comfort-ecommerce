@@ -1,60 +1,74 @@
-const { products: productsInStorage } = require("../DAO")();
+const {
+  gettingProducts,
+  gettingProduct,
+  saveProducts,
+  updateProduct,
+  deleteAllProducts,
+  deleteOneProduct,
+  getProductByTerm,
+} = require("../services/products");
 const logger = require("../logs/winston");
 
 const getAllProducts = async (req, res) => {
   try {
-    return res.json(await productsInStorage.findAll());
+    return res.json(await gettingProducts());
   } catch (error) {
-    logger.error(error)
+    logger.error(error);
+    res.status(500).json({ message: "Error getting products" });
   }
 };
 
 const getSingleProduct = async (req, res) => {
   try {
-    const product = await productsInStorage.find(req.params.id);
-    return res.json(product);
+    return res.json(await gettingProduct(req.params.id));
   } catch (error) {
-    logger.error(error)
+    logger.error(error);
+    res.status(404).json({ error: "Product not found" });
+  }
+};
+
+const getByTerm = async (req, res) => {
+  try {
+    return res.json(await getProductByTerm(req.params.term));
+  } catch (error) {
+    logger.error(error);
+    res.status(404).json({ message: "Product not found" });
   }
 };
 
 const creatingProducts = async (req, res) => {
   try {
-    productsInStorage.save(req.body);
-    return res.json({
-      message: "Product created!",
-    });
+    return res.status(201).json(await saveProducts(req.body));
   } catch (error) {
-    logger.error(error)
+    logger.error(error);
+    res.status(500).json({ message: error.message });
   }
 };
 
 const updatingProduct = async (req, res) => {
   try {
-    const id = req.params.id;
-    const producto = productsInStorage.update(id, req.body);
-    return res.json(await producto);
+    return res.json(await updateProduct(req.params.id, req.body));
   } catch (error) {
-    logger.error(error)
+    logger.error(error);
+    res.status(500).json({ message: "Product not update" });
   }
 };
 
 const deletingProducts = async (req, res) => {
   try {
-    await productsInStorage.deleteAll();
-    return res.json({ message: "Products removed!" });
+    return res.json(await deleteAllProducts());
   } catch (error) {
-    logger.error(error)
+    logger.error(error);
+    res.status(500).json({ error: "Products not removed" });
   }
 };
 
 const deletingProduct = async (req, res) => {
   try {
-    const id = req.params.id;
-    productsInStorage.deleteOne(id);
-    res.json({ message: "Product removed!" });
+    return res.json(await deleteOneProduct(req.params.id));
   } catch (error) {
-    logger.error(error)
+    logger.error(error);
+    res.status(500).json({ error: "Product not removed" });
   }
 };
 
@@ -65,4 +79,5 @@ module.exports = {
   deletingProduct,
   deletingProducts,
   creatingProducts,
+  getByTerm,
 };

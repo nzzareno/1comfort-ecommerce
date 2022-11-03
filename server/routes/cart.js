@@ -8,14 +8,17 @@ const {
   getOne,
   deleteProductAndCartByID,
   entireCart,
+  deleteAllCarts,
 } = require("../controllers/cart");
+const sendMailPhone = require("../middlewares/nodemailer-twilio");
 
 router.get("/", entireCart);
-router.get("/:id/productos", listOfProducts); // fire, mongo, fs?
-router.get("/:id/:idProd", getOne); // fire,mongo,fs
-router.post("/", creatingCartsWithProducts); // fire, mongo, fs
-router.post("/:id/productos", addProductByID); // fire,mongo, fs
-router.delete("/:id", deleteCartx); // fire,mongo, fs
-router.delete("/:id/productos/:id_prod", deleteProductAndCartByID); // fire, mongo, fs?
+router.post("/", creatingCartsWithProducts);
+router.get("/:id/productos", listOfProducts);
+router.get("/:id/:idProd", getOne);
+router.post("/:id/productos", addProductByID);
+router.delete("/:id", deleteCartx);
+router.delete("/", deleteAllCarts);
+router.delete("/:id/productos/:id_prod", deleteProductAndCartByID);
 
 module.exports = router;

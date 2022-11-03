@@ -2,9 +2,7 @@ import React, { useState, useContext } from "react";
 import styles from "./Women.module.scss";
 import { ContextOfProduct } from "../../context/ProductContext";
 import HeaderPic from "../../assets/womens.jpg";
-import axios from "axios";
 import { motion } from "framer-motion";
-import EditPopUp from "../../components/EditPopUp/EditPopUp";
 import { useNavigate } from "react-router-dom";
 
 const Women = () => {
@@ -18,13 +16,9 @@ const Women = () => {
     visible: { opacity: 1 },
   };
 
-  const deleteSingleProduct = async (id) => {
-    const response = await axios.delete(
-      `http://localhost:8080/api/productos/${id}`
-    );
-    const data = await response.data;
-    setDeleteSingleData(data);
-    alert("Product removed");
+  const dateFormatter = (date) => {
+    const newDate = new Date(date);
+    return newDate.toLocaleString();
   };
   return (
     <>
@@ -78,14 +72,6 @@ const Women = () => {
                           alt="imagex"
                         />
                         <ul className={styles.action}>
-                          <li onClick={() => setEditButton(true)}>
-                            <i className="fa fa-pencil" aria-hidden="true"></i>
-                            <span>Edit</span>
-                          </li>
-                          <EditPopUp
-                            trigger={editButton}
-                            setTrigger={setEditButton}
-                          ></EditPopUp>
                           <li>
                             <i className="fa fa-eye" aria-hidden="true"></i>
                             <span>View Details</span>
@@ -96,10 +82,6 @@ const Women = () => {
                               aria-hidden="true"
                             ></i>
                             <span>Add to Cart</span>
-                          </li>
-                          <li onClick={() => deleteSingleProduct(item.id)}>
-                            <i className="fa fa-trash" aria-hidden="true"></i>
-                            <span>Remove</span>
                           </li>
                         </ul>
                       </div>
@@ -139,7 +121,7 @@ const Women = () => {
                             className={styles.dateSmall}
                             style={{ fontWeight: "lighter" }}
                           >
-                            {item.date}
+                            {dateFormatter(item.date)}
                           </small>
                           <h3 className={styles.stock}>Stock: {item.stock}</h3>
                           <button

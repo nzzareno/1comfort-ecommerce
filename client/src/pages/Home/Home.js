@@ -12,31 +12,16 @@ import Men from "../../assets/fondomen.jpg";
 import BlondeGirl from "../../assets/fondoblonde.jpg";
 import GirlsFriends from "../../assets//fondofriends.jpg";
 import Sidebar from "../../components/Sidebar/Sidebar";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import jwt_decode from "jwt-decode";
+import { IoChatbubbles } from "react-icons/io5";
+
+// execute reducer
 
 const Home = () => {
-  const [data, setData] = useState([]);
   const [deleteSingleData, setDeleteSingleData] = useState({});
-  const [editButton, setEditButton] = useState(true);
-
-  let { saveData } = useContext(ContextOfProduct);
-  const { users } = useContext(ContextOfProduct);
+  const { users, data, googleUser } = useContext(ContextOfProduct);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    axios.get("http://localhost:8080/api/productos").then((res) => {
-      setData(res.data);
-    });
-  }, []);
-
-  const deleteSingleProduct = async (id) => {
-    const response = await axios.delete(
-      `http://localhost:8080/api/productos/${id}`
-    );
-    const data = await response.data;
-    setDeleteSingleData(data);
-    alert("Product removed");
-  };
 
   let settings = {
     dots: false,
@@ -119,6 +104,11 @@ const Home = () => {
     visible: { opacity: 1 },
   };
 
+  const dateFormatter = (date) => {
+    const newDate = new Date(date);
+    return newDate.toLocaleString();
+  };
+
   return (
     <>
       <motion.div
@@ -147,9 +137,16 @@ const Home = () => {
           </Slider>
         </motion.div>
       </motion.div>
-
+      <h2 className="absoluto-user">
+        Welcome, {users?.firstname || googleUser?.user.given_name || "Guest"}
+      </h2>
       <div className="pic-container"></div>
-      <h3 className="home-title txt anim-text-flow">NEW ARRIVALS </h3>
+      <button onClick={() => navigate("/chat")} className="chat-buton">
+        <IoChatbubbles />
+      </button>
+      <h3 className="home-title txt anim-text-flow">
+        HERE LEFT OUR NEW ARRIVALS
+      </h3>
       <motion.div
         initial="hidden"
         animate="visible"
@@ -193,10 +190,6 @@ const Home = () => {
                             ></i>
                             <span>Add to Cart</span>
                           </li>
-                          <li onClick={() => deleteSingleProduct(item.id)}>
-                            <i className="fa fa-trash" aria-hidden="true"></i>
-                            <span>Remove</span>
-                          </li>
                         </ul>
                       </div>
 
@@ -235,7 +228,7 @@ const Home = () => {
                             className="date-small"
                             style={{ fontWeight: "lighter" }}
                           >
-                            {item.date}
+                            {dateFormatter(item.date)}
                           </small>
                           <h3 className="stock">Stock: {item.stock}</h3>
                           <button
@@ -247,8 +240,8 @@ const Home = () => {
                         </div>
                         <div className="cuotas_container">
                           <h4 className="cuotes-home">
-                            Or 6 installments of{" "}
-                            ${parseFloat(item.price / 6).toFixed(2)} 
+                            Or 6 installments of $
+                            {parseFloat(item.price / 6).toFixed(2)}
                           </h4>
                         </div>
                       </div>

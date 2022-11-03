@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
 * {
   font-family: "Poppins", sans-serif;
@@ -11,10 +12,81 @@
   align-items: center;
   height: 74vh;
   margin-bottom: 0;
-  background-color: #fcfafa;
+  background-color: #ffffff;
   overflow-x: hidden;
   text-align: center;
   overflow: hidden;
+}
+
+.chat-buton {
+  background: #28004b35;
+  border: 0;
+  color: white;
+  text-transform: uppercase;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 99999999999;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease-in-out;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: .3rem;
+
+  &:hover {
+    background: #28004b;
+    color: #fff;
+    transform: translateY(-0.2rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+
+    @media (max-width: 768px) {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 480px) {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 320px) {
+      transform: translateY(0);
+    }
+
+    @media (max-width: 280px) {
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+.absoluto-user {
+  position: absolute;
+  top: 1021px;
+  right: 4px;
+  margin: 0;
+  padding: 0;
+  z-index: 99;
+  font-family: "Poppins", sans-serif;
+  font-size: 28px;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  font-weight: 400;
 }
 
 .slick-slide {
@@ -34,6 +106,8 @@
   width: 450px !important;
   background-color: #ffffff;
   height: 700px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 
 .container .card .imgBx {

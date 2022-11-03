@@ -41,14 +41,6 @@ export const SidebarData = [
     cName: "nav-text",
   },
   {
-    title: "SPREAD PRODUCT",
-    titleAuth: "SPREAD PRODUCT",
-    path: "/make-product",
-    pathAuth: "/make-product",
-    icon: <MdIcons.MdPostAdd />,
-    cName: "nav-text",
-  },
-  {
     title: "CART",
     titleAuth: "CART",
     path: "/cart",

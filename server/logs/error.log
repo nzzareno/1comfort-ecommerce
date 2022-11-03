@@ -1,518 +1,189 @@
-{"address":"::","code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"listen"}
-{"address":"::","code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"listen"}
-{"address":"::","code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"listen"}
-{"address":"::","code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"listen"}
-{"address":"::","code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"listen"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":"::","code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"listen"}
-{"address":"::","code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"listen"}
-{"address":"::","code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"listen"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":null,"code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"bind"}
-{"address":"::","code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"listen"}
-{"address":"::","code":"EADDRINUSE","errno":-98,"level":"error","port":8080,"syscall":"listen"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"t-shirts\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"t-shirts\"","value":"t-shirts","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"women\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"women\"","value":"women","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"women\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"women\"","value":"women","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"t-shirts\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"t-shirts\"","value":"t-shirts","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"men\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"men\"","value":"men","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"men\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"men\"","value":"men","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"t-shirts\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"t-shirts\"","value":"t-shirts","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"t-shirts\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"t-shirts\"","value":"t-shirts","valueType":"string"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"t-shirts\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"t-shirts\"","value":"t-shirts","valueType":"string"}
+{"level":"error"}
+{"level":"error"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"men\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"men\"","value":"men","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"m\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"m\"","value":"m","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"6\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"6\"","value":"6","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"6\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"6\"","value":"6","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"men\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"men\"","value":"men","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"women\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"women\"","value":"women","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"t-shirts\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"t-shirts\"","value":"t-shirts","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"t-shirts\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"t-shirts\"","value":"t-shirts","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"men\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"men\"","value":"men","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"t-shirts\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"t-shirts\"","value":"t-shirts","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"t-shirts\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"t-shirts\"","value":"t-shirts","valueType":"string"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"men\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"men\"","value":"men","valueType":"string"}
+{"level":"error"}
+{"level":"error"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"men\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"men\"","value":"men","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"women\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"women\"","value":"women","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"t-shirts\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"t-shirts\"","value":"t-shirts","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"t-shirts\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"t-shirts\"","value":"t-shirts","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"t-shirts\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"t-shirts\"","value":"t-shirts","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"men\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"men\"","value":"men","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"t-shirts\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"t-shirts\"","value":"t-shirts","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"t-shirts\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"t-shirts\"","value":"t-shirts","valueType":"string"}
+{"level":"error","originalStack":"Error\n    at model.Query._wrappedThunk [as _find] (/home/nazareno/code/onecomfort-webapp/node_modules/mongoose/lib/helpers/query/wrapThunk.js:25:28)\n    at /home/nazareno/code/onecomfort-webapp/node_modules/kareem/index.js:426:25\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"level":"error","originalStack":"Error\n    at model.Query._wrappedThunk [as _find] (/home/nazareno/code/onecomfort-webapp/node_modules/mongoose/lib/helpers/query/wrapThunk.js:25:28)\n    at /home/nazareno/code/onecomfort-webapp/node_modules/kareem/index.js:426:25\n    at processTicksAndRejections (node:internal/process/task_queues:78:11)"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"men\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"men\"","value":"men","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"men\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"men\"","value":"men","valueType":"string"}
+{"level":"error","message":"Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/","reason":{"commonWireVersion":13,"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"maxElectionId":"7fffffff0000000000000012","maxSetVersion":1,"servers":{},"setName":"atlas-tzf27u-shard-0","stale":false,"type":"ReplicaSetNoPrimary"}}
+{"level":"error","message":"Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/","reason":{"commonWireVersion":13,"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"maxElectionId":"7fffffff0000000000000012","maxSetVersion":1,"servers":{},"setName":"atlas-tzf27u-shard-0","stale":false,"type":"ReplicaSetNoPrimary"}}
+{"level":"error","message":"Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/","reason":{"commonWireVersion":13,"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"maxElectionId":"7fffffff0000000000000012","maxSetVersion":1,"servers":{},"setName":"atlas-tzf27u-shard-0","stale":false,"type":"ReplicaSetNoPrimary"}}
+{"level":"error","message":"Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/","reason":{"commonWireVersion":13,"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"maxElectionId":"7fffffff0000000000000012","maxSetVersion":1,"servers":{},"setName":"atlas-tzf27u-shard-0","stale":false,"type":"ReplicaSetNoPrimary"}}
+{"level":"error","message":"Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/","reason":{"commonWireVersion":13,"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"maxElectionId":"7fffffff0000000000000012","maxSetVersion":1,"servers":{},"setName":"atlas-tzf27u-shard-0","stale":false,"type":"ReplicaSetNoPrimary"}}
+{"level":"error","message":"Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/","reason":{"commonWireVersion":13,"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"maxElectionId":"7fffffff0000000000000012","maxSetVersion":1,"servers":{},"setName":"atlas-tzf27u-shard-0","stale":false,"type":"ReplicaSetNoPrimary"}}
+{"level":"error","message":"Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/","reason":{"commonWireVersion":13,"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"maxElectionId":"7fffffff0000000000000012","maxSetVersion":1,"servers":{},"setName":"atlas-tzf27u-shard-0","stale":false,"type":"ReplicaSetNoPrimary"}}
+{"level":"error"}
+{"_message":"Order validation failed","errors":{"total":{"kind":"required","message":"Path `total` is required.","name":"ValidatorError","path":"total","properties":{"message":"Path `total` is required.","path":"total","type":"required"}}},"level":"error","message":"Order validation failed: total: Path `total` is required.","name":"ValidationError"}
+{"_message":"Order validation failed","errors":{"qtyProducts":{"kind":"required","message":"Path `qtyProducts` is required.","name":"ValidatorError","path":"qtyProducts","properties":{"message":"Path `qtyProducts` is required.","path":"qtyProducts","type":"required"}},"total":{"kind":"required","message":"Path `total` is required.","name":"ValidatorError","path":"total","properties":{"message":"Path `total` is required.","path":"total","type":"required"}}},"level":"error","message":"Order validation failed: qtyProducts: Path `qtyProducts` is required., total: Path `total` is required.","name":"ValidationError"}
+{"_message":"Order validation failed","errors":{"date":{"kind":"date","message":"Cast to date failed for value \"18/10/2022\" (type string) at path \"date\"","name":"CastError","path":"date","reason":{"actual":false,"code":"ERR_ASSERTION","expected":true,"generatedMessage":true,"operator":"=="},"stringValue":"\"18/10/2022\"","value":"18/10/2022","valueType":"string"},"email":{"kind":"required","message":"Path `email` is required.","name":"ValidatorError","path":"email","properties":{"message":"Path `email` is required.","path":"email","type":"required"}}},"level":"error","message":"Order validation failed: date: Cast to date failed for value \"18/10/2022\" (type string) at path \"date\", email: Path `email` is required.","name":"ValidationError"}
+{"_message":"Order validation failed","errors":{"email":{"kind":"required","message":"Path `email` is required.","name":"ValidatorError","path":"email","properties":{"message":"Path `email` is required.","path":"email","type":"required"}}},"level":"error","message":"Order validation failed: email: Path `email` is required.","name":"ValidationError"}
+{"_message":"Order validation failed","errors":{"date":{"kind":"date","message":"Cast to date failed for value \"18/10/2022\" (type string) at path \"date\"","name":"CastError","path":"date","reason":{"actual":false,"code":"ERR_ASSERTION","expected":true,"generatedMessage":true,"operator":"=="},"stringValue":"\"18/10/2022\"","value":"18/10/2022","valueType":"string"},"email":{"kind":"required","message":"Path `email` is required.","name":"ValidatorError","path":"email","properties":{"message":"Path `email` is required.","path":"email","type":"required"}}},"level":"error","message":"Order validation failed: date: Cast to date failed for value \"18/10/2022\" (type string) at path \"date\", email: Path `email` is required.","name":"ValidationError"}
+{"_message":"Order validation failed","errors":{"date":{"kind":"date","message":"Cast to date failed for value \"18/10/2022\" (type string) at path \"date\"","name":"CastError","path":"date","reason":{"actual":false,"code":"ERR_ASSERTION","expected":true,"generatedMessage":true,"operator":"=="},"stringValue":"\"18/10/2022\"","value":"18/10/2022","valueType":"string"}},"level":"error","message":"Order validation failed: date: Cast to date failed for value \"18/10/2022\" (type string) at path \"date\"","name":"ValidationError"}
+{"_message":"Order validation failed","errors":{"date":{"kind":"date","message":"Cast to date failed for value \"18/10/2022\" (type string) at path \"date\"","name":"CastError","path":"date","reason":{"actual":false,"code":"ERR_ASSERTION","expected":true,"generatedMessage":true,"operator":"=="},"stringValue":"\"18/10/2022\"","value":"18/10/2022","valueType":"string"}},"level":"error","message":"Order validation failed: date: Cast to date failed for value \"18/10/2022\" (type string) at path \"date\"","name":"ValidationError"}
+{"_message":"Order validation failed","errors":{"user":{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"garmatorresnazareno@gmail.com\" (type string) at path \"user\" because of \"BSONTypeError\"","name":"CastError","path":"user","reason":{},"stringValue":"\"garmatorresnazareno@gmail.com\"","value":"garmatorresnazareno@gmail.com","valueType":"string"}},"level":"error","message":"Order validation failed: user: Cast to ObjectId failed for value \"garmatorresnazareno@gmail.com\" (type string) at path \"user\" because of \"BSONTypeError\"","name":"ValidationError"}
+{"_message":"Order validation failed","errors":{"numOrder":{"kind":"required","message":"Path `numOrder` is required.","name":"ValidatorError","path":"numOrder","properties":{"message":"Path `numOrder` is required.","path":"numOrder","type":"required"}},"user":{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"garmatorresnazareno@gmail.com\" (type string) at path \"user\" because of \"BSONTypeError\"","name":"CastError","path":"user","reason":{},"stringValue":"\"garmatorresnazareno@gmail.com\"","value":"garmatorresnazareno@gmail.com","valueType":"string"}},"level":"error","message":"Order validation failed: user: Cast to ObjectId failed for value \"garmatorresnazareno@gmail.com\" (type string) at path \"user\" because of \"BSONTypeError\", numOrder: Path `numOrder` is required.","name":"ValidationError"}
+{"code":"ERR_BAD_REQUEST","config":{"env":{"Blob":null},"headers":{"Accept":"application/json, text/plain, */*","Accept-Encoding":"gzip, deflate, br","Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzRhMGUzNjFkZDFiNjZlMTE0NmZkZTgiLCJlbWFpbCI6Imdhcm1hdG9ycmVzbmF6YXJlbm9AZ21haWwuY29tIiwiaWF0IjoxNjY2MjI3MDA4LCJleHAiOjE2NjYzMTM0MDh9.E0v6kPGdvEiiAt_girr6uyUWbjv20cVr246qZVxrpFE","User-Agent":"axios/1.1.2"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"http://localhost:8080/api/auth","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 401","name":"AxiosError","stack":"AxiosError: Request failed with status code 401\n    at settle (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:1261:12)\n    at IncomingMessage.handleStreamEnd (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:2444:11)\n    at IncomingMessage.emit (node:events:539:35)\n    at endReadableNT (node:internal/streams/readable:1345:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)","status":401}
+{"code":"ERR_BAD_REQUEST","config":{"env":{"Blob":null},"headers":{"Accept":"application/json, text/plain, */*","Accept-Encoding":"gzip, deflate, br","Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzRhMGUzNjFkZDFiNjZlMTE0NmZkZTgiLCJlbWFpbCI6Imdhcm1hdG9ycmVzbmF6YXJlbm9AZ21haWwuY29tIiwiaWF0IjoxNjY2NDEyNTYyLCJleHAiOjE2NjY0OTg5NjJ9.0GbC7bOLAp8tDyNryrFkhtz2KMADdbsyqfRZjJsIe38","User-Agent":"axios/1.1.2"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"http://localhost:8080/api/auth","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 401","name":"AxiosError","stack":"AxiosError: Request failed with status code 401\n    at settle (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:1261:12)\n    at IncomingMessage.handleStreamEnd (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:2444:11)\n    at IncomingMessage.emit (node:events:539:35)\n    at endReadableNT (node:internal/streams/readable:1345:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)","status":401}
+{"code":"ERR_BAD_REQUEST","config":{"env":{"Blob":null},"headers":{"Accept":"application/json, text/plain, */*","Accept-Encoding":"gzip, deflate, br","Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzRhMGUzNjFkZDFiNjZlMTE0NmZkZTgiLCJlbWFpbCI6Imdhcm1hdG9ycmVzbmF6YXJlbm9AZ21haWwuY29tIiwiaWF0IjoxNjY2NDEyNTYyLCJleHAiOjE2NjY0OTg5NjJ9.0GbC7bOLAp8tDyNryrFkhtz2KMADdbsyqfRZjJsIe38","User-Agent":"axios/1.1.2"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"http://localhost:8080/api/auth","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 401","name":"AxiosError","stack":"AxiosError: Request failed with status code 401\n    at settle (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:1261:12)\n    at IncomingMessage.handleStreamEnd (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:2444:11)\n    at IncomingMessage.emit (node:events:539:35)\n    at endReadableNT (node:internal/streams/readable:1345:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)","status":401}
+{"code":"ERR_BAD_REQUEST","config":{"env":{"Blob":null},"headers":{"Accept":"application/json, text/plain, */*","Accept-Encoding":"gzip, deflate, br","Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzRhMGUzNjFkZDFiNjZlMTE0NmZkZTgiLCJlbWFpbCI6Imdhcm1hdG9ycmVzbmF6YXJlbm9AZ21haWwuY29tIiwiaWF0IjoxNjY2NDEyNTYyLCJleHAiOjE2NjY0OTg5NjJ9.0GbC7bOLAp8tDyNryrFkhtz2KMADdbsyqfRZjJsIe38","User-Agent":"axios/1.1.2"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"http://localhost:8080/api/auth","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 401","name":"AxiosError","stack":"AxiosError: Request failed with status code 401\n    at settle (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:1261:12)\n    at IncomingMessage.handleStreamEnd (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:2444:11)\n    at IncomingMessage.emit (node:events:539:35)\n    at endReadableNT (node:internal/streams/readable:1345:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)","status":401}
+{"code":"ERR_BAD_REQUEST","config":{"env":{"Blob":null},"headers":{"Accept":"application/json, text/plain, */*","Accept-Encoding":"gzip, deflate, br","Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzRhMGUzNjFkZDFiNjZlMTE0NmZkZTgiLCJlbWFpbCI6Imdhcm1hdG9ycmVzbmF6YXJlbm9AZ21haWwuY29tIiwiaWF0IjoxNjY2NDEyNTYyLCJleHAiOjE2NjY0OTg5NjJ9.0GbC7bOLAp8tDyNryrFkhtz2KMADdbsyqfRZjJsIe38","User-Agent":"axios/1.1.2"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"http://localhost:8080/api/auth","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 401","name":"AxiosError","stack":"AxiosError: Request failed with status code 401\n    at settle (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:1261:12)\n    at IncomingMessage.handleStreamEnd (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:2444:11)\n    at IncomingMessage.emit (node:events:539:35)\n    at endReadableNT (node:internal/streams/readable:1345:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)","status":401}
+{"code":"ERR_BAD_REQUEST","config":{"env":{"Blob":null},"headers":{"Accept":"application/json, text/plain, */*","Accept-Encoding":"gzip, deflate, br","Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzRhMGUzNjFkZDFiNjZlMTE0NmZkZTgiLCJlbWFpbCI6Imdhcm1hdG9ycmVzbmF6YXJlbm9AZ21haWwuY29tIiwiaWF0IjoxNjY2NDEyNTYyLCJleHAiOjE2NjY0OTg5NjJ9.0GbC7bOLAp8tDyNryrFkhtz2KMADdbsyqfRZjJsIe38","User-Agent":"axios/1.1.2"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"http://localhost:8080/api/auth","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 401","name":"AxiosError","stack":"AxiosError: Request failed with status code 401\n    at settle (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:1261:12)\n    at IncomingMessage.handleStreamEnd (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:2444:11)\n    at IncomingMessage.emit (node:events:539:35)\n    at endReadableNT (node:internal/streams/readable:1345:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)","status":401}
+{"code":"ERR_BAD_REQUEST","config":{"env":{"Blob":null},"headers":{"Accept":"application/json, text/plain, */*","Accept-Encoding":"gzip, deflate, br","Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzRhMGUzNjFkZDFiNjZlMTE0NmZkZTgiLCJlbWFpbCI6Imdhcm1hdG9ycmVzbmF6YXJlbm9AZ21haWwuY29tIiwiaWF0IjoxNjY2NDEyNTYyLCJleHAiOjE2NjY0OTg5NjJ9.0GbC7bOLAp8tDyNryrFkhtz2KMADdbsyqfRZjJsIe38","User-Agent":"axios/1.1.2"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"http://localhost:8080/api/auth","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 401","name":"AxiosError","stack":"AxiosError: Request failed with status code 401\n    at settle (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:1261:12)\n    at IncomingMessage.handleStreamEnd (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:2444:11)\n    at IncomingMessage.emit (node:events:539:35)\n    at endReadableNT (node:internal/streams/readable:1345:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)","status":401}
+{"code":"ERR_BAD_REQUEST","config":{"env":{"Blob":null},"headers":{"Accept":"application/json, text/plain, */*","Accept-Encoding":"gzip, deflate, br","Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzRhMGUzNjFkZDFiNjZlMTE0NmZkZTgiLCJlbWFpbCI6Imdhcm1hdG9ycmVzbmF6YXJlbm9AZ21haWwuY29tIiwiaWF0IjoxNjY2NDEyNTYyLCJleHAiOjE2NjY0OTg5NjJ9.0GbC7bOLAp8tDyNryrFkhtz2KMADdbsyqfRZjJsIe38","User-Agent":"axios/1.1.2"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"http://localhost:8080/api/auth","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 401","name":"AxiosError","stack":"AxiosError: Request failed with status code 401\n    at settle (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:1261:12)\n    at IncomingMessage.handleStreamEnd (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:2444:11)\n    at IncomingMessage.emit (node:events:539:35)\n    at endReadableNT (node:internal/streams/readable:1345:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)","status":401}
+{"code":"ERR_BAD_REQUEST","config":{"env":{"Blob":null},"headers":{"Accept":"application/json, text/plain, */*","Accept-Encoding":"gzip, deflate, br","Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzRhMGUzNjFkZDFiNjZlMTE0NmZkZTgiLCJlbWFpbCI6Imdhcm1hdG9ycmVzbmF6YXJlbm9AZ21haWwuY29tIiwiaWF0IjoxNjY2NDEyNTYyLCJleHAiOjE2NjY0OTg5NjJ9.0GbC7bOLAp8tDyNryrFkhtz2KMADdbsyqfRZjJsIe38","User-Agent":"axios/1.1.2"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"http://localhost:8080/api/auth","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 401","name":"AxiosError","stack":"AxiosError: Request failed with status code 401\n    at settle (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:1261:12)\n    at IncomingMessage.handleStreamEnd (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:2444:11)\n    at IncomingMessage.emit (node:events:539:35)\n    at endReadableNT (node:internal/streams/readable:1345:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)","status":401}
+{"code":"ERR_BAD_REQUEST","config":{"env":{"Blob":null},"headers":{"Accept":"application/json, text/plain, */*","Accept-Encoding":"gzip, deflate, br","Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzRhMGUzNjFkZDFiNjZlMTE0NmZkZTgiLCJlbWFpbCI6Imdhcm1hdG9ycmVzbmF6YXJlbm9AZ21haWwuY29tIiwiaWF0IjoxNjY2NDEyNTYyLCJleHAiOjE2NjY0OTg5NjJ9.0GbC7bOLAp8tDyNryrFkhtz2KMADdbsyqfRZjJsIe38","User-Agent":"axios/1.1.2"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"http://localhost:8080/api/auth","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 401","name":"AxiosError","stack":"AxiosError: Request failed with status code 401\n    at settle (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:1261:12)\n    at IncomingMessage.handleStreamEnd (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:2444:11)\n    at IncomingMessage.emit (node:events:539:35)\n    at endReadableNT (node:internal/streams/readable:1345:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)","status":401}
+{"code":"ERR_BAD_REQUEST","config":{"env":{"Blob":null},"headers":{"Accept":"application/json, text/plain, */*","Accept-Encoding":"gzip, deflate, br","Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzRhMGUzNjFkZDFiNjZlMTE0NmZkZTgiLCJlbWFpbCI6Imdhcm1hdG9ycmVzbmF6YXJlbm9AZ21haWwuY29tIiwiaWF0IjoxNjY2NDEyNTYyLCJleHAiOjE2NjY0OTg5NjJ9.0GbC7bOLAp8tDyNryrFkhtz2KMADdbsyqfRZjJsIe38","User-Agent":"axios/1.1.2"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"http://localhost:8080/api/auth","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 401","name":"AxiosError","stack":"AxiosError: Request failed with status code 401\n    at settle (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:1261:12)\n    at IncomingMessage.handleStreamEnd (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:2444:11)\n    at IncomingMessage.emit (node:events:539:35)\n    at endReadableNT (node:internal/streams/readable:1345:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)","status":401}
+{"level":"error","message":"Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/","reason":{"commonWireVersion":13,"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"maxElectionId":"7fffffff0000000000000012","maxSetVersion":1,"servers":{},"setName":"atlas-tzf27u-shard-0","stale":false,"type":"ReplicaSetNoPrimary"}}
+{"level":"error","message":"Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/","reason":{"commonWireVersion":13,"compatible":true,"heartbeatFrequencyMS":10000,"localThresholdMS":15,"maxElectionId":"7fffffff0000000000000012","maxSetVersion":1,"servers":{},"setName":"atlas-tzf27u-shard-0","stale":false,"type":"ReplicaSetNoPrimary"}}
+{"code":"ERR_BAD_REQUEST","config":{"env":{"Blob":null},"headers":{"Accept":"application/json, text/plain, */*","Accept-Encoding":"gzip, deflate, br","Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzRhMGUzNjFkZDFiNjZlMTE0NmZkZTgiLCJlbWFpbCI6Imdhcm1hdG9ycmVzbmF6YXJlbm9AZ21haWwuY29tIiwiaWF0IjoxNjY2NTU4NDYzLCJleHAiOjE2NjY2NDQ4NjN9.4rMENvBeoh_JOVLpfI9Gk7TMTgNSmxzbAQX6Xn68Z8A","User-Agent":"axios/1.1.2"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"http://localhost:8080/api/auth","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 401","name":"AxiosError","stack":"AxiosError: Request failed with status code 401\n    at settle (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:1261:12)\n    at IncomingMessage.handleStreamEnd (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:2444:11)\n    at IncomingMessage.emit (node:events:539:35)\n    at endReadableNT (node:internal/streams/readable:1345:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)","status":401}
+{"code":"ERR_BAD_REQUEST","config":{"env":{"Blob":null},"headers":{"Accept":"application/json, text/plain, */*","Accept-Encoding":"gzip, deflate, br","User-Agent":"axios/1.1.2"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"http://localhost:8080/api/auth","withCredentials":true,"xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 403","name":"AxiosError","stack":"AxiosError: Request failed with status code 403\n    at settle (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:1261:12)\n    at IncomingMessage.handleStreamEnd (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:2444:11)\n    at IncomingMessage.emit (node:events:539:35)\n    at endReadableNT (node:internal/streams/readable:1345:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)","status":403}
+{"code":"ERR_BAD_REQUEST","config":{"env":{"Blob":null},"headers":{"Accept":"application/json, text/plain, */*","Accept-Encoding":"gzip, deflate, br","User-Agent":"axios/1.1.2"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"http://localhost:8080/api/auth","withCredentials":true,"xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 403","name":"AxiosError","stack":"AxiosError: Request failed with status code 403\n    at settle (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:1261:12)\n    at IncomingMessage.handleStreamEnd (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:2444:11)\n    at IncomingMessage.emit (node:events:539:35)\n    at endReadableNT (node:internal/streams/readable:1345:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)","status":403}
+{"code":"ERR_BAD_REQUEST","config":{"env":{"Blob":null},"headers":{"Accept":"application/json, text/plain, */*","Accept-Encoding":"gzip, deflate, br","User-Agent":"axios/1.1.2"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"http://localhost:8080/api/auth","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 403","name":"AxiosError","stack":"AxiosError: Request failed with status code 403\n    at settle (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:1261:12)\n    at IncomingMessage.handleStreamEnd (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:2444:11)\n    at IncomingMessage.emit (node:events:539:35)\n    at endReadableNT (node:internal/streams/readable:1345:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)","status":403}
+{"level":"error"}
+{"level":"error"}
+{"code":"ERR_BAD_REQUEST","config":{"env":{"Blob":null},"headers":{"Accept":"application/json, text/plain, */*","Accept-Encoding":"gzip, deflate, br","Authorization":"Bearer undefined","User-Agent":"axios/1.1.2"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"http://localhost:8080/api/auth","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 401","name":"AxiosError","stack":"AxiosError: Request failed with status code 401\n    at settle (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:1261:12)\n    at IncomingMessage.handleStreamEnd (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:2444:11)\n    at IncomingMessage.emit (node:events:539:35)\n    at endReadableNT (node:internal/streams/readable:1345:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)","status":401}
+{"_message":"Order validation failed","errors":{"email":{"kind":"required","message":"Path `email` is required.","name":"ValidatorError","path":"email","properties":{"message":"Path `email` is required.","path":"email","type":"required"}}},"level":"error","message":"Order validation failed: email: Path `email` is required.","name":"ValidationError"}
+{"code":"ERR_BAD_RESPONSE","config":{"data":"{\"orders\":\"6359a7b2d8e860b1042d05f3\"}","env":{"Blob":null},"headers":{"Accept":"application/json, text/plain, */*","Accept-Encoding":"gzip, deflate, br","Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzRhMGUzNjFkZDFiNjZlMTE0NmZkZTgiLCJlbWFpbCI6Imdhcm1hdG9ycmVzbmF6YXJlbm9AZ21haWwuY29tIiwiaWF0IjoxNjY2ODEyNzk4LCJleHAiOjE2NjY4OTkxOTh9.FKVgkWG76qgjCXpxbkfKIMn3yOmRlJ8SNmmIxokNtPY","Content-Length":"37","Content-Type":"application/json","User-Agent":"axios/1.1.2"},"maxBodyLength":-1,"maxContentLength":-1,"method":"patch","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"http://localhost:8080/api/auth/634a0e361dd1b66e1146fde8","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 500","name":"AxiosError","stack":"AxiosError: Request failed with status code 500\n    at settle (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:1261:12)\n    at IncomingMessage.handleStreamEnd (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:2444:11)\n    at IncomingMessage.emit (node:events:539:35)\n    at endReadableNT (node:internal/streams/readable:1345:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)","status":500}
+{"code":"ERR_BAD_RESPONSE","config":{"data":"{\"orders\":\"6359a7f1f762373041614a00\"}","env":{"Blob":null},"headers":{"Accept":"application/json, text/plain, */*","Accept-Encoding":"gzip, deflate, br","Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzRhMGUzNjFkZDFiNjZlMTE0NmZkZTgiLCJlbWFpbCI6Imdhcm1hdG9ycmVzbmF6YXJlbm9AZ21haWwuY29tIiwiaWF0IjoxNjY2ODEyNzk4LCJleHAiOjE2NjY4OTkxOTh9.FKVgkWG76qgjCXpxbkfKIMn3yOmRlJ8SNmmIxokNtPY","Content-Length":"37","Content-Type":"application/json","User-Agent":"axios/1.1.2"},"maxBodyLength":-1,"maxContentLength":-1,"method":"patch","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"http://localhost:8080/api/auth/634a0e361dd1b66e1146fde8","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 500","name":"AxiosError","stack":"AxiosError: Request failed with status code 500\n    at settle (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:1261:12)\n    at IncomingMessage.handleStreamEnd (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:2444:11)\n    at IncomingMessage.emit (node:events:539:35)\n    at endReadableNT (node:internal/streams/readable:1345:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)","status":500}
+{"code":"ERR_BAD_RESPONSE","config":{"data":"{\"orders\":{\"products\":[{\"id\":\"63117a386d5b00d18d516943\",\"title\":\"PANTALON FILA LIGHT\",\"price\":10199,\"description\":\"REMERA FILA LIGHT REFLECT F12L157199440S MUJER\",\"code\":\"F1240S\",\"quantity\":1}],\"numOrder\":243940,\"status\":\"completed\",\"user\":\"634a0e361dd1b66e1146fde8\",\"date\":\"2022-10-26T03:00:00.000Z\",\"total\":10199,\"qtyProducts\":1,\"email\":\"garmatorresnazareno@gmail.com\",\"history\":[{\"id\":\"7L0973702H685234U\",\"intent\":\"CAPTURE\",\"status\":\"COMPLETED\",\"purchase_units\":[{\"reference_id\":\"default\",\"amount\":{\"currency_code\":\"USD\",\"value\":\"10199.00\"},\"payee\":{\"email_address\":\"onecomfort@gmail.com\",\"merchant_id\":\"8X6GQVFKYNFK6\"},\"description\":\"PANTALON FILA LIGHT\",\"soft_descriptor\":\"PAYPAL *TEST STORE\",\"shipping\":{\"name\":{\"full_name\":\"Bojack Horseman\"},\"address\":{\"address_line_1\":\"1 Main St\",\"admin_area_2\":\"San Jose\",\"admin_area_1\":\"CA\",\"postal_code\":\"95131\",\"country_code\":\"US\"}},\"payments\":{\"captures\":[{\"id\":\"20C65611YH882204Y\",\"status\":\"COMPLETED\",\"amount\":{\"currency_code\":\"USD\",\"value\":\"10199.00\"},\"final_capture\":true,\"seller_protection\":{\"status\":\"ELIGIBLE\",\"dispute_categories\":[\"ITEM_NOT_RECEIVED\",\"UNAUTHORIZED_TRANSACTION\"]},\"create_time\":\"2022-10-26T21:35:53Z\",\"update_time\":\"2022-10-26T21:35:53Z\"}]}}],\"payer\":{\"name\":{\"given_name\":\"Bojack\",\"surname\":\"Horseman\"},\"email_address\":\"bojackh@gmail.com\",\"payer_id\":\"VXKUG7YY4EGUY\",\"address\":{\"country_code\":\"US\"}},\"create_time\":\"2022-10-26T21:35:45Z\",\"update_time\":\"2022-10-26T21:35:53Z\",\"links\":[{\"href\":\"https://api.sandbox.paypal.com/v2/checkout/orders/7L0973702H685234U\",\"rel\":\"self\",\"method\":\"GET\"}]}],\"_id\":\"6359a8384030c3774e591be9\",\"__v\":0}}","env":{"Blob":null},"headers":{"Accept":"application/json, text/plain, */*","Accept-Encoding":"gzip, deflate, br","Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzRhMGUzNjFkZDFiNjZlMTE0NmZkZTgiLCJlbWFpbCI6Imdhcm1hdG9ycmVzbmF6YXJlbm9AZ21haWwuY29tIiwiaWF0IjoxNjY2ODEyNzk4LCJleHAiOjE2NjY4OTkxOTh9.FKVgkWG76qgjCXpxbkfKIMn3yOmRlJ8SNmmIxokNtPY","Content-Length":"1606","Content-Type":"application/json","User-Agent":"axios/1.1.2"},"maxBodyLength":-1,"maxContentLength":-1,"method":"patch","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"http://localhost:8080/api/auth/634a0e361dd1b66e1146fde8","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 500","name":"AxiosError","stack":"AxiosError: Request failed with status code 500\n    at settle (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:1261:12)\n    at IncomingMessage.handleStreamEnd (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:2444:11)\n    at IncomingMessage.emit (node:events:539:35)\n    at endReadableNT (node:internal/streams/readable:1345:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)","status":500}
+{"code":"ERR_BAD_RESPONSE","config":{"data":"{\"orders\":[{\"$__\":{\"activePaths\":{\"paths\":{\"email\":\"require\",\"qtyProducts\":\"require\",\"total\":\"require\",\"date\":\"require\",\"status\":\"require\",\"numOrder\":\"require\"},\"states\":{\"require\":{\"email\":true,\"qtyProducts\":true,\"total\":true,\"date\":true,\"status\":true,\"numOrder\":true},\"default\":{},\"modify\":{}}},\"pathsToScopes\":{\"history\":{\"products\":[{\"id\":\"63117a986d5b00d18d516946\",\"title\":\"BOLSO TOPPER TOTE BAG WMNS BENITO\",\"price\":2000,\"description\":\"BOLSO TOPPER TOTE BAG WMNS BENITO 172705 MUJER\",\"code\":\"172705 \",\"quantity\":2}],\"numOrder\":719454,\"status\":\"completed\",\"user\":\"634a0e361dd1b66e1146fde8\",\"date\":\"2022-10-26T03:00:00.000Z\",\"total\":4000,\"qtyProducts\":1,\"email\":\"garmatorresnazareno@gmail.com\",\"history\":[{\"id\":\"2G806790T93409618\",\"intent\":\"CAPTURE\",\"status\":\"COMPLETED\",\"purchase_units\":[{\"reference_id\":\"default\",\"amount\":{\"currency_code\":\"USD\",\"value\":\"4000.00\"},\"payee\":{\"email_address\":\"onecomfort@gmail.com\",\"merchant_id\":\"8X6GQVFKYNFK6\"},\"description\":\"BOLSO TOPPER TOTE BAG WMNS BENITO\",\"soft_descriptor\":\"PAYPAL *TEST STORE\",\"shipping\":{\"name\":{\"full_name\":\"Bojack Horseman\"},\"address\":{\"address_line_1\":\"1 Main St\",\"admin_area_2\":\"San Jose\",\"admin_area_1\":\"CA\",\"postal_code\":\"95131\",\"country_code\":\"US\"}},\"payments\":{\"captures\":[{\"id\":\"4B565717NG470333F\",\"status\":\"COMPLETED\",\"amount\":{\"currency_code\":\"USD\",\"value\":\"4000.00\"},\"final_capture\":true,\"seller_protection\":{\"status\":\"ELIGIBLE\",\"dispute_categories\":[\"ITEM_NOT_RECEIVED\",\"UNAUTHORIZED_TRANSACTION\"]},\"create_time\":\"2022-10-26T21:37:11Z\",\"update_time\":\"2022-10-26T21:37:11Z\"}]}}],\"payer\":{\"name\":{\"given_name\":\"Bojack\",\"surname\":\"Horseman\"},\"email_address\":\"bojackh@gmail.com\",\"payer_id\":\"VXKUG7YY4EGUY\",\"address\":{\"country_code\":\"US\"}},\"create_time\":\"2022-10-26T21:37:03Z\",\"update_time\":\"2022-10-26T21:37:11Z\",\"links\":[{\"href\":\"https://api.sandbox.paypal.com/v2/checkout/orders/2G806790T93409618\",\"rel\":\"self\",\"method\":\"GET\"}]}],\"_id\":\"6359a8862fa5c65c2ba6f374\",\"__v\":0}},\"op\":null,\"saving\":null,\"$versionError\":null,\"saveOptions\":null,\"validating\":null,\"cachedRequired\":{},\"backup\":{\"activePaths\":{\"modify\":{\"products\":true,\"numOrder\":true,\"status\":true,\"user\":true,\"date\":true,\"total\":true,\"qtyProducts\":true,\"email\":true,\"history\":true},\"default\":{\"_id\":true}},\"validationError\":null},\"inserting\":true,\"savedState\":{}},\"_doc\":{\"products\":[{\"id\":\"63117a986d5b00d18d516946\",\"title\":\"BOLSO TOPPER TOTE BAG WMNS BENITO\",\"price\":2000,\"description\":\"BOLSO TOPPER TOTE BAG WMNS BENITO 172705 MUJER\",\"code\":\"172705 \",\"quantity\":2}],\"numOrder\":719454,\"status\":\"completed\",\"user\":\"634a0e361dd1b66e1146fde8\",\"date\":\"2022-10-26T03:00:00.000Z\",\"total\":4000,\"qtyProducts\":1,\"email\":\"garmatorresnazareno@gmail.com\",\"history\":[{\"id\":\"2G806790T93409618\",\"intent\":\"CAPTURE\",\"status\":\"COMPLETED\",\"purchase_units\":[{\"reference_id\":\"default\",\"amount\":{\"currency_code\":\"USD\",\"value\":\"4000.00\"},\"payee\":{\"email_address\":\"onecomfort@gmail.com\",\"merchant_id\":\"8X6GQVFKYNFK6\"},\"description\":\"BOLSO TOPPER TOTE BAG WMNS BENITO\",\"soft_descriptor\":\"PAYPAL *TEST STORE\",\"shipping\":{\"name\":{\"full_name\":\"Bojack Horseman\"},\"address\":{\"address_line_1\":\"1 Main St\",\"admin_area_2\":\"San Jose\",\"admin_area_1\":\"CA\",\"postal_code\":\"95131\",\"country_code\":\"US\"}},\"payments\":{\"captures\":[{\"id\":\"4B565717NG470333F\",\"status\":\"COMPLETED\",\"amount\":{\"currency_code\":\"USD\",\"value\":\"4000.00\"},\"final_capture\":true,\"seller_protection\":{\"status\":\"ELIGIBLE\",\"dispute_categories\":[\"ITEM_NOT_RECEIVED\",\"UNAUTHORIZED_TRANSACTION\"]},\"create_time\":\"2022-10-26T21:37:11Z\",\"update_time\":\"2022-10-26T21:37:11Z\"}]}}],\"payer\":{\"name\":{\"given_name\":\"Bojack\",\"surname\":\"Horseman\"},\"email_address\":\"bojackh@gmail.com\",\"payer_id\":\"VXKUG7YY4EGUY\",\"address\":{\"country_code\":\"US\"}},\"create_time\":\"2022-10-26T21:37:03Z\",\"update_time\":\"2022-10-26T21:37:11Z\",\"links\":[{\"href\":\"https://api.sandbox.paypal.com/v2/checkout/orders/2G806790T93409618\",\"rel\":\"self\",\"method\":\"GET\"}]}],\"_id\":\"6359a8862fa5c65c2ba6f374\",\"__v\":0},\"$isNew\":false}]}","env":{"Blob":null},"headers":{"Accept":"application/json, text/plain, */*","Accept-Encoding":"gzip, deflate, br","Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzRhMGUzNjFkZDFiNjZlMTE0NmZkZTgiLCJlbWFpbCI6Imdhcm1hdG9ycmVzbmF6YXJlbm9AZ21haWwuY29tIiwiaWF0IjoxNjY2ODEyNzk4LCJleHAiOjE2NjY4OTkxOTh9.FKVgkWG76qgjCXpxbkfKIMn3yOmRlJ8SNmmIxokNtPY","Content-Length":"3941","Content-Type":"application/json","User-Agent":"axios/1.1.2"},"maxBodyLength":-1,"maxContentLength":-1,"method":"patch","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"http://localhost:8080/api/auth/634a0e361dd1b66e1146fde8","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 500","name":"AxiosError","stack":"AxiosError: Request failed with status code 500\n    at settle (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:1261:12)\n    at IncomingMessage.handleStreamEnd (/home/nazareno/code/onecomfort-webapp/node_modules/axios/dist/node/axios.cjs:2444:11)\n    at IncomingMessage.emit (node:events:539:35)\n    at endReadableNT (node:internal/streams/readable:1345:12)\n    at processTicksAndRejections (node:internal/process/task_queues:83:21)","status":500}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"_message":"Order validation failed","errors":{"email":{"kind":"required","message":"Path `email` is required.","name":"ValidatorError","path":"email","properties":{"message":"Path `email` is required.","path":"email","type":"required"}}},"level":"error","message":"Order validation failed: email: Path `email` is required.","name":"ValidationError"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'data')"}
+{"level":"error","message":"Cannot read properties of undefined (reading 'data')"}
+{"level":"error","message":"Order validation failed: email: Path `email` is required."}
+{"level":"error","message":"Order validation failed: email: Path `email` is required."}
+{"level":"error","message":"Order validation failed: email: Path `email` is required."}
+{"level":"error","message":"Invalid URL"}
+{"level":"error","message":"Request failed with status code 401"}
+{"level":"error","message":"Request failed with status code 401"}
+{"level":"error","message":"Request failed with status code 401"}
+{"level":"error","message":"Request failed with status code 401"}
+{"level":"error","message":"Request failed with status code 401"}
+{"level":"error","message":"Request failed with status code 401"}
+{"level":"error","message":"Request failed with status code 401"}
+{"level":"error","message":"Request failed with status code 401"}
+{"level":"error","message":"Request failed with status code 401"}
+{"level":"error","message":"Order validation failed: user: Cast to ObjectId failed for value \"a66b6288923b2b4fe4aafcce849e23f2cb37279a\" (type string) at path \"user\" because of \"BSONTypeError\""}
+{"level":"error","message":"Request failed with status code 401"}
+{"level":"error","message":"Request failed with status code 401"}
+{"level":"error","message":"Request failed with status code 401"}
+{"level":"error","message":"Request failed with status code 401"}
+{"level":"error","message":"Request failed with status code 401"}
+{"level":"error","message":"Unsupported protocol htpp:"}
+{"level":"error","message":"Request failed with status code 404"}
+{"level":"error","message":"Request failed with status code 404"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"[object Object]\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"[object Object]\"","value":"[object Object]","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"[object Object]\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"[object Object]\"","value":"[object Object]","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"[object Object]\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"[object Object]\"","value":"[object Object]","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"[object Object]\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"[object Object]\"","value":"[object Object]","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"[object Object]\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"[object Object]\"","value":"[object Object]","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"[object Object]\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"[object Object]\"","value":"[object Object]","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"[object Object]\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"[object Object]\"","value":"[object Object]","valueType":"string"}
+{"level":"error","message":"Request failed with status code 401"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"d\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"d\"","value":"d","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"d\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"d\"","value":"d","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"d\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"d\"","value":"d","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"d\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"d\"","value":"d","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"d\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"d\"","value":"d","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"d\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"d\"","value":"d","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"d\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"d\"","value":"d","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"631179c66d5b00d18d51693fd\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"631179c66d5b00d18d51693fd\"","value":"631179c66d5b00d18d51693fd","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"631179c66d5b00d18d51693fd\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"631179c66d5b00d18d51693fd\"","value":"631179c66d5b00d18d51693fd","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"631179c66d5b00d18d51693fd\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"631179c66d5b00d18d51693fd\"","value":"631179c66d5b00d18d51693fd","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"2\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"2\"","value":"2","valueType":"string"}
+{"kind":"ObjectId","message":"Cast to ObjectId failed for value \"631179c66d5b00d18d51693fd\" (type string) at path \"_id\" for model \"Product\"","name":"CastError","path":"_id","reason":{},"stringValue":"\"631179c66d5b00d18d51693fd\"","value":"631179c66d5b00d18d51693fd","valueType":"string"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}
+{"level":"error"}

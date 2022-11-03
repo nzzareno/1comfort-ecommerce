@@ -33,7 +33,7 @@ const MenuItem = () => {
           />
           <div className="content">
             <h1 className="title">FOOTWEAR</h1>
-            <span className="subtitle">& STOCKINGS</span>
+            <span className="subtitle">& PANTS</span>
           </div>
         </Link>
 

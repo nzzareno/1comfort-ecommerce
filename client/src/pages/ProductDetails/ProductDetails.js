@@ -1,33 +1,42 @@
 import details from "./ProductDetails.module.scss";
 import { toast } from "react-toastify";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Quantity from "../../components/Quantity/Quantity";
 import { Link } from "react-router-dom";
 import { ContextOfProduct } from "../../context/ProductContext";
 
 const ProductDetails = ({ item, getProduct }) => {
   const {
-    increaseCartNumber,
     setProductoSend,
     productoSend,
-    addItem,
     it,
     setIt,
+    addProductToLocalStorage,
     setShow,
     show,
+    handlerStock,
   } = useContext(ContextOfProduct);
 
   const [quantityCarro, setQuantityCarro] = useState(0);
   const [stockState, setStockState] = useState(item.stock);
 
+  useEffect(() => {
+    setShow(true);
+  }, [show]);
+
   const onAdd = (cantidadCarro) => {
     setQuantityCarro(cantidadCarro);
-    setProductoSend([...productoSend, { item: item, quantity: cantidadCarro }]);
-    addItem(item, cantidadCarro);
+    setProductoSend([
+      ...productoSend,
+      {
+        item: item,
+        quantity: cantidadCarro,
+      },
+    ]);
+
+    addProductToLocalStorage(item, cantidadCarro);
     setIt(0);
   };
-
-  setShow(true);
 
   return (
     <>

@@ -181,8 +181,9 @@
 }
 
 .search {
-  font-size: 1.4rem;
-  margin-top: 0.1rem;
+  font-size: 1.3rem;
+  color: rgba(0, 0, 0, 0.492);
+   
 }
 
 // Sidebar styles and media queries
@@ -284,7 +285,7 @@ nav-text {
   color: white;
 }
 
-@media screen and(min-width:1342px) {
+@media screen and (min-width:1342px) {
   .contexto-side {
     display: none !important;
   }

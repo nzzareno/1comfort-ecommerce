@@ -1,8 +1,8 @@
-const { CartModel } = require("../../persistence/models/mongoPersistence");
-const { CartMongoContainer } = require("../../services/containerMongo");
+const { CartModel } = require("../../models/mongoPersistence");
+const { CartMongoContainer } = require("../../repositories/containerMongo");
 
 class DaoMongoCartContainer extends CartMongoContainer {
-  constructor(){
+  constructor() {
     super(CartModel);
   }
 }

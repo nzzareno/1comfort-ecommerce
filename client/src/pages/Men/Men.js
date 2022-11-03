@@ -18,14 +18,11 @@ const Men = () => {
     visible: { opacity: 1 },
   };
 
-  const deleteSingleProduct = async (id) => {
-    const response = await axios.delete(
-      `http://localhost:8080/api/productos/${id}`
-    );
-    const data = await response.data;
-    setDeleteSingleData(data);
-    alert("Product removed");
+  const dateFormatter = (date) => {
+    const newDate = new Date(date);
+    return newDate.toLocaleString();
   };
+
   return (
     <>
       <motion.header
@@ -78,14 +75,6 @@ const Men = () => {
                           alt="imagex"
                         />
                         <ul className={styles.action}>
-                          <li onClick={() => setEditButton(true)}>
-                            <i className="fa fa-pencil" aria-hidden="true"></i>
-                            <span>Edit</span>
-                          </li>
-                          <EditPopUp
-                            trigger={editButton}
-                            setTrigger={setEditButton}
-                          ></EditPopUp>
                           <li>
                             <i className="fa fa-eye" aria-hidden="true"></i>
                             <span>View Details</span>
@@ -96,10 +85,6 @@ const Men = () => {
                               aria-hidden="true"
                             ></i>
                             <span>Add to Cart</span>
-                          </li>
-                          <li onClick={() => deleteSingleProduct(item.id)}>
-                            <i className="fa fa-trash" aria-hidden="true"></i>
-                            <span>Remove</span>
                           </li>
                         </ul>
                       </div>
@@ -139,7 +124,7 @@ const Men = () => {
                             className={styles.dateSmall}
                             style={{ fontWeight: "lighter" }}
                           >
-                            {item.date}
+                            {dateFormatter(item.date)}
                           </small>
                           <h3 className={styles.stock}>Stock: {item.stock}</h3>
                           <button
@@ -151,8 +136,8 @@ const Men = () => {
                         </div>
                         <div className={styles.cuotasContainer}>
                           <h4 className={styles.cuotesHome}>
-                            Or 6 installments of{" "}
-                            ${parseFloat(item.price / 6).toFixed(2)} 
+                            Or 6 installments of $
+                            {parseFloat(item.price / 6).toFixed(2)}
                           </h4>
                         </div>
                       </div>

@@ -8,8 +8,8 @@ const {
   updatingProduct,
   deletingProducts,
   deletingProduct,
+  getByTerm,
 } = require("../controllers/products");
- 
 
 router.get("/", getAllProducts);
 
@@ -18,6 +18,8 @@ router.post("/", creatingProducts);
 router.delete("/", deletingProducts);
 
 router.get("/:id", getSingleProduct);
+
+router.get("/category|genre/:term", getByTerm);
 
 router.patch("/:id", updatingProduct);
 

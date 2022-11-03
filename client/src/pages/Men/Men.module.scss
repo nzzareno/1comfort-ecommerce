@@ -10,7 +10,7 @@
   align-content: center;
   align-items: center;
   min-height: 77vh;
-  background-color: #fcfafa;
+  background-color: #ffffff;
   overflow-x: hidden;
   text-align: center;
 }
@@ -21,6 +21,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(452px, 1fr));
   z-index: 2;
+  
 }
 
 .container {
@@ -37,6 +38,10 @@
   width: 450px !important;
   background-color: #ffffff;
   height: 700px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  
+
 }
 
 .container .card .imgBx {
