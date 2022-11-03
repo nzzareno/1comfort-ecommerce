@@ -198,10 +198,10 @@ export default function ProductContext({ children }) {
     setProductoSend(newProd);
   }
 
-  const cartQuantity = carroData.reduce((quantity, item) => {
-    item.qtyProducts = item.products.length;
-    return quantity + item.qtyProducts;
-  }, 0);
+  // const cartQuantity = carroData.reduce((quantity, item) => {
+  //   item.qtyProducts = item.products.length;
+  //   return quantity + item.qtyProducts;
+  // }, 0);
 
   const removeFromCart = async (id) => {
     if (
