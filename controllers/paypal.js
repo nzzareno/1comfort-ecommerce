@@ -4,7 +4,7 @@ const { orderUserNodemailer } = require("../services/auth");
 const createPayment = async (req, res) => {
   try {
     const cart = await axios
-      .get("http://localhost:8080/api/carrito", {
+      .get("https://one-comfort.herokuapp.com/api/carrito", {
       })
       .then((res) => {
         return res.data;

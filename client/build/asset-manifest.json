@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a60df865.css",
+    "main.js": "/static/js/main.aca64ba7.js",
+    "static/media/konstantin.jpg": "/static/media/konstantin.b466bffbddc26ad7a706.jpg",
+    "static/media/byn.jpg": "/static/media/byn.5d28c42e4af9e2c90d57.jpg",
+    "static/media/styloasian.jpg": "/static/media/styloasian.393cb1ffce339258a862.jpg",
+    "static/media/fondomenpanoram.jpg": "/static/media/fondomenpanoram.d7c97d7088c2f837aa13.jpg",
+    "static/media/Hats.jpg": "/static/media/Hats.7494b8595f9343df8091.jpg",
+    "static/media/fondomen.jpg": "/static/media/fondomen.267d0c76ad135cfb8550.jpg",
+    "static/media/backfoot.jpg": "/static/media/backfoot.cbbb580dca3cbb7c7b51.jpg",
+    "static/media/fondofriends.jpg": "/static/media/fondofriends.0b6b218bfaadd7beed02.jpg",
+    "static/media/Menjacketpro.jpg": "/static/media/Menjacketpro.265824dc1681a710ed43.jpg",
+    "static/media/fondoblonde.jpg": "/static/media/fondoblonde.c2357cf0613357342d21.jpg",
+    "static/media/Men.jpg": "/static/media/Men.b9889929c130071eaf09.jpg",
+    "static/media/Women.jpg": "/static/media/Women.6f261a51eec6c64bd04a.jpg",
+    "static/media/Bags.jpg": "/static/media/Bags.7ac3140de157580a91b9.jpg",
+    "static/media/header-accessories.jpg": "/static/media/header-accessories.5731121869bddaf33a2c.jpg",
+    "static/media/footwomen.jpg": "/static/media/footwomen.52f1737e98a992b8a861.jpg",
+    "static/media/womens.jpg": "/static/media/womens.efe43503b8ae2eeb9de3.jpg",
+    "static/media/tshirtheader.jpg": "/static/media/tshirtheader.d97a11969b9ecd9ddd3c.jpg",
+    "static/media/mens.jpg": "/static/media/mens.aaded653f3891f3c8bed.jpg",
+    "index.html": "/index.html",
+    "main.a60df865.css.map": "/static/css/main.a60df865.css.map",
+    "main.aca64ba7.js.map": "/static/js/main.aca64ba7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a60df865.css",
+    "static/js/main.aca64ba7.js"
+  ]
+}
