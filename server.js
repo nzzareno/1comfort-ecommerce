@@ -76,11 +76,11 @@ class Sv {
 
       socket.on("get_messages", async () => {
         const messages = await messageService.gettingMessages();
-        this.io.emit("messages", messages);
+        this.io.sockets.emit("messages", messages);
       });
 
       socket.on("send_message", async (data) => {
-        this.io.emit("receive_message", data.data);
+        this.io.sockets.emit("receive_message", data.data);
       });
 
       socket.on("disconnect", () => {
