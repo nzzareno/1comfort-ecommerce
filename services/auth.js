@@ -5,7 +5,7 @@ const axios = require("axios");
 const localStorage = require("localStorage");
 
 const orderUserNodemailer = async (order) => {
-  const users = await axios.get("http://localhost:8080/api/auth", {
+  const users = await axios.get("/api/auth", {
     headers: {
       Authorization: `Bearer ${localStorage.getItem("tokenaso")}`,
     },
