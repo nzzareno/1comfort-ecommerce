@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import styles from "./Women.module.scss";
 import { ContextOfProduct } from "../../context/ProductContext";
 import HeaderPic from "../../assets/womens.jpg";
@@ -6,8 +6,6 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 const Women = () => {
-  const [editButton, setEditButton] = useState(false);
-  const [deleteSingleData, setDeleteSingleData] = useState({});
   let { data } = useContext(ContextOfProduct);
   const navigate = useNavigate();
 

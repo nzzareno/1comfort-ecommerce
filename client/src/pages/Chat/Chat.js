@@ -22,7 +22,7 @@ const Chat = ({ socket }) => {
   useEffect(() => {
     const userG = googleUser?.user;
     axios
-      .get("http://localhost:8080/api/chat")
+      .get("/api/chat")
       .then((res) => {
         setMessages(res.data);
       })
@@ -58,7 +58,7 @@ const Chat = ({ socket }) => {
 
     onSubmit: async (values) => {
       try {
-        const chatData = await axios.post("http://localhost:8080/api/chat", {
+        const chatData = await axios.post("/api/chat", {
           message: values.message,
           date: values.date,
           email: users?.email || googleUser?.user?.email,

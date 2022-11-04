@@ -33,7 +33,6 @@ const ProductDetails = ({ item, getProduct }) => {
         quantity: cantidadCarro,
       },
     ]);
-
     addProductToLocalStorage(item, cantidadCarro);
     setIt(0);
   };

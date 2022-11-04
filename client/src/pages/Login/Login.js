@@ -158,7 +158,7 @@ const Login = () => {
               try {
                 dispatch({ type: "AUTH", data: { client, token, user } });
                 await axios
-                  .post("http://localhost:8080/api/auth/google", {
+                  .post("/api/auth/google", {
                     token,
                     user,
                   })

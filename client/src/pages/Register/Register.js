@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import "./Register.scss";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { motion } from "framer-motion";
-import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import {
   FaAddressCard,

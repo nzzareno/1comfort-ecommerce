@@ -1,11 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Navbar.scss";
-import Pantalla from "../../assets/Pantalla.webp";
 import { BsCart4 } from "react-icons/bs";
-import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 import { ContextOfProduct } from "../../context/ProductContext";
-import Search from "../Search/Search";
 import { useDispatch } from "react-redux";
 
 const Navbar = () => {

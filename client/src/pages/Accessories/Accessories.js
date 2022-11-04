@@ -1,15 +1,11 @@
 import React, { useState, useContext } from "react";
 import { ContextOfProduct } from "../../context/ProductContext";
 import HeaderPic from "../../assets/header-accessories.jpg";
-import axios from "axios";
 import { motion } from "framer-motion";
-import EditPopUp from "../../components/EditPopUp/EditPopUp";
 import styles from "./Accessories.module.scss";
 const { useNavigate } = require("react-router-dom");
 
 const Accessories = () => {
-  const [editButton, setEditButton] = useState(false);
-  const [deleteSingleData, setDeleteSingleData] = useState({});
   let { data } = useContext(ContextOfProduct);
   const navigate = useNavigate();
 
@@ -18,19 +14,10 @@ const Accessories = () => {
     visible: { opacity: 1 },
   };
 
-  const deleteSingleProduct = async (id) => {
-    const response = await axios.delete(
-      `/api/productos/${id}`
-    );
-    const data = await response.data;
-    setDeleteSingleData(data);
-    alert("Product removed");
-  };
-
   const dateFormatter = (date) => {
     const newDate = new Date(date);
-    return newDate.toLocaleString()
-  }
+    return newDate.toLocaleString();
+  };
 
   return (
     <>
@@ -84,14 +71,6 @@ const Accessories = () => {
                           alt="imagex"
                         />
                         <ul className={styles.action}>
-                          <li onClick={() => setEditButton(true)}>
-                            <i className="fa fa-pencil" aria-hidden="true"></i>
-                            <span>Edit</span>
-                          </li>
-                          <EditPopUp
-                            trigger={editButton}
-                            setTrigger={setEditButton}
-                          ></EditPopUp>
                           <li>
                             <i className="fa fa-eye" aria-hidden="true"></i>
                             <span>View Details</span>
@@ -102,10 +81,6 @@ const Accessories = () => {
                               aria-hidden="true"
                             ></i>
                             <span>Add to Cart</span>
-                          </li>
-                          <li onClick={() => deleteSingleProduct(item.id)}>
-                            <i className="fa fa-trash" aria-hidden="true"></i>
-                            <span>Remove</span>
                           </li>
                         </ul>
                       </div>

@@ -1,15 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, {  useContext } from "react";
 import styles from "./Tshirts.module.scss";
 import { ContextOfProduct } from "../../context/ProductContext";
 import HeaderPic from "../../assets/tshirtheader.jpg";
-import axios from "axios";
 import { motion } from "framer-motion";
-import EditPopUp from "../../components/EditPopUp/EditPopUp";
 import { useNavigate } from "react-router-dom";
 
 const Tshirts = () => {
-  const [editButton, setEditButton] = useState(false);
-  const [deleteSingleData, setDeleteSingleData] = useState({});
   let { data } = useContext(ContextOfProduct);
   const navigate = useNavigate();
 
@@ -17,8 +13,6 @@ const Tshirts = () => {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
   };
-
- 
 
   const dateFormatter = (date) => {
     const newDate = new Date(date);

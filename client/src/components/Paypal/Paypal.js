@@ -31,14 +31,14 @@ export default function Paypal() {
         },
         createOrder: async () => {
           const createPay = await axios.post(
-            "http://localhost:8080/api/paypal/create-payment"
+            "/api/paypal/create-payment"
           );
 
           return createPay.data.id;
         },
         onApprove: async (data, actions) => {
           const cart = await axios
-            .get("http://localhost:8080/api/carrito")
+            .get("/api/carrito")
             .then((res) => {
               return res.data;
             })
@@ -53,7 +53,7 @@ export default function Paypal() {
 
           await actions.order.capture().then(async (details) => {
             const postOrder = await axios
-              .post(`http://localhost:8080/api/orders`, {
+              .post(`/api/orders`, {
                 products: productsInCart,
                 total: details.purchase_units[0].amount.value,
                 status: "completed",

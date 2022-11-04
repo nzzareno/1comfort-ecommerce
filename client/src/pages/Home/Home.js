@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import "./Home.scss";
-import EditPopUp from "../../components/EditPopUp/EditPopUp";
 import MenuItem from "../../components/Menu-Item/MenuItem";
-import axios from "axios";
 import { motion } from "framer-motion";
 import { ContextOfProduct } from "../../context/ProductContext";
 import Slider from "react-slick";
@@ -10,14 +8,12 @@ import Bags from "../../assets/Bags.jpg";
 import MenPanoram from "../../assets/fondomenpanoram.jpg";
 import Men from "../../assets/fondomen.jpg";
 import BlondeGirl from "../../assets/fondoblonde.jpg";
-import GirlsFriends from "../../assets//fondofriends.jpg";
+import GirlsFriends from "../../assets/fondofriends.jpg";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import { useNavigate, useLocation } from "react-router-dom";
-import jwt_decode from "jwt-decode";
 import { IoChatbubbles } from "react-icons/io5";
 
 const Home = () => {
-  const [deleteSingleData, setDeleteSingleData] = useState({});
   const { users, data, googleUser } = useContext(ContextOfProduct);
   const navigate = useNavigate();
 

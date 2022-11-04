@@ -2,14 +2,10 @@ import React, { useState, useContext } from "react";
 import styles from "./Footwear.module.scss";
 import { ContextOfProduct } from "../../context/ProductContext";
 import HeaderPic from "../../assets/footwomen.jpg";
-import axios from "axios";
 import { motion } from "framer-motion";
-import EditPopUp from "../../components/EditPopUp/EditPopUp";
 import { useNavigate } from "react-router-dom";
 
 const Footwear = () => {
-  const [editButton, setEditButton] = useState(false);
-  const [deleteSingleData, setDeleteSingleData] = useState({});
   let { data } = useContext(ContextOfProduct);
   const navigate = useNavigate();
 

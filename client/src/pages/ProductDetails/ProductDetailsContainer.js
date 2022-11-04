@@ -1,11 +1,10 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { ContextOfProduct } from "../../context/ProductContext";
 import ProductDetails from "./ProductDetails";
 
 const ProductDetailsContainer = () => {
-  let { data, carroData, increaseCartNumber, addToCart, addProductToCart } =
-    useContext(ContextOfProduct);
+  let { data, addToCart, addProductToCart } = useContext(ContextOfProduct);
   const { id } = useParams();
 
   function getProduct(id) {
