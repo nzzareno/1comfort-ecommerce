@@ -23,7 +23,7 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import Chat from "./pages/Chat/Chat";
 import io from "socket.io-client";
 
-const socket = io("http://localhost:8080");
+const socket = io("https://one-comfort.herokuapp.com");
 
 const App = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("token")));
