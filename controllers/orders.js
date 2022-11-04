@@ -50,6 +50,7 @@ const gettingOrderById = async (req, res) => {
 const addingOrder = async (req, res) => {
   try {
     const order = await createOrder(req.body);
+    console.log(order)
     await orderUserNodemailer(order);
     return res.status(201).json(order);
   } catch (err) {

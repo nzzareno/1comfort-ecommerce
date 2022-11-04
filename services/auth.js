@@ -1,13 +1,11 @@
-const { UserModel } = require("../models/mongoPersistence");
-const { hashPassword, generateAuthToken } = require("../utils/keys");
 const nodemailer = require("nodemailer");
 const axios = require("axios");
 const localStorage = require("localStorage");
 
 const orderUserNodemailer = async (order) => {
-  const users = await axios.get("/api/auth", {
+  const users = await axios.get("http://localhost:8080/api/auth", {
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("tokenaso")}`,
+      Authorization: `Bearer ${ localStorage.getItem("tokenaso")}`,
     },
   });
   const user = users.data;
@@ -76,7 +74,6 @@ const orderUserNodemailer = async (order) => {
   };
 
   transporter.sendMail(mailOptions);
-
   return mailOptions;
 };
 

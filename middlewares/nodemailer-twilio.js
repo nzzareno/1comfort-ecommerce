@@ -7,7 +7,7 @@ const localStorage = require("localStorage");
 
 const sendMailPhone = async (req, res, next) => {
   const users = await axios
-    .get("/api/auth", {
+    .get("http://localhost:8080/api/auth", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("tokenaso")}`,
       }
@@ -18,7 +18,7 @@ const sendMailPhone = async (req, res, next) => {
     .catch((err) => console.log(err));
 
   const itemsCart = await axios
-    .get(`/api/carrito`)
+    .get(`http://localhost:8080/api/carrito`)
     .then((response) => response.data)
     .catch((err) => console.log(err));
 

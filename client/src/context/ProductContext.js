@@ -33,7 +33,7 @@ export default function ProductContext({ children }) {
 
     if (token) {
       try {
-        const resp = await axios.get("/api/auth", {
+        const resp = await axios.get("http://localhost:8080/api/auth", {
           headers: {
             Authorization: `Bearer ${token.token}`,
           },
@@ -50,7 +50,7 @@ export default function ProductContext({ children }) {
 
   useEffect(() => {
     axios
-      .get("/api/orders")
+      .get("http://localhost:8080/api/orders")
       .then(({ data }) => {
         setOrder(data);
       })
@@ -59,7 +59,7 @@ export default function ProductContext({ children }) {
 
   useEffect(() => {
     axios
-      .get("/api/productos")
+      .get("http://localhost:8080/api/productos")
       .then((res) => {
         setData(res.data);
       })
@@ -68,12 +68,10 @@ export default function ProductContext({ children }) {
 
   useEffect(() => {
     axios
-      .get("/api/carrito")
+      .get("http://localhost:8080/api/carrito")
       .then((res) => {
         setCarroData(res.data);
         res.data.map((i) => setProductosCarro(i.products));
-         
-
       })
       .catch((err) => console.log(err));
   }, []);
@@ -84,7 +82,7 @@ export default function ProductContext({ children }) {
     };
     const body = JSON.stringify(user);
     try {
-      const resp = await axios.post("/api/auth", body, config);
+      const resp = await axios.post("http://localhost:8080/api/auth", body, config);
       setIsSignedIn(true);
       localStorage.setItem("token", JSON.stringify(resp.data));
       await gettingUser();
@@ -100,7 +98,7 @@ export default function ProductContext({ children }) {
     };
     const body = JSON.stringify(user);
     try {
-      await axios.post("/api/users", body, config);
+      await axios.post("http://localhost:8080/api/users", body, config);
       setIsSignedUp(true);
       await gettingUser();
       setAuth(true);
@@ -115,7 +113,7 @@ export default function ProductContext({ children }) {
     });
     await axios({
       method: "POST",
-      url: "/api/carrito",
+      url: "http://localhost:8080/api/carrito",
       data: {
         products: JSON.parse(localStorage.getItem("products")),
         users: users,
@@ -131,7 +129,7 @@ export default function ProductContext({ children }) {
     const newQuantity = product.quantity;
     await axios({
       method: "PATCH",
-      url: `/api/productos/${id}`,
+      url: `http://localhost:8080/api/productos/${id}`,
       data: {
         stock: newStock,
         quantity: newQuantity,
@@ -151,7 +149,7 @@ export default function ProductContext({ children }) {
   async function addCartOrder() {
     await axios({
       method: "POST",
-      url: "/api/orders",
+      url: "http://localhost:8080/api/orders",
       data: {
         user: users._id,
         status: "generated",

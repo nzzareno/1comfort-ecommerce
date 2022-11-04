@@ -4,7 +4,8 @@ const { orderUserNodemailer } = require("../services/auth");
 const createPayment = async (req, res) => {
   try {
     const cart = await axios
-      .get("/api/carrito")
+      .get("http://localhost:8080/api/carrito", {
+      })
       .then((res) => {
         return res.data;
       })

@@ -187,3 +187,13 @@
 {"level":"error"}
 {"level":"error"}
 {"level":"error"}
+{"level":"error","message":"Invalid URL"}
+{"level":"error","message":"Request failed with status code 401"}
+{"level":"error","message":"Request failed with status code 401"}
+{"level":"error","message":"Request failed with status code 401"}
+{"level":"error","message":"Invalid URL"}
+{"level":"error","message":"Invalid URL"}
+{"level":"error","message":"Request failed with status code 401"}
+{"level":"error","message":"Request failed with status code 401"}
+{"level":"error","message":"Request failed with status code 401"}
+{"level":"error","message":"Request failed with status code 401"}

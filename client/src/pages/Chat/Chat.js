@@ -58,7 +58,7 @@ const Chat = ({ socket }) => {
 
     onSubmit: async (values) => {
       try {
-        const chatData = await axios.post("/api/chat", {
+        const chatData = await axios.post("http://localhost:8080/api/chat", {
           message: values.message,
           date: values.date,
           email: users?.email || googleUser?.user?.email,
