@@ -72,6 +72,8 @@ export default function ProductContext({ children }) {
       .then((res) => {
         setCarroData(res.data);
         res.data.map((i) => setProductosCarro(i.products));
+         
+
       })
       .catch((err) => console.log(err));
   }, []);

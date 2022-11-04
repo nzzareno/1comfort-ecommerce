@@ -1,13 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.70789ff8.css",
-    "main.js": "/static/js/main.76114958.js",
+    "main.css": "/static/css/main.a60df865.css",
+    "main.js": "/static/js/main.93c75250.js",
     "static/media/konstantin.jpg": "/static/media/konstantin.b466bffbddc26ad7a706.jpg",
     "static/media/byn.jpg": "/static/media/byn.5d28c42e4af9e2c90d57.jpg",
     "static/media/styloasian.jpg": "/static/media/styloasian.393cb1ffce339258a862.jpg",
     "static/media/fondomenpanoram.jpg": "/static/media/fondomenpanoram.d7c97d7088c2f837aa13.jpg",
     "static/media/Hats.jpg": "/static/media/Hats.7494b8595f9343df8091.jpg",
-    "static/media/Pantalla.webp": "/static/media/Pantalla.41a3312c19fbd72536ad.webp",
     "static/media/fondomen.jpg": "/static/media/fondomen.267d0c76ad135cfb8550.jpg",
     "static/media/backfoot.jpg": "/static/media/backfoot.cbbb580dca3cbb7c7b51.jpg",
     "static/media/fondofriends.jpg": "/static/media/fondofriends.0b6b218bfaadd7beed02.jpg",
@@ -22,11 +21,11 @@
     "static/media/tshirtheader.jpg": "/static/media/tshirtheader.d97a11969b9ecd9ddd3c.jpg",
     "static/media/mens.jpg": "/static/media/mens.aaded653f3891f3c8bed.jpg",
     "index.html": "/index.html",
-    "main.70789ff8.css.map": "/static/css/main.70789ff8.css.map",
-    "main.76114958.js.map": "/static/js/main.76114958.js.map"
+    "main.a60df865.css.map": "/static/css/main.a60df865.css.map",
+    "main.93c75250.js.map": "/static/js/main.93c75250.js.map"
   },
   "entrypoints": [
-    "static/css/main.70789ff8.css",
-    "static/js/main.76114958.js"
+    "static/css/main.a60df865.css",
+    "static/js/main.93c75250.js"
   ]
 }

@@ -155,6 +155,7 @@ const App = () => {
               )
             }
           />
+          <Route path="*" element={<NotFound404 />} />
         </Routes>
       </div>
     </GoogleOAuthProvider>

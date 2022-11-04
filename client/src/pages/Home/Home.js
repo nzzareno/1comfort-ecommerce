@@ -156,7 +156,8 @@ const Home = () => {
           <Slider {...settingsV2}>
             {!data
               ? "Loading..."
-              : data.map((item) => (
+              : 
+                data.map((item) => (
                   <motion.div
                     initial="hidden"
                     animate="visible"
