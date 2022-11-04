@@ -51,11 +51,11 @@ class Sv {
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(morgan("dev"));
     if (process.env.NODE_ENV === "production") {
-      this.app.use(express.static(path.join(__dirname, "/client/build")));
-      // this.app.get("*", (req, res) => {
-      //   res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-      // });
-    } 
+      this.app.use(express.static("client/build"));
+      this.app.get("*", (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+      });
+    }
   }
   routes() {
     this.app.use(this.productsRoute, productRouter);

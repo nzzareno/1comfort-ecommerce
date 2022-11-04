@@ -7,7 +7,7 @@ const SvInfo = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/process/info")
+      .get("/api/process/info")
       .then((res) => {
         setProcessNode(res.data);
       })
