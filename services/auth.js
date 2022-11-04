@@ -3,7 +3,7 @@ const axios = require("axios");
 const localStorage = require("localStorage");
 
 const orderUserNodemailer = async (order) => {
-  const users = await axios.get("https://one-comfort.herokuapp.com/api/auth", {
+  const users = await axios.get(`${process.env.NODE_ENV === "production" ? "https://one-comfort.herokuapp.com" : "http://localhost:8080"}/api/auth`, {
     headers: {
       Authorization: `Bearer ${ localStorage.getItem("tokenaso")}`,
     },

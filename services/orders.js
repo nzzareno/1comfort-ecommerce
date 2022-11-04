@@ -1,6 +1,6 @@
 const { orders: orderInStorage } = require("../DAO")();
 const productsDTO = require("../DTO/products");
-const sendMailPhone = require("../middlewares/nodemailer-twilio");
+const sendMailPhone = require("../middlewares/sendMailPhone");
 require("dotenv").config();
 
 const findAllOrders = async () => {

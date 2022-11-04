@@ -10,7 +10,7 @@ const {
   entireCart,
   deleteAllCarts,
 } = require("../controllers/cart");
-const sendMailPhone = require("../middlewares/nodemailer-twilio");
+const sendMailPhone = require("../middlewares/sendMailPhone");
 
 router.get("/", entireCart);
 router.post("/", creatingCartsWithProducts);

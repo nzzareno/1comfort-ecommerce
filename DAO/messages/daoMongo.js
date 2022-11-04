@@ -1,5 +1,7 @@
-const { MessageModel } = require("../../models/mongoPersistence");
-const { MessagesMongoContainer } = require("../../repositories/containerMongo");
+const { MessageModel } = require("../../models/Schema");
+const {
+  MessagesMongoContainer,
+} = require("../../repositories/ContainerRepository");
 
 class DaoMongoMessagesContainer extends MessagesMongoContainer {
   constructor() {

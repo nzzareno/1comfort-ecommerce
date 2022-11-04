@@ -18,8 +18,6 @@ router.delete("/", deletingMessages);
 
 router.get("/:id", getSingleMessage);
 
-// router.get("/category|genre/:term", getByTerm);
-
 router.patch("/:id", updatingMessage);
 
 router.delete("/:id", deletingOneMessage);

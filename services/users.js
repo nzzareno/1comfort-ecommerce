@@ -1,4 +1,4 @@
-const { UserModel } = require("../models/mongoPersistence");
+const { UserModel } = require("../models/Schema");
 const { hashPassword, generateAuthToken } = require("../utils/keys");
 const nodemailer = require("nodemailer");
 

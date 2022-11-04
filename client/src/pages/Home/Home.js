@@ -102,7 +102,7 @@ const Home = () => {
     const newDate = new Date(date);
     return newDate.toLocaleString();
   };
-  console.log(data, users);
+   
   return (
     <>
       <motion.div
