@@ -57,8 +57,8 @@ export default function ProductContext({ children }) {
       .catch((err) => console.log(err));
   }, []);
 
-  useEffect(() => {
-    axios
+  useEffect(async () => {
+    await axios
       .get("/api/productos")
       .then((res) => {
         setData(res.data);

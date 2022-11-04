@@ -46,15 +46,12 @@ class Sv {
   }
 
   middlewares() {
-    this.app.use(cors());
+    this.app.use(morgan("dev"));
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
-    this.app.use(morgan("dev"));
+    this.app.use(cors());
     if (process.env.NODE_ENV === "production") {
       this.app.use(express.static("client/build"));
-      this.app.get("*", (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-      });
     }
   }
   routes() {
@@ -66,6 +63,11 @@ class Sv {
     this.app.use(this.processRoute, processRouter);
     this.app.use(this.paypalRoute, paypalRouter);
     this.app.use(this.messagesRoute, messagesRouter);
+    if (process.env.NODE_ENV === "production") {
+      this.app.get("*", (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+      });
+    }
   }
 
   sockets() {
