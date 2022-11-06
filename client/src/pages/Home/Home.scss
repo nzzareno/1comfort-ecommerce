@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
 * {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif !important;
 }
 
 .bodyHome {
@@ -10,9 +10,9 @@
   justify-content: center;
   align-content: center;
   align-items: center;
-  height: 74vh;
+  height: 90vh;
   margin-bottom: 0;
-  background-color: #ffffff;
+  background-color: #080e33;
   overflow-x: hidden;
   text-align: center;
   overflow: hidden;
@@ -25,14 +25,14 @@
   text-transform: uppercase;
   border-radius: 50px;
   cursor: pointer;
-  z-index: 99999999999;
+  z-index: 9;
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: 0.1rem;
   padding: 0.5rem 1rem;
   transition: all 0.3s ease-in-out;
   position: fixed;
-  bottom: 0;
+  bottom: -5px;
   left: 0;
   margin: .3rem;
 
@@ -77,16 +77,15 @@
 
 .absoluto-user {
   position: absolute;
-  top: 1021px;
+  top: 910px;
   right: 4px;
   margin: 0;
   padding: 0;
   z-index: 99;
-  font-family: "Poppins", sans-serif;
   font-size: 28px;
   color: #fff;
   text-shadow: 1px 1px 1px #000;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .slick-slide {
@@ -94,16 +93,70 @@
   margin-bottom: -7px;
 }
 
+ 
+
+.slick-prev {
+  left: 0;
+  z-index: 99;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: #0000008d;
+  border: 0;
+  color: #fff;
+ 
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border-radius: 50%;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    background: #000;
+    color: #fff;
+    transform: translateY(-50%) scale(1.1);
+  }
+}
+
+.slick-next {
+  right: 0;
+  z-index: 99;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: #0000008d;
+  border: 0;
+  color: #fff;
+ 
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border-radius: 50%;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    background: #000;
+    color: #fff;
+    transform: translateY(-50%) scale(1.1);
+  }
+}
+
 .container {
   position: relative;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   z-index: 2;
 }
 
 .container .card {
-  width: 450px !important;
+  width: 420px !important;
   background-color: #ffffff;
   height: 700px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -286,14 +339,14 @@
 .code-small {
   position: absolute;
   bottom: 0;
-  margin-left: 380px;
+  margin-left: 355px;
   margin-bottom: 10px;
 }
 
 .btn-product-home {
   position: absolute;
   bottom: 0;
-  margin: 63px 16px;
+  margin: 63px 1.3px;
   text-align: center;
   width: 100%;
   z-index: 999999999;

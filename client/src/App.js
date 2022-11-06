@@ -22,7 +22,10 @@ import Success from "./pages/Success/Success";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import Chat from "./pages/Chat/Chat";
 import io from "socket.io-client";
+import Footer from "./components/Footer/Footer";
 
+// production route   https://one-comfort.herokuapp.com
+// development route http://localhost:8080
 const socket = io("https://one-comfort.herokuapp.com");
 
 const App = () => {
@@ -157,6 +160,7 @@ const App = () => {
           />
           <Route path="*" element={<NotFound404 />} />
         </Routes>
+        {isSignedIn || user || googleUser ? <Footer /> : null}
       </div>
     </GoogleOAuthProvider>
   );

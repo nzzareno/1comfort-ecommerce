@@ -1,10 +1,11 @@
 import React from "react";
-import * as MdIcons from "react-icons/md";
+
 import * as AiIcons from "react-icons/ai";
 import * as FaIcons from "react-icons/fa";
 import * as BsIcons from "react-icons/bs";
 import * as IoIcons from "react-icons/io5";
-import * as RiIcons from "react-icons/ri";
+
+const storageProducts = JSON.parse(localStorage.getItem("products"));
 
 export const SidebarData = [
   {
@@ -13,14 +14,6 @@ export const SidebarData = [
     path: "/",
     pathAuth: "/",
     icon: <AiIcons.AiFillHome />,
-    cName: "nav-text",
-  },
-  {
-    title: "SEARCH",
-    titleAuth: "SEARCH",
-    path: "#",
-    pathAuth: "#",
-    icon: <AiIcons.AiOutlineSearch />,
     cName: "nav-text",
   },
 
@@ -41,8 +34,8 @@ export const SidebarData = [
     cName: "nav-text",
   },
   {
-    title: "CART",
-    titleAuth: "CART",
+    title: `CART (${storageProducts ? storageProducts.length : 0})`,
+    titleAuth: `CART (${storageProducts ? storageProducts.length : 0})`,
     path: "/cart",
     pathAuth: "/cart",
     icon: <BsIcons.BsCart4 />,

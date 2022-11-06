@@ -139,7 +139,7 @@ const Home = () => {
         <IoChatbubbles />
       </button>
       <h3 className="home-title txt anim-text-flow">
-        HERE LEFT OUR NEW ARRIVALS
+        NEW ARRIVALS
       </h3>
       <motion.div
         initial="hidden"

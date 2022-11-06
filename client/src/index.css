@@ -6,12 +6,11 @@
   padding: 0;
 }
 
-body {
+body, html {
   margin: 0;
-  font-family: "Roboto" !important;
-  background-color: rgb(255, 255, 255);
   height: 100%;
   width: 100%;
+  background-color: #080e33 !important;
 }
 
  

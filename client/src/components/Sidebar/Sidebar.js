@@ -7,6 +7,7 @@ import { SidebarData } from "./SidebarData";
 import { IconContext } from "react-icons";
 import { ContextOfProduct } from "../../context/ProductContext";
 import { useDispatch } from "react-redux";
+import Logo from "../../assets/v3log.svg";
 
 const Sidebar = ({ auth, setAuth }) => {
   const [sidebar, setSidebar] = React.useState(false);
@@ -48,7 +49,7 @@ const Sidebar = ({ auth, setAuth }) => {
       setSidebar(false);
     }
   };
-
+  const storageProducts = JSON.parse(localStorage.getItem("products"));
   return (
     <>
       {user || googleUser ? (
@@ -58,9 +59,9 @@ const Sidebar = ({ auth, setAuth }) => {
               <Link to="#" className="menu-bars">
                 <FaBars onClick={showSidebar} />
               </Link>
-              <Link to="/">
-                <h1 className="aside-title">1COMFORT</h1>
-              </Link>
+              <Link to="/"  >
+                  <img className="sidebar-logo" src={Logo} alt="LogoOneComfort" />
+                </Link>
             </div>
 
             <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
@@ -73,10 +74,10 @@ const Sidebar = ({ auth, setAuth }) => {
                 {SidebarData.map((item, index) => {
                   return (
                     <li key={index} className={item.cName}>
-                      <Link to={auth ? item.pathAuth : item.path}>
+                      <Link to={user || googleUser  ? item.pathAuth : item.path}>
                         {item.icon}
                         <span className="span-sidebar">
-                          {auth ? item.titleAuth : item.title}
+                          {user || googleUser ? item.titleAuth : item.title}
                         </span>
                       </Link>
                     </li>

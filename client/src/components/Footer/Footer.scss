@@ -1,0 +1,230 @@
+footer {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  background-color: #060b26;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.copyright-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.copyright {
+  font-size: 12px;
+  opacity: 0.7;
+  font-weight: 400;
+  padding: 10px 0;
+}
+
+.footer-menus {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 40%;
+}
+
+.footer-container {
+  height: fit-content;
+  width: 100%;
+  padding: 2rem 6rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-content-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+footer .website-logo {
+  font-size: calc(1vw + 20px);
+}
+
+.menu-item-footer {
+  margin: 0.5rem 0;
+  opacity: 0.7;
+  color: white;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+.footer-info {
+  margin: 3.9rem 0 0 0;
+  opacity: 0.7;
+  color: white;
+  text-decoration: none;
+  transition: 0.5s;
+  max-width: 390px;
+}
+
+.footer-info2 {
+  margin: 0;
+  opacity: 0.7;
+  color: white;
+  text-decoration: none;
+  transition: 0.5s;
+  max-width: 390px;
+}
+
+.footer-info:hover,
+.menu-item-footer:hover {
+  opacity: 1;
+}
+
+.menu-item-footer:hover {
+  opacity: 1;
+}
+
+.menu-title {
+  font-size: var(--medium-text-font);
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.social-link {
+  height: 100%;
+  width: 30px;
+  background-size: 70%;
+  background-position: center;
+  margin-right: 1rem;
+  background-repeat: no-repeat;
+}
+
+.social-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .social-btn {
+    --size: 60px;
+    border: none;
+    min-width: var(--size);
+    min-height: var(--size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    background: transparent;
+    color: #fff;
+    transition: background 200ms ease, color 200ms ease;
+    cursor: pointer;
+    &:hover {
+      background: #fff;
+      color: #000;
+    }
+  }
+
+  &:hover {
+    .social-btn {
+      background: rgba(255, 255, 255, 0.04);
+      color: rgba(251, 3, 3, 0.04);
+
+      &:hover {
+        color: #fff;
+      }
+    }
+    .social-btn:nth-child(1) {
+      background: rgba(255, 255, 255, 0);
+      color: #3b589829;
+      &:hover {
+        color: #3b5998;
+      }
+    }
+
+    .social-btn:nth-child(2) {
+      background: rgba(255, 255, 255, 0);
+      color: #1da0f228;
+      &:hover {
+        color: #1da1f2;
+      }
+    }
+
+    .social-btn:nth-child(3) {
+      background: rgba(255, 255, 255, 0);
+      color: #e4405e27;
+      &:hover {
+        color: #e4405f;
+      }
+    }
+
+    .social-btn:nth-child(4) {
+      background: rgba(255, 255, 255, 0);
+      color: #ff000028;
+      &:hover {
+        color: #ff0000;
+      }
+    }
+  }
+}
+
+.follow-h3 {
+  margin-left: 3.7rem;
+}
+
+@media (max-width: 1300px) {
+  .footer-container {
+    padding: 2rem;
+    flex-direction: column;
+  }
+
+  .follow-h3 {
+    margin-left: 0;
+    margin-right: 14px;
+  }
+
+  .footer-content-container {
+    width: 100%;
+    padding: 2rem 0;
+    border-bottom: 1px solid #2a2a2a;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer-content-container:nth-of-type(1) {
+    align-items: flex-start;
+  }
+  .footer-content-container:nth-of-type(3) {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .footer-menus {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #2a2a2a;
+  }
+
+  .footer-menus .footer-content-container:nth-of-type(1) {
+    width: 45%;
+    align-items: flex-start;
+    border-bottom: none;
+  }
+  .footer-menus .footer-content-container:nth-of-type(2) {
+    width: 45%;
+    align-items: flex-start;
+    border-bottom: none;
+  }
+}

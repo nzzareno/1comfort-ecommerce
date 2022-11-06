@@ -4,6 +4,7 @@ import "./Navbar.scss";
 import { BsCart4 } from "react-icons/bs";
 import { ContextOfProduct } from "../../context/ProductContext";
 import { useDispatch } from "react-redux";
+import Logo from "../../assets/v3log.svg";
 
 const Navbar = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("token")));
@@ -41,36 +42,22 @@ const Navbar = () => {
           <header className="header-section d-none d-xl-block">
             <nav className={show ? "navbar active" : "navbar"}>
               <div className="navbar__menu">
-                <ul className="navbar__ul">
-                  <li className={show ? "navbar__li" : "navbar--li"}>
+               
+              <Link to="/"  >
+                  <img className="nav-logo" src={Logo} alt="LogoOneComfort" />
+                </Link>
+               
+                <ul className="navbar__ul navbarv2">
+                  <li className= "navbar--li">
                     <Link to="/men">MEN</Link>
                   </li>
-                  <li className={show ? "navbar__li" : "navbar--li"}>
+                  <li className="navbar--li" style={{
+                    marginLeft: "50px",
+                  }}>
                     <Link to="/women">WOMEN</Link>
                   </li>
                 </ul>
-                <div className="navbar__logo">
-                  <h1 className="navbar__title">
-                    <Link
-                      style={{
-                        textDecoration: "none",
-                        fontWeight: "bold",
-                        fontSize: "2rem",
-                        color: "white",
-                      }}
-                      to="/"
-                    >
-                      <span
-                        style={{
-                          fontSize: "2rem",
-                        }}
-                      >
-                        1
-                      </span>
-                      COMFORT
-                    </Link>
-                  </h1>
-                </div>
+               
                 <ul className="navbar__ul">
                   <li
                     onClick={handleLogOut}
