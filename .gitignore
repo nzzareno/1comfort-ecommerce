@@ -3,3 +3,6 @@
 /node_modules
 /Procfile
 /package-lock.json
+package-lock.json
+Procfile
+node_modules
