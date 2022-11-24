@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect, useContext } from "react";
 import "./Paypal.scss";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { ContextOfProduct } from "../../context/ProductContext";
+import { ContextOfProduct } from "../../context/MyContext";
 
 export default function Paypal() {
   const {
@@ -30,9 +30,7 @@ export default function Paypal() {
           height: 50,
         },
         createOrder: async () => {
-          const createPay = await axios.post(
-            "/api/paypal/create-payment"
-          );
+          const createPay = await axios.post("/api/paypal/create-payment");
 
           return createPay.data.id;
         },

@@ -1,13 +1,17 @@
-import React, { useState, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import styles from "./Footwear.module.scss";
-import { ContextOfProduct } from "../../context/ProductContext";
+import { ContextOfProduct } from "../../context/MyContext";
 import HeaderPic from "../../assets/footwomen.jpg";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 const Footwear = () => {
-  let { data } = useContext(ContextOfProduct);
+  let { data, foot, setFoot } = useContext(ContextOfProduct);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setFoot(true)    
+   }, [foot, setFoot])
 
   const variants = {
     hidden: { opacity: 0 },
@@ -18,7 +22,9 @@ const Footwear = () => {
     const newDate = new Date(date);
     return newDate.toLocaleString();
   };
+
   return (
+ 
     <>
       <motion.header
         initial="hidden"
@@ -69,19 +75,7 @@ const Footwear = () => {
                           src={item.image}
                           alt="imagex"
                         />
-                        <ul className={styles.action}>
-                          <li>
-                            <i className="fa fa-eye" aria-hidden="true"></i>
-                            <span>View Details</span>
-                          </li>
-                          <li>
-                            <i
-                              className="fa fa-shopping-cart"
-                              aria-hidden="true"
-                            ></i>
-                            <span>Add to Cart</span>
-                          </li>
-                        </ul>
+                       
                       </div>
 
                       <div className={styles.content}>

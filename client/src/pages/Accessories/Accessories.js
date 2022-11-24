@@ -1,13 +1,17 @@
-import React, { useState, useContext } from "react";
-import { ContextOfProduct } from "../../context/ProductContext";
+import React, { useEffect, useContext } from "react";
+import { ContextOfProduct } from "../../context/MyContext";
 import HeaderPic from "../../assets/header-accessories.jpg";
 import { motion } from "framer-motion";
 import styles from "./Accessories.module.scss";
 const { useNavigate } = require("react-router-dom");
 
 const Accessories = () => {
-  let { data } = useContext(ContextOfProduct);
+  let { data, foot, setFoot } = useContext(ContextOfProduct);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setFoot(true)    
+   }, [foot, setFoot])
 
   const variants = {
     hidden: { opacity: 0 },
@@ -37,7 +41,7 @@ const Accessories = () => {
       <div className={styles.containerProductos}>
         {data.map((item) => {
           return (
-            item.category === "hats" && (
+            item.category === "accessories" && (
               <motion.div
                 initial="hidden"
                 animate="visible"
@@ -70,19 +74,7 @@ const Accessories = () => {
                           src={item.image}
                           alt="imagex"
                         />
-                        <ul className={styles.action}>
-                          <li>
-                            <i className="fa fa-eye" aria-hidden="true"></i>
-                            <span>View Details</span>
-                          </li>
-                          <li>
-                            <i
-                              className="fa fa-shopping-cart"
-                              aria-hidden="true"
-                            ></i>
-                            <span>Add to Cart</span>
-                          </li>
-                        </ul>
+                         
                       </div>
 
                       <div className={styles.content}>

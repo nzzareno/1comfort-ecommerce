@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import "./Login.scss";
 import * as Yup from "yup";
 import { useFormik } from "formik";
@@ -7,14 +7,18 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { FaUser, FaLock } from "react-icons/fa";
 import { IoArrowRedo } from "react-icons/io5";
-import { ContextOfProduct } from "../../context/ProductContext";
+import { ContextOfProduct } from "../../context/MyContext";
 import { GoogleLogin } from "@react-oauth/google";
 import { useDispatch } from "react-redux";
 import jwt_decode from "jwt-decode";
 
 const Login = () => {
-  const { logIn } = useContext(ContextOfProduct);
+  const { logIn, foot, setFoot } = useContext(ContextOfProduct);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    setFoot(false)    
+   }, [foot, setFoot])
 
   const variants = {
     hidden: { opacity: 0 },

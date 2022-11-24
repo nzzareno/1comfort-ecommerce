@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 import App from "./App";
-import ProductContext from "./context/ProductContext";
+import ProductContext from "./context/MyContext";
 import { BrowserRouter as Router } from "react-router-dom";
 import {render} from "react-dom";
 import { Provider } from 'react-redux';

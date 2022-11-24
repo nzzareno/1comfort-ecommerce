@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ContextOfProduct } from "../../context/ProductContext";
+import { ContextOfProduct } from "../../context/MyContext";
 import "./Quantity.scss";
 
 const Quantity = ({ item, initial, stockState, setStockState }) => {

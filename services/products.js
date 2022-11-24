@@ -22,10 +22,7 @@ const saveProducts = (body) => {
     return { error: "Its not possible to add more products than the stock" };
   }
   const newStock = body.stock - body.quantity;
-  return productsInStorage.save(body).then(async (product) => {
-    await productsInStorage.update(product._id, { stock: newStock });
-    return product;
-  });
+  return productsInStorage.save(body, newStock);
 };
 
 const updateProduct = (id, body) => {

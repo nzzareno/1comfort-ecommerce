@@ -5,7 +5,7 @@ import { FaBars } from "react-icons/fa";
 import { AiOutlineClose } from "react-icons/ai";
 import { SidebarData } from "./SidebarData";
 import { IconContext } from "react-icons";
-import { ContextOfProduct } from "../../context/ProductContext";
+import { ContextOfProduct } from "../../context/MyContext";
 import { useDispatch } from "react-redux";
 import Logo from "../../assets/v3log.svg";
 
@@ -59,9 +59,9 @@ const Sidebar = ({ auth, setAuth }) => {
               <Link to="#" className="menu-bars">
                 <FaBars onClick={showSidebar} />
               </Link>
-              <Link to="/"  >
-                  <img className="sidebar-logo" src={Logo} alt="LogoOneComfort" />
-                </Link>
+              <Link to="/">
+                <img className="sidebar-logo" src={Logo} alt="LogoOneComfort" />
+              </Link>
             </div>
 
             <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
@@ -74,7 +74,7 @@ const Sidebar = ({ auth, setAuth }) => {
                 {SidebarData.map((item, index) => {
                   return (
                     <li key={index} className={item.cName}>
-                      <Link to={user || googleUser  ? item.pathAuth : item.path}>
+                      <Link to={user || googleUser ? item.pathAuth : item.path}>
                         {item.icon}
                         <span className="span-sidebar">
                           {user || googleUser ? item.titleAuth : item.title}

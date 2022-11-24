@@ -1,13 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import styles from "./Women.module.scss";
-import { ContextOfProduct } from "../../context/ProductContext";
+import { ContextOfProduct } from "../../context/MyContext";
 import HeaderPic from "../../assets/womens.jpg";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 const Women = () => {
-  let { data } = useContext(ContextOfProduct);
+  let { data, foot, setFoot } = useContext(ContextOfProduct);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setFoot(true);
+  }, [foot, setFoot]);
 
   const variants = {
     hidden: { opacity: 0 },
@@ -69,19 +73,6 @@ const Women = () => {
                           src={item.image}
                           alt="imagex"
                         />
-                        <ul className={styles.action}>
-                          <li>
-                            <i className="fa fa-eye" aria-hidden="true"></i>
-                            <span>View Details</span>
-                          </li>
-                          <li>
-                            <i
-                              className="fa fa-shopping-cart"
-                              aria-hidden="true"
-                            ></i>
-                            <span>Add to Cart</span>
-                          </li>
-                        </ul>
                       </div>
 
                       <div className={styles.content}>

@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import React, { useContext, useEffect, useState } from "react";
 import Quantity from "../../components/Quantity/Quantity";
 import { Link } from "react-router-dom";
-import { ContextOfProduct } from "../../context/ProductContext";
+import { ContextOfProduct } from "../../context/MyContext";
 
 const ProductDetails = ({ item, getProduct }) => {
   const {
@@ -14,7 +14,8 @@ const ProductDetails = ({ item, getProduct }) => {
     addProductToLocalStorage,
     setShow,
     show,
-    handlerStock,
+    foot,
+    setFoot,
   } = useContext(ContextOfProduct);
 
   const [quantityCarro, setQuantityCarro] = useState(0);
@@ -23,6 +24,10 @@ const ProductDetails = ({ item, getProduct }) => {
   useEffect(() => {
     setShow(true);
   }, [show]);
+
+  useEffect(() => {
+    setFoot(true);
+  }, [foot, setFoot]);
 
   const onAdd = (cantidadCarro) => {
     setQuantityCarro(cantidadCarro);

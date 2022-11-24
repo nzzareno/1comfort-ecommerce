@@ -34,7 +34,7 @@
   position: fixed;
   bottom: -5px;
   left: 0;
-  margin: .3rem;
+  margin: 0.3rem;
 
   &:hover {
     background: #28004b;
@@ -93,8 +93,6 @@
   margin-bottom: -7px;
 }
 
- 
-
 .slick-prev {
   left: 0;
   z-index: 99;
@@ -108,7 +106,7 @@
   background: #0000008d;
   border: 0;
   color: #fff;
- 
+
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   border-radius: 50%;
@@ -134,7 +132,7 @@
   background: #0000008d;
   border: 0;
   color: #fff;
- 
+
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   border-radius: 50%;
@@ -183,9 +181,11 @@
   pointer-events: none;
 }
 
-.container .card:hover .imgBx img {
-  transform: scale(1.21);
+.container .card .imgBx > img:hover {
+  transform: scale(1.1);
 }
+
+ 
 
 .container .card .content {
   padding: 10px;
@@ -209,12 +209,6 @@
   bottom: 220px;
 
   max-width: 428px;
-}
-
-.imagez {
-}
-
-.productName {
 }
 
 .container .card .content .price_rating {

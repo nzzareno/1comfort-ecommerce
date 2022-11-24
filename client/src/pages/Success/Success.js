@@ -1,9 +1,12 @@
 import React, { useEffect, useContext } from "react";
-import { ContextOfProduct } from "../../context/ProductContext";
+import { ContextOfProduct } from "../../context/MyContext";
 import "./Success.scss";
 
 const Success = () => {
-  let { setShow, show } = useContext(ContextOfProduct);
+  const { foot, setFoot, setShow, show } = useContext(ContextOfProduct);
+  useEffect(() => {
+    setFoot(false);
+  }, [foot, setFoot]);
 
   useEffect(() => {
     setShow(true);
@@ -36,16 +39,14 @@ const Success = () => {
         </div>
         <div className="children-success">
           <span className="success2">
-            you can check your email to see the order details of the products that you have requested.
+            you can check your email to see the order details of the products
+            that you have requested.
           </span>
         </div>
-       
       </div>
       <div className="hope">
-          <span>
-          Thank you for your purchase. We hope to see you again soon. 
-          </span>
-        </div>
+        <span>Thank you for your purchase. We hope to see you again soon.</span>
+      </div>
     </div>
   );
 };

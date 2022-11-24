@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "./Register.scss";
 import * as Yup from "yup";
 import { useFormik } from "formik";
@@ -12,16 +12,20 @@ import {
   FaUser,
 } from "react-icons/fa";
 import { IoArrowRedo } from "react-icons/io5";
-import { ContextOfProduct } from "../../context/ProductContext";
+import { ContextOfProduct } from "../../context/MyContext";
 import { GoogleLogin } from "@react-oauth/google";
 import { useDispatch } from "react-redux";
 import jwt_decode from "jwt-decode";
 
 const Register = () => {
   const [data, setData] = useState({});
-  const { register } = useContext(ContextOfProduct);
+  const { register, foot, setFoot } = useContext(ContextOfProduct);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setFoot(false)    
+   }, [foot, setFoot])
 
   const variants = {
     hidden: { opacity: 0 },
@@ -298,7 +302,7 @@ const Register = () => {
               value="Sign Up"
             />
           </div>
- 
+
           <GoogleLogin
             className="loginBtn loginBtn--google"
             onSuccess={(credentialResponse) => {

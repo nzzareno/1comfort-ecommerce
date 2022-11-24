@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Navbar.scss";
 import { BsCart4 } from "react-icons/bs";
-import { ContextOfProduct } from "../../context/ProductContext";
+import { ContextOfProduct } from "../../context/MyContext";
 import { useDispatch } from "react-redux";
 import Logo from "../../assets/v3log.svg";
 
@@ -42,22 +42,24 @@ const Navbar = () => {
           <header className="header-section d-none d-xl-block">
             <nav className={show ? "navbar active" : "navbar"}>
               <div className="navbar__menu">
-               
-              <Link to="/"  >
+                <Link to="/">
                   <img className="nav-logo" src={Logo} alt="LogoOneComfort" />
                 </Link>
-               
+
                 <ul className="navbar__ul navbarv2">
-                  <li className= "navbar--li">
+                  <li className="navbar--li">
                     <Link to="/men">MEN</Link>
                   </li>
-                  <li className="navbar--li" style={{
-                    marginLeft: "50px",
-                  }}>
+                  <li
+                    className="navbar--li"
+                    style={{
+                      marginLeft: "50px",
+                    }}
+                  >
                     <Link to="/women">WOMEN</Link>
                   </li>
                 </ul>
-               
+
                 <ul className="navbar__ul">
                   <li
                     onClick={handleLogOut}

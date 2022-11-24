@@ -1,9 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./SvInfo.scss";
 import axios from "axios";
+import { ContextOfProduct } from "../../context/MyContext";
+ 
 
 const SvInfo = () => {
   const [processNode, setProcessNode] = useState({});
+  const {foot, setFoot} = useContext(ContextOfProduct)
+
+  useEffect(() => {
+    setFoot(false)    
+   }, [foot, setFoot])
 
   useEffect(() => {
     axios

@@ -14,7 +14,7 @@ import Women from "./pages/Women/Women";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
-import { ContextOfProduct } from "./context/ProductContext";
+import { ContextOfProduct } from "./context/MyContext";
 import Cart from "./pages/Cart/Cart";
 import ProductDetailsContainer from "./pages/ProductDetails/ProductDetailsContainer";
 import SvInfo from "./pages/SvInfo/SvInfo";

@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 import { AiOutlineGift } from "react-icons/ai";
-import { ContextOfProduct } from "../../context/ProductContext";
+import { ContextOfProduct } from "../../context/MyContext";
 import "./Cart.scss";
 import axios from "axios";
 import { toast } from "react-toastify";

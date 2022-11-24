@@ -4,6 +4,7 @@ export const ContextOfProduct = createContext();
 
 export default function ProductContext({ children }) {
   const [data, setData] = useState([]);
+  const [foot, setFoot] = useState(false);
   const [saveData, setSaveData] = useState({});
   const [users, setUsers] = useState(null);
   const [auth, setAuth] = useState(false);
@@ -288,6 +289,8 @@ export default function ProductContext({ children }) {
         googleUser,
         setGoogleUser,
         handlerStock,
+        foot,
+        setFoot,
       }}
     >
       {children}

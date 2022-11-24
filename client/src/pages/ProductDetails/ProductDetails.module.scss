@@ -1,9 +1,9 @@
 .containerex {
-  margin: 0 auto;
+  margin: 0 0;
   padding: 70px;
   display: flex;
   height: 100vh;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
 }
 
 .leftcolumn {
@@ -84,17 +84,17 @@
 @media (max-width: 940px) {
   .containerex {
     flex-direction: column;
-    padding-top: 21px;
-
+    padding: 20px;
     justify-content: center;
     align-items: center;
-    flex: auto;
-    min-height: 100vh;
   }
 
-  .leftcolumn,
   .rightcolumn {
     width: 100%;
+  }
+
+  .leftcolumn {
+    width: 50%;
   }
 
   .productdescription span {

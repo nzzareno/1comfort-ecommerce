@@ -2,28 +2,38 @@ import React, { useState, useEffect, useContext } from "react";
 import "./Home.scss";
 import MenuItem from "../../components/Menu-Item/MenuItem";
 import { motion } from "framer-motion";
-import { ContextOfProduct } from "../../context/ProductContext";
+import { ContextOfProduct } from "../../context/MyContext";
 import Slider from "react-slick";
 import Bags from "../../assets/Bags.jpg";
 import MenPanoram from "../../assets/fondomenpanoram.jpg";
 import Men from "../../assets/fondomen.jpg";
 import BlondeGirl from "../../assets/fondoblonde.jpg";
 import GirlsFriends from "../../assets/fondofriends.jpg";
-import Sidebar from "../../components/Sidebar/Sidebar";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { IoChatbubbles } from "react-icons/io5";
 
 const Home = () => {
-  const { users, data, googleUser } = useContext(ContextOfProduct);
+  const { users, data, googleUser, foot, setFoot } =
+    useContext(ContextOfProduct);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setFoot(true);
+  }, [foot, setFoot]);
 
   let settings = {
     dots: false,
     infinite: true,
     autoplay: true,
-    speed: 1250,
     slidesToShow: 1,
     slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    pauseOnFocus: false,
+    pauseOnHover: false,
+    pauseOnDotsHover: false,
+    speed: 1000,
+    autoplaySpeed: 2000,
   };
 
   let settingsV2 = {
@@ -102,7 +112,7 @@ const Home = () => {
     const newDate = new Date(date);
     return newDate.toLocaleString();
   };
-   
+
   return (
     <>
       <motion.div
@@ -138,9 +148,7 @@ const Home = () => {
       <button onClick={() => navigate("/chat")} className="chat-buton">
         <IoChatbubbles />
       </button>
-      <h3 className="home-title txt anim-text-flow">
-        NEW ARRIVALS
-      </h3>
+      <h3 className="home-title txt anim-text-flow">NEW ARRIVALS</h3>
       <motion.div
         initial="hidden"
         animate="visible"
@@ -156,8 +164,7 @@ const Home = () => {
           <Slider {...settingsV2}>
             {!data
               ? "Loading..."
-              : 
-                data.map((item) => (
+              : data.map((item) => (
                   <motion.div
                     initial="hidden"
                     animate="visible"
@@ -173,19 +180,6 @@ const Home = () => {
                     >
                       <div className="imgBx">
                         <img className="imagez" src={item.image} alt="imagex" />
-                        <ul className="action">
-                          <li>
-                            <i className="fa fa-eye" aria-hidden="true"></i>
-                            <span>View Details</span>
-                          </li>
-                          <li>
-                            <i
-                              className="fa fa-shopping-cart"
-                              aria-hidden="true"
-                            ></i>
-                            <span>Add to Cart</span>
-                          </li>
-                        </ul>
                       </div>
 
                       <div className="content">
