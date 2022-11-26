@@ -20,11 +20,7 @@ class Sv {
   constructor() {
     this.app = express();
     this.server = http.createServer(this.app);
-    this.io = socketio(this.server, {
-      cors: {
-        origin: "*",
-      },
-    });
+    this.io = socketio(this.server);
     this.port = process.env.PORT || 8080;
     this.productsRoute = "/api/productos";
     this.cartRoute = "/api/carrito";

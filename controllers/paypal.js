@@ -4,7 +4,7 @@ const { orderUserNodemailer } = require("../services/auth");
 const createPayment = async (req, res) => {
   try {
     const cart = await axios
-      .get(`${process.env.NODE_ENV === "production" ? "https://one-comfort.herokuapp.com" : "http://localhost:8080"}/api/carrito`, {
+      .get(`${process.env.NODE_ENV === "production" ? "https://onecomfort.up.railway.app" : "http://localhost:8080"}/api/carrito`, {
       })
       .then((res) => {
         return res.data;
@@ -83,6 +83,26 @@ const createPayment = async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const executePayment = async (req, res) => {
   const { token } = req.query;

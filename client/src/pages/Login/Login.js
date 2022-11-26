@@ -17,8 +17,8 @@ const Login = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    setFoot(false)    
-   }, [foot, setFoot])
+    setFoot(false);
+  }, [foot, setFoot]);
 
   const variants = {
     hidden: { opacity: 0 },
@@ -167,10 +167,9 @@ const Login = () => {
                     token,
                     user,
                   })
-                  .then((res) => {
-                    console.log(res);
+                  .then(() => {
+                    navigate("/");
                   });
-                navigate("/");
               } catch (error) {
                 console.log(error);
               }

@@ -26,7 +26,7 @@ import Footer from "./components/Footer/Footer";
 
 // production route   https://one-comfort.herokuapp.com
 // development route http://localhost:8080
-const socket = io("https://one-comfort.herokuapp.com");
+const socket = io("https://onecomfort.up.railway.app");
 
 const App = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("token")));
