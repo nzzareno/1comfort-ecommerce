@@ -175,7 +175,7 @@ const Login = () => {
               }
             }}
             onError={() => {
-              console.log("Login Failed");
+              console.error("Login Failed");
             }}
             type="standard"
             theme="filled-dark"
