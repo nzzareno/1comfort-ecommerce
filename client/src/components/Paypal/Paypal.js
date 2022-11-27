@@ -75,7 +75,7 @@ export default function Paypal() {
           await removeAllFromCart();
         },
         onError: (err) => {
-          console.log(err);
+          console.error(err);
         },
       })
       .render(paypal.current);

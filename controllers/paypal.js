@@ -15,7 +15,7 @@ const createPayment = async (req, res) => {
       .then((res) => {
         return res.data;
       })
-      .catch((err) => console.log(err.message));
+      .catch((err) => console.log(err));
 
     const itemsInOrder = cart.map((el) => el.products);
     const totalOfProducts = cart.map((el) => el.total);
@@ -58,10 +58,12 @@ const createPayment = async (req, res) => {
     const params = new URLSearchParams();
     params.append("grant_type", "client_credentials");
 
+    console.log(params + " params estos!")
+
     const {
       data: { access_token },
     } = await axios.post(
-      `https://api-m.sandbox.paypal.com/v1/oauth2/token`,
+      "https://api-m.sandbox.paypal.com/v1/oauth2/token",
       params,
       {
         headers: {
@@ -75,13 +77,14 @@ const createPayment = async (req, res) => {
         },
       }
     );
-    console.log(access_token, data);
+    console.log(access_token);
     const response = await axios.post(
-      `https://api-m.sandbox.paypal.com/v2/checkout/orders`,
+      "https://api-m.sandbox.paypal.com/v2/checkout/orders",
       body,
       {
         headers: {
           Authorization: `Bearer ${access_token}`,
+          "Content-Type": "application/json",
         },
       }
     );
