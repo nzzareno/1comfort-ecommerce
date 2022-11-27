@@ -4,7 +4,14 @@ const { orderUserNodemailer } = require("../services/auth");
 const createPayment = async (req, res) => {
   try {
     const cart = await axios
-      .get(` /api/carrito`, {})
+      .get(
+        `${
+          process.env.NODE_ENV === "production"
+            ? "https://onecomfort.up.railway.app"
+            : "http://localhost:8080"
+        }/api/carrito`,
+        {}
+      )
       .then((res) => {
         return res.data;
       })
