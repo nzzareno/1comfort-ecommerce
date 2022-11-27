@@ -4,18 +4,15 @@ const { orderUserNodemailer } = require("../services/auth");
 const createPayment = async (req, res) => {
   try {
     const cart = await axios
-      .get(
-        `${
-          process.env.NODE_ENV === "production"
-            ? "https://onecomfort.up.railway.app"
-            : "http://localhost:8080"
-        }/api/carrito`,
-        {}
-      )
+      .get(`https://onecomfort.up.railway.app/api/carrito`, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      })
       .then((res) => {
         return res.data;
       })
-      .catch((err) => console.log(err.message));
+      .catch((err) => console.log(err));
 
     const itemsInOrder = cart.map((el) => el.products);
     const totalOfProducts = cart.map((el) => el.total);

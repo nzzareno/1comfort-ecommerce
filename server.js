@@ -19,7 +19,7 @@ const messageService = require("./services/messages");
 class Sv {
   constructor() {
     this.app = express();
-    this.server = http.createServer(this.app);
+    this.server = http.createServer(this.app, { cors: true });
     this.io = socketio(this.server);
     this.port = process.env.PORT || 8080;
     this.productsRoute = "/api/productos";
@@ -45,7 +45,10 @@ class Sv {
     this.app.use(morgan("dev"));
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
-    this.app.use(cors());
+    this.app.use(cors({
+      origin: "*",
+      methods: ["GET", "POST", "PUT", "PATCH", "DELETE"]
+    }));
     if (process.env.NODE_ENV === "production") {
       this.app.use(express.static("client/build"));
     }
