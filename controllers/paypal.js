@@ -75,7 +75,7 @@ const createPayment = async (req, res) => {
         },
       }
     );
-      console.log(access_token)
+    console.log(access_token, data);
     const response = await axios.post(
       `https://api-m.sandbox.paypal.com/v2/checkout/orders`,
       body,
@@ -92,20 +92,6 @@ const createPayment = async (req, res) => {
     return res.status(500).json({ message: err.message });
   }
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const executePayment = async (req, res) => {
   const { token } = req.query;
