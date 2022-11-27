@@ -13,10 +13,11 @@ const createPayment = async (req, res) => {
         {}
       )
       .then((res) => {
+        console.log(res.data);
         return res.data;
       })
-      .catch((err) => console.log(err));
-    console.log(cart);
+      .catch((err) => console.log(err.message));
+
     const itemsInOrder = cart.map((el) => el.products);
     const totalOfProducts = cart.map((el) => el.total);
     const total = totalOfProducts[totalOfProducts.length - 1];
