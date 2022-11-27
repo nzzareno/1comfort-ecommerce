@@ -61,7 +61,7 @@ const createPayment = async (req, res) => {
 
     const {
       data: { access_token },
-    } = await axios.post(`${process.env.PAYPAL_API}/v1/oauth2/token`, params, {
+    } = await axios.post(`https://api-m.sandbox.paypal.com/v1/oauth2/token`, params, {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
@@ -72,7 +72,7 @@ const createPayment = async (req, res) => {
     });
 
     const response = await axios.post(
-      `${process.env.PAYPAL_API}/v2/checkout/orders`,
+      `https://api-m.sandbox.paypal.com/v2/checkout/orders`,
       body,
       {
         headers: {
@@ -93,7 +93,7 @@ const executePayment = async (req, res) => {
 
   try {
     const response = await axios.post(
-      `${process.env.PAYPAL_API}/v2/checkout/orders/${token}/capture`,
+      `https://api-m.sandbox.paypal.com/v2/checkout/orders/${token}/capture`,
       {},
       {
         auth: {
