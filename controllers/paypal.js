@@ -13,7 +13,6 @@ const createPayment = async (req, res) => {
         {}
       )
       .then((res) => {
-        console.log(res.data);
         return res.data;
       })
       .catch((err) => console.log(err.message));
@@ -61,16 +60,22 @@ const createPayment = async (req, res) => {
 
     const {
       data: { access_token },
-    } = await axios.post(`https://api-m.sandbox.paypal.com/v1/oauth2/token`, params, {
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      auth: {
-        username: "AVpiznU1cdQI3YmVGeR-FWdH3TGyNm_MkGgKg68DZJRgRbTqdCnhNwR63bVQn7XKM2geGqIDVdxMZXX4",
-        password: "EOjayLj_p8jQiLfTtx0s38byhjd7vxw4bjLs0TiEGCNuA2xewHiQ_Pp4n38N3Fv4NOelZl7I8QEYACSO",
-      },
-    });
-
+    } = await axios.post(
+      `https://api-m.sandbox.paypal.com/v1/oauth2/token`,
+      params,
+      {
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        auth: {
+          username:
+            "AVpiznU1cdQI3YmVGeR-FWdH3TGyNm_MkGgKg68DZJRgRbTqdCnhNwR63bVQn7XKM2geGqIDVdxMZXX4",
+          password:
+            "EOjayLj_p8jQiLfTtx0s38byhjd7vxw4bjLs0TiEGCNuA2xewHiQ_Pp4n38N3Fv4NOelZl7I8QEYACSO",
+        },
+      }
+    );
+      console.log(access_token)
     const response = await axios.post(
       `https://api-m.sandbox.paypal.com/v2/checkout/orders`,
       body,
@@ -88,6 +93,20 @@ const createPayment = async (req, res) => {
   }
 };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const executePayment = async (req, res) => {
   const { token } = req.query;
 
@@ -97,8 +116,10 @@ const executePayment = async (req, res) => {
       {},
       {
         auth: {
-          username: "AVpiznU1cdQI3YmVGeR-FWdH3TGyNm_MkGgKg68DZJRgRbTqdCnhNwR63bVQn7XKM2geGqIDVdxMZXX4",
-          password: "EOjayLj_p8jQiLfTtx0s38byhjd7vxw4bjLs0TiEGCNuA2xewHiQ_Pp4n38N3Fv4NOelZl7I8QEYACSO",
+          username:
+            "AVpiznU1cdQI3YmVGeR-FWdH3TGyNm_MkGgKg68DZJRgRbTqdCnhNwR63bVQn7XKM2geGqIDVdxMZXX4",
+          password:
+            "EOjayLj_p8jQiLfTtx0s38byhjd7vxw4bjLs0TiEGCNuA2xewHiQ_Pp4n38N3Fv4NOelZl7I8QEYACSO",
         },
       }
     );
