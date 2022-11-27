@@ -55,42 +55,23 @@ const createPayment = async (req, res) => {
       },
     };
 
-    const responseToken = await axios.post(
-      "https://api-m.sandbox.paypal.com/v1/oauth2/token",
-      new URLSearchParams({
-        grant_type: "client_credentials",
-      }),
+    const rta = await axios.post(
+      "https://api-m.sandbox.paypal.com/v2/checkout/orders",
+      body,
       {
         auth: {
           username: process.env.PAYPAL_CLIENT_ID,
           password: process.env.PAYPAL_SECRET,
         },
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-      }
-    );
 
-    const { access_token } = responseToken.data;
-    
-    console.log(access_token);
-    console.log(process.env.PAYPAL_CLIENT_ID)
-    console.log(process.env.PAYPAL_SECRET)
-
-    const responseOrder = await axios.post(
-      "https://api-m.sandbox.paypal.com/v2/checkout/orders",
-      body,
-      {
         headers: {
-          Authorization: `Bearer ${access_token}`,
           "Content-Type": "application/json",
         },
+        json: true,
       }
     );
 
-    const { id } = responseOrder.data;
-    console.log("ESTA ES LA ID " + id);
-    return res.json({ id });
+    return res.json(rta.data);
   } catch (err) {
     console.log(err.message + " NO SE PUEDE!");
     res.status(500).json({ message: err.message });
