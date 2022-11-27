@@ -55,22 +55,15 @@ const createPayment = async (req, res) => {
       },
     };
 
-    const params = new URLSearchParams();
-    params.append("grant_type", "client_credentials");
-
-    console.log("PARAMS: " + params)
-
-    const rsp = await axios.post(
+    // get access_token
+    const responseToken = await axios.post(
       "https://api-m.sandbox.paypal.com/v1/oauth2/token",
-      params,
+      "grant_type=client_credentials",
       {
         headers: {
-          "Accept": "application/json",
+          Accept: "application/json",
           "Accept-Language": "en_US",
           "Content-Type": "application/x-www-form-urlencoded",
-          Authorization: `Basic ${Buffer.from(
-            `${process.env.PAYPAL_CLIENT_ID}:${process.env.PAYPAL_SECRET}`
-          ).toString("base64")}`,
         },
         auth: {
           username: process.env.PAYPAL_CLIENT_ID,
@@ -79,20 +72,22 @@ const createPayment = async (req, res) => {
       }
     );
 
-    console.log(rsp.data.access_token);
+    const { access_token } = responseToken.data;
 
-    const { data } = await axios.post(
+    // create order
+
+    const responseOrder = await axios.post(
       "https://api-m.sandbox.paypal.com/v2/checkout/orders",
       body,
       {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${rsp.data.access_token}`,
+          Authorization: `Bearer ${access_token}`,
         },
       }
     );
-    console.log(data + " ESTA ES LA DATA");
-    return res.json(data);
+
+    return res.json(responseOrder.data);
 
     // console.log(params + " params estos!")
 
@@ -141,10 +136,12 @@ const executePayment = async (req, res) => {
       {},
       {
         auth: {
-          username:
-            "AVpiznU1cdQI3YmVGeR-FWdH3TGyNm_MkGgKg68DZJRgRbTqdCnhNwR63bVQn7XKM2geGqIDVdxMZXX4",
-          password:
-            "EOjayLj_p8jQiLfTtx0s38byhjd7vxw4bjLs0TiEGCNuA2xewHiQ_Pp4n38N3Fv4NOelZl7I8QEYACSO",
+          username: process.env.PAYPAL_CLIENT_ID,
+          password: process.env.PAYPAL_SECRET,
+        },
+
+        headers: {
+          "Content-Type": "application/json",
         },
       }
     );
