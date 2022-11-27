@@ -74,7 +74,7 @@ const createPayment = async (req, res) => {
       }
     );
 
-    console.log(rsp)
+    console.log(rsp.data)
 
     const { data } = await axios.post(
       "https://api-m.sandbox.paypal.com/v2/checkout/orders",
