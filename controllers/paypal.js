@@ -15,8 +15,8 @@ const createPayment = async (req, res) => {
       .then((res) => {
         return res.data;
       })
-      .catch((err) => console.log(err.message));
-
+      .catch((err) => console.log(err));
+    console.log(cart);
     const itemsInOrder = cart.map((el) => el.products);
     const totalOfProducts = cart.map((el) => el.total);
     const total = totalOfProducts[totalOfProducts.length - 1];
@@ -60,19 +60,15 @@ const createPayment = async (req, res) => {
 
     const {
       data: { access_token },
-    } = await axios.post(
-      "https://api-m.sandbox.paypal.com/v1/oauth2/token",
-      params,
-      {
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        auth: {
-          username: process.env.PAYPAL_CLIENT_ID,
-          password: process.env.PAYPAL_SECRET,
-        },
-      }
-    );
+    } = await axios.post(`${process.env.PAYPAL_API}/v1/oauth2/token`, params, {
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      auth: {
+        username: process.env.PAYPAL_CLIENT_ID,
+        password: process.env.PAYPAL_SECRET,
+      },
+    });
 
     const response = await axios.post(
       `${process.env.PAYPAL_API}/v2/checkout/orders`,
@@ -86,8 +82,8 @@ const createPayment = async (req, res) => {
 
     return res.json(response.data);
   } catch (err) {
-    console.log(err.message);
-    return res.status(500).json({ message: "Internal Server error" });
+    console.log(err.message + " SE PUEDE!");
+    return res.status(500).json({ message: err.message });
   }
 };
 
