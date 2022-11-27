@@ -55,7 +55,6 @@ const createPayment = async (req, res) => {
       },
     };
 
-    // get access_token
     const responseToken = await axios.post(
       "https://api-m.sandbox.paypal.com/v1/oauth2/token",
       new URLSearchParams({
@@ -73,6 +72,10 @@ const createPayment = async (req, res) => {
     );
 
     const { access_token } = responseToken.data;
+    
+    console.log(access_token);
+    console.log(process.env.PAYPAL_CLIENT_ID)
+    console.log(process.env.PAYPAL_SECRET)
 
     const responseOrder = await axios.post(
       "https://api-m.sandbox.paypal.com/v2/checkout/orders",
@@ -88,39 +91,6 @@ const createPayment = async (req, res) => {
     const { id } = responseOrder.data;
     console.log("ESTA ES LA ID " + id);
     return res.json({ id });
-
-    // console.log(params + " params estos!")
-
-    // const {
-    //   data: { access_token },
-    // } = await axios.post(
-    //   "https://api-m.sandbox.paypal.com/v1/oauth2/token",
-    //   params,
-    //   {
-    //     headers: {
-    //       "Content-Type": "application/x-www-form-urlencoded",
-    //     },
-    //     auth: {
-    //       username:
-    //         "AVpiznU1cdQI3YmVGeR-FWdH3TGyNm_MkGgKg68DZJRgRbTqdCnhNwR63bVQn7XKM2geGqIDVdxMZXX4",
-    //       password:
-    //         "EOjayLj_p8jQiLfTtx0s38byhjd7vxw4bjLs0TiEGCNuA2xewHiQ_Pp4n38N3Fv4NOelZl7I8QEYACSO",
-    //     },
-    //   }
-    // );
-    // console.log(access_token);
-    // const response = await axios.post(
-    //   "https://api-m.sandbox.paypal.com/v2/checkout/orders",
-    //   body,
-    //   {
-    //     headers: {
-    //       Authorization: `Bearer ${access_token}`,
-    //       "Content-Type": "application/json",
-    //     },
-    //   }
-    // );
-
-    // return res.json(response.data);
   } catch (err) {
     console.log(err.message + " NO SE PUEDE!");
     res.status(500).json({ message: err.message });
