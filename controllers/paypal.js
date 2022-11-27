@@ -58,15 +58,20 @@ const createPayment = async (req, res) => {
     const params = new URLSearchParams();
     params.append("grant_type", "client_credentials");
 
+    console.log("PARAMS: " + params)
+
     const rsp = await axios.post(
       "https://api-m.sandbox.paypal.com/v1/oauth2/token",
       params,
       {
         headers: {
+          "Accept": "application/json",
+          "Accept-Language": "en_US",
           "Content-Type": "application/x-www-form-urlencoded",
-          Authorization: `Basic ${process.env.PAYPAL_CLIENT_ID}`,
+          Authorization: `Basic ${Buffer.from(
+            `${process.env.PAYPAL_CLIENT_ID}:${process.env.PAYPAL_SECRET}`
+          ).toString("base64")}`,
         },
-
         auth: {
           username: process.env.PAYPAL_CLIENT_ID,
           password: process.env.PAYPAL_SECRET,
