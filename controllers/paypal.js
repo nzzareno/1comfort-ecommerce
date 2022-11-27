@@ -4,18 +4,11 @@ const { orderUserNodemailer } = require("../services/auth");
 const createPayment = async (req, res) => {
   try {
     const cart = await axios
-      .get(
-        `${
-          process.env.NODE_ENV === "production"
-            ? "https://onecomfort.up.railway.app"
-            : "http://localhost:8080"
-        }/api/carrito`,
-        {}
-      )
+      .get(` /api/carrito`, {})
       .then((res) => {
         return res.data;
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err + " ERROR AQUI"));
 
     const itemsInOrder = cart.map((el) => el.products);
     const totalOfProducts = cart.map((el) => el.total);
@@ -74,12 +67,11 @@ const createPayment = async (req, res) => {
       }
     );
 
-    console.log(rsp.data)
+    console.log(rsp.data.access_token);
 
     const { data } = await axios.post(
       "https://api-m.sandbox.paypal.com/v2/checkout/orders",
       body,
-
       {
         headers: {
           "Content-Type": "application/json",
@@ -87,7 +79,7 @@ const createPayment = async (req, res) => {
         },
       }
     );
-
+    console.log(data + " ESTA ES LA DATA");
     return res.json(data);
 
     // console.log(params + " params estos!")
@@ -123,8 +115,8 @@ const createPayment = async (req, res) => {
 
     // return res.json(response.data);
   } catch (err) {
-    console.log(err.message + " SE PUEDE!");
-    return res.status(500).json({ message: err.message });
+    console.log(err.message + " NO SE PUEDE!");
+    res.status(500).json({ message: err.message });
   }
 };
 
