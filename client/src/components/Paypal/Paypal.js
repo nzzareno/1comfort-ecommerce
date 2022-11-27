@@ -31,7 +31,7 @@ export default function Paypal() {
         },
         createOrder: async () => {
           const createPay = await axios.post("/api/paypal/create-payment");
-          return createPay.data.id;
+          return createPay.data;
         },
         onApprove: async (data, actions) => {
           const cart = await axios
