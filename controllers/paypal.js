@@ -86,7 +86,8 @@ const createPayment = async (req, res) => {
 
     return res.json(response.data);
   } catch (err) {
-    res.status(500).json({ message: err.response.data });
+    console.log(err.message);
+    return res.status(500).json({ message: "Internal Server error" });
   }
 };
 

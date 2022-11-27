@@ -7,7 +7,7 @@ const localStorage = require("localStorage");
 
 const sendMailPhone = async (req, res, next) => {
   const users = await axios
-    .get(`${process.env.NODE_ENV === "production" ? "https://one-comfort.herokuapp.com" : "http://localhost:8080"}/api/auth`, {
+    .get(`${process.env.NODE_ENV === "production" ? "https://onecomfort.up.railway.app" : "http://localhost:8080"}/api/auth`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("tokenaso")}`,
       }
@@ -18,7 +18,7 @@ const sendMailPhone = async (req, res, next) => {
     .catch((err) => console.log(err));
 
   const itemsCart = await axios
-    .get(`${process.env.NODE_ENV === "production" ? "https://one-comfort.herokuapp.com" : "http://localhost:8080"}/api/carrito`)
+    .get(`${process.env.NODE_ENV === "production" ? "https://onecomfort.up.railway.app" : "http://localhost:8080"}/api/carrito`)
     .then((response) => response.data)
     .catch((err) => console.log(err));
 

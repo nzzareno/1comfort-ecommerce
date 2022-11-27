@@ -1,5 +1,3 @@
-const { UserModel } = require("../models/Schema");
-const { hashPassword, generateAuthToken } = require("../utils/keys");
 const nodemailer = require("nodemailer");
 
 const registeredUserNodemailer = async (user) => {
