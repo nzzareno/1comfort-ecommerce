@@ -65,25 +65,20 @@ const createPayment = async (req, res) => {
       },
     });
 
-    const rtaOrder = await axios({
-      method: "post",
-      url: "https://api-m.sandbox.paypal.com/v2/checkout/orders",
-      data: body,
-      headers: {
-        Authorization: `Bearer ${generateToken.data.access_token}`,
-        "Content-Type": "application/json",
-      },
-      json: true,
-    })
-      .then((res) => {
-        return res.data;
-      })
-      .catch((err) => console.log(err + " ERROR AQUI"));
+    const rtaOrder = await axios.post(
+      "https://api-m.sandbox.paypal.com/v2/checkout/orders",
+      body,
+      {
+        headers: {
+          Authorization: `Bearer ${generateToken.data.access_token}`,
+          "Content-Type": "application/json",
+        },
 
-    const { id } = rtaOrder;
+        json: true,
+      }
+    );
 
-    return res.json({ id });
-
+    return res.json(rtaOrder.data);
     // const rta = await axios.post(
     //   "https://api-m.sandbox.paypal.com/v2/checkout/orders",
     //   body,
