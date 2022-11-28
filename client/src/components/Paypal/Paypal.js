@@ -31,7 +31,7 @@ export default function Paypal() {
         },
         createOrder: async () => {
           const createPay = await axios.post("/api/paypal/create-payment", {});
-        
+
           return createPay.data.id;
         },
         onApprove: async (data, actions) => {
@@ -50,7 +50,7 @@ export default function Paypal() {
           });
 
           await actions.order.capture().then(async (details) => {
-            const postOrder = await axios
+            return await axios
               .post(`/api/orders`, {
                 products: productsInCart,
                 total: details.purchase_units[0].amount.value,
@@ -66,7 +66,6 @@ export default function Paypal() {
                 return res.data;
               })
               .catch((err) => console.log(err));
-            return postOrder;
           });
 
           navigate("/successfull-payment");
@@ -79,7 +78,14 @@ export default function Paypal() {
         },
       })
       .render(paypal.current);
-  }, []);
+  }, [
+    googleUser,
+    navigate,
+    removeAllFromCart,
+    removeAllProductsFromLocalStorage,
+    users,
+    handlerStock,
+  ]);
 
   return (
     <div

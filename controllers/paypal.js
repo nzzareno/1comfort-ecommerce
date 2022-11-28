@@ -98,7 +98,6 @@ const executePayment = async (req, res) => {
 
     return res.json(response.data);
   } catch (error) {
-    console.log(error.message);
     return res.status(500).json({ message: "Internal Server error" });
   }
 };
