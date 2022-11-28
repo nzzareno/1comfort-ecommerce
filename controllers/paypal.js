@@ -55,23 +55,47 @@ const createPayment = async (req, res) => {
       },
     };
 
-    const rta = await axios.post(
-      "https://api-m.sandbox.paypal.com/v2/checkout/orders",
-      body,
-      {
-        auth: {
-          username: process.env.PAYPAL_CLIENT_ID,
-          password: process.env.PAYPAL_SECRET,
-        },
+    const generateToken = await axios({
+      method: "post",
+      url: "https://api-m.sandbox.paypal.com/v1/oauth2/token",
+      data: "grant_type=client_credentials",
+      auth: {
+        username: process.env.PAYPAL_CLIENT_ID,
+        password: process.env.PAYPAL_SECRET,
+      },
+    });
 
-        headers: {
-          "Content-Type": "application/json",
-        },
-        json: true,
-      }
-    );
+    const rtaOrder = await axios({
+      method: "post",
+      url: "https://api-m.sandbox.paypal.com/v2/checkout/orders",
+      data: body,
+      headers: {
+        Authorization: `Bearer ${generateToken.data.access_token}`,
+        "Content-Type": "application/json",
+      },
+      json: true,
+    })
+      .then((res) => {
+        return res.data;
+      })
+      .catch((err) => console.log(err + " ERROR AQUI"));
 
-    return res.json(rta.data);
+    return res.json(rtaOrder);
+    // const rta = await axios.post(
+    //   "https://api-m.sandbox.paypal.com/v2/checkout/orders",
+    //   body,
+    //   {
+    //     auth: {
+    //       username: process.env.PAYPAL_CLIENT_ID,
+    //       password: process.env.PAYPAL_SECRET,
+    //     },
+
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     json: true,
+    //   }
+    // );
   } catch (err) {
     console.log(err.message + " NO SE PUEDE!");
     res.status(500).json({ message: err.message });

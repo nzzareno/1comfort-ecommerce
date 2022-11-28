@@ -3,11 +3,18 @@ const axios = require("axios");
 const localStorage = require("localStorage");
 
 const orderUserNodemailer = async (order) => {
-  const users = await axios.get(`${process.env.NODE_ENV === "production" ? "https://onecomfort.up.railway.app" : "http://localhost:8080"}/api/auth`, {
-    headers: {
-      Authorization: `Bearer ${ localStorage.getItem("tokenaso")}`,
-    },
-  });
+  const users = await axios.get(
+    `${
+      process.env.NODE_ENV === "production"
+        ? "https://onecomfort.up.railway.app"
+        : "http://localhost:8080"
+    }/api/auth`,
+    {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("tokenaso")}`,
+      },
+    }
+  );
   const user = users.data;
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -24,7 +31,7 @@ const orderUserNodemailer = async (order) => {
   const mailOptions = {
     from: `One Comfort Associations`,
     to: user.email,
-    subject: `🎯 ${user.firstname}, here is your order: ${order.numOrder}`,
+    subject: `🎯 ${user.firstname}, here is your One Comfort order: ${order.numOrder}`,
     html: `
       <h1>
       Order purchase data:

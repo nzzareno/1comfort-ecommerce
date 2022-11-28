@@ -203,3 +203,4 @@
 {"kind":"Number","message":"Cast to Number failed for value \"NaN\" (type number) at path \"stock\"","name":"CastError","path":"stock","reason":{"actual":false,"code":"ERR_ASSERTION","expected":true,"generatedMessage":true,"operator":"=="},"stringValue":"\"NaN\"","value":null,"valueType":"number"}
 {"kind":"Number","message":"Cast to Number failed for value \"NaN\" (type number) at path \"stock\"","name":"CastError","path":"stock","reason":{"actual":false,"code":"ERR_ASSERTION","expected":true,"generatedMessage":true,"operator":"=="},"stringValue":"\"NaN\"","value":null,"valueType":"number"}
 {"kind":"Number","message":"Cast to Number failed for value \"NaN\" (type number) at path \"stock\"","name":"CastError","path":"stock","reason":{"actual":false,"code":"ERR_ASSERTION","expected":true,"generatedMessage":true,"operator":"=="},"stringValue":"\"NaN\"","value":null,"valueType":"number"}
+{"level":"error","message":"Request failed with status code 401"}
