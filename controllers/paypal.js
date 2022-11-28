@@ -80,7 +80,10 @@ const createPayment = async (req, res) => {
       })
       .catch((err) => console.log(err + " ERROR AQUI"));
 
-    return res.json(rtaOrder);
+    const { id } = rtaOrder;
+
+    return res.json({ id });
+
     // const rta = await axios.post(
     //   "https://api-m.sandbox.paypal.com/v2/checkout/orders",
     //   body,
