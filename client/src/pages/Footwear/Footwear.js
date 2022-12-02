@@ -1,17 +1,37 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import styles from "./Footwear.module.scss";
 import { ContextOfProduct } from "../../context/MyContext";
 import HeaderPic from "../../assets/footwomen.jpg";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import GenderFilters from "../../components/GenderFilters/GenderFilters";
+import axios from 'axios'
+import Loader from '../Loader/Loader'
 
 const Footwear = () => {
+  let [filteredProducts, setFilteredProducts] = useState([]);
   let { data, foot, setFoot } = useContext(ContextOfProduct);
   const navigate = useNavigate();
 
   useEffect(() => {
     setFoot(true)    
    }, [foot, setFoot])
+
+   useEffect(() => {
+    giveMeAllProducts();
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  async function giveMeAllProducts() {
+    const response = await axios.get("/api/productos");
+    const productsGenreMen = response.data.filter(
+      (product) => product.category === "footwear"
+    );
+    setFilteredProducts(productsGenreMen);
+  }
 
   const variants = {
     hidden: { opacity: 0 },
@@ -26,7 +46,9 @@ const Footwear = () => {
   return (
  
     <>
-      <motion.header
+    {
+      filteredProducts.length > 1 ? (<>
+        <motion.header
         initial="hidden"
         animate="visible"
         variants={variants}
@@ -39,8 +61,9 @@ const Footwear = () => {
           alt="header-accessories"
         />
       </motion.header>
+      <GenderFilters setFilteredProducts={setFilteredProducts} />
       <div className={styles.containerProductos}>
-        {data.map((item) => {
+        {filteredProducts.map((item) => {
           return (
             item.category === "footwear" && (
               <motion.div
@@ -138,6 +161,10 @@ const Footwear = () => {
           );
         })}
       </div>
+      </>) : (
+        <Loader/>
+      ) 
+    }
     </>
   );
 };

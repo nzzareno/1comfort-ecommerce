@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import * as AiIcons from "react-icons/ai";
 import * as FaIcons from "react-icons/fa";
 import * as BsIcons from "react-icons/bs";
 import * as IoIcons from "react-icons/io5";
-
-const storageProducts = JSON.parse(localStorage.getItem("products"));
+import { ContextOfProduct } from "../../context/MyContext";
 
 export const SidebarData = [
   {
@@ -34,8 +33,8 @@ export const SidebarData = [
     cName: "nav-text",
   },
   {
-    title: `CART (${storageProducts ? storageProducts.length : 0})`,
-    titleAuth: `CART (${storageProducts ? storageProducts.length : 0})`,
+    title: `CART`,
+    titleAuth: `CART`,
     path: "/cart",
     pathAuth: "/cart",
     icon: <BsIcons.BsCart4 />,

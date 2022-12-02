@@ -1,17 +1,35 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import { ContextOfProduct } from "../../context/MyContext";
 import HeaderPic from "../../assets/header-accessories.jpg";
 import { motion } from "framer-motion";
 import styles from "./Accessories.module.scss";
-const { useNavigate } = require("react-router-dom");
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import GenderFilters from "../../components/GenderFilters/GenderFilters";
+import Loader from '../Loader/Loader'
 
 const Accessories = () => {
-  let { data, foot, setFoot } = useContext(ContextOfProduct);
+  let [filteredProducts, setFilteredProducts] = useState([]);
+  let { foot, setFoot } = useContext(ContextOfProduct);
   const navigate = useNavigate();
 
+
+
   useEffect(() => {
-    setFoot(true)    
-   }, [foot, setFoot])
+    setFoot(true);
+  }, [foot, setFoot]);
+
+  useEffect(() => {
+    giveMeAllProducts();
+  }, []);
+
+  async function giveMeAllProducts() {
+    const response = await axios.get("/api/productos");
+    const productsGenreMen = response.data.filter(
+      (product) => product.category === "accessories"
+    );
+    setFilteredProducts(productsGenreMen);
+  }
 
   const variants = {
     hidden: { opacity: 0 },
@@ -23,9 +41,16 @@ const Accessories = () => {
     return newDate.toLocaleString();
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <>
-      <motion.header
+    {
+      filteredProducts.length > 1 ? (
+        <>
+         <motion.header
         initial="hidden"
         animate="visible"
         variants={variants}
@@ -38,8 +63,11 @@ const Accessories = () => {
           alt="header-accessories"
         />
       </motion.header>
+
+      <GenderFilters setFilteredProducts={setFilteredProducts} />
+
       <div className={styles.containerProductos}>
-        {data.map((item) => {
+        {filteredProducts.map((item) => {
           return (
             item.category === "accessories" && (
               <motion.div
@@ -74,7 +102,6 @@ const Accessories = () => {
                           src={item.image}
                           alt="imagex"
                         />
-                         
                       </div>
 
                       <div className={styles.content}>
@@ -137,6 +164,12 @@ const Accessories = () => {
           );
         })}
       </div>
+        </>
+      ) : (
+        <Loader/>
+      )
+    }
+     
     </>
   );
 };

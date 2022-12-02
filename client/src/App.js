@@ -23,17 +23,21 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import Chat from "./pages/Chat/Chat";
 import io from "socket.io-client";
 import Footer from "./components/Footer/Footer";
+import { Audio } from "react-loader-spinner";
 
 // production route   https://one-comfort.herokuapp.com
 // development route http://localhost:8080
-const socket = io("https://onecomfort.up.railway.app");
+const socket =
+  process.env.NODE_ENV === "production"
+    ? io("https://onecomfort.up.railway.app")
+    : io("http://localhost:8080");
 
 const App = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("token")));
   const [googleUser, setGoogleUser] = useState(
     JSON.parse(localStorage.getItem("profile"))
   );
-  const { isSignedIn } = useContext(ContextOfProduct);
+  const { isSignedIn, data } = useContext(ContextOfProduct);
 
   return (
     <GoogleOAuthProvider clientId="1034045335715-rcgadar76fdvc86lu7n8dkj5goh7vbo2.apps.googleusercontent.com">

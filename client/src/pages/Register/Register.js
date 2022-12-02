@@ -19,13 +19,21 @@ import jwt_decode from "jwt-decode";
 
 const Register = () => {
   const [data, setData] = useState({});
-  const { register, foot, setFoot } = useContext(ContextOfProduct);
+  const {
+    register,
+    foot,
+    setFoot,
+    backRegisterError,
+    setBackRegisterError,
+    isSignedUp,
+    setIsSignedUp,
+  } = useContext(ContextOfProduct);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
-    setFoot(false)    
-   }, [foot, setFoot])
+    setFoot(false);
+  }, [foot, setFoot]);
 
   const variants = {
     hidden: { opacity: 0 },
@@ -48,8 +56,11 @@ const Register = () => {
       email: Yup.string()
         .email("Must be a valid email")
         .trim()
-        .required("Required"),
-      password: Yup.string().trim().required("Required"),
+        .required("Email is required"),
+      password: Yup.string()
+        .trim()
+        .required("Password is required")
+        .min(5, "Password must be at least 5 characters"),
       firstname: Yup.string()
         .min(4, "Four letters at least")
         .required("First name is required")
@@ -57,7 +68,7 @@ const Register = () => {
         .matches(/^[aA-zZ\s]+$/, "Is not in correct format"),
       lastname: Yup.string()
         .min(4, "Four letters at least")
-        .required("First name is required")
+        .required("Last name is required")
         .trim()
         .matches(/^[aA-zZ\s]+$/, "Is not in correct format"),
       phone: Yup.string().trim().required("Required"),
@@ -65,22 +76,17 @@ const Register = () => {
     onSubmit: async (values) => {
       try {
         await register(values);
-        setData({
-          success: true,
-          error: false,
-        });
-        navigate("/signin");
+        if (isSignedUp) {
+          navigate("/signin");
+        } else {
+          return;
+        }
       } catch (err) {
-        setData({
-          success: false,
-          error: true,
-        });
-        console.error(err);
+        console.log(err);
       }
     },
   });
 
-  const { success, error } = data;
   return (
     <div className="align-register">
       <motion.div
@@ -134,6 +140,28 @@ const Register = () => {
               value={formik.values.firstname}
             />
           </div>
+          <div style={{ height: "5px" }}>
+            {formik.touched.firstname && formik.errors.firstname ? (
+              <div
+                style={{
+                  marginTop: "-10px",
+                  gap: "0px !important",
+                }}
+                className="error-wrap"
+              >
+                <p
+                  style={{
+                    color: "#ff0000",
+                    margin: "0",
+                    fontSize: "12px",
+                    textAlign: "center",
+                  }}
+                >
+                  {formik.errors.firstname}
+                </p>
+              </div>
+            ) : null}
+          </div>
           <div
             style={{
               textAlign: "center",
@@ -141,11 +169,7 @@ const Register = () => {
               fontSize: "15px",
               fontWeight: "bold",
             }}
-          >
-            {formik.touched.firstname && formik.errors.firstname ? (
-              <small className="formik-error">{formik.errors.firstname}</small>
-            ) : null}
-          </div>
+          ></div>
           <div className="form__field">
             <label htmlFor="login__username">
               <svg className="icon">
@@ -165,6 +189,28 @@ const Register = () => {
               value={formik.values.lastname}
             />
           </div>
+          <div style={{ height: "5px" }}>
+            {formik.touched.lastname && formik.errors.lastname ? (
+              <div
+                style={{
+                  marginTop: "-10px",
+                  gap: "0px !important",
+                }}
+                className="error-wrap"
+              >
+                <p
+                  style={{
+                    color: "#ff0000",
+                    margin: "0",
+                    fontSize: "12px",
+                    textAlign: "center",
+                  }}
+                >
+                  {formik.errors.lastname}
+                </p>
+              </div>
+            ) : null}
+          </div>
           <div
             style={{
               textAlign: "center",
@@ -174,11 +220,7 @@ const Register = () => {
               margin: 0,
               padding: 0,
             }}
-          >
-            {formik.touched.lastname && formik.errors.lastname ? (
-              <small className="formik-error">{formik.errors.lastname}</small>
-            ) : null}
-          </div>
+          ></div>
           <div className="form__field">
             <label htmlFor="login__username">
               <svg className="icon">
@@ -199,6 +241,28 @@ const Register = () => {
               value={formik.values.phone}
             />
           </div>
+          <div style={{ height: "5px" }}>
+            {formik.touched.phone && formik.errors.phone ? (
+              <div
+                style={{
+                  marginTop: "-10px",
+                  gap: "0px !important",
+                }}
+                className="error-wrap"
+              >
+                <p
+                  style={{
+                    color: "#ff0000",
+                    margin: "0",
+                    fontSize: "12px",
+                    textAlign: "center",
+                  }}
+                >
+                  {formik.errors.phone}
+                </p>
+              </div>
+            ) : null}
+          </div>
           <div
             style={{
               textAlign: "center",
@@ -208,11 +272,7 @@ const Register = () => {
               margin: 0,
               padding: 0,
             }}
-          >
-            {formik.touched.phone && formik.errors.phone ? (
-              <small className="formik-error">{formik.errors.phone}</small>
-            ) : null}
-          </div>
+          ></div>
           <div className="form__field">
             <label htmlFor="login__username">
               <svg className="icon">
@@ -233,6 +293,28 @@ const Register = () => {
               onBlur={formik.handleBlur}
             />
           </div>
+          <div style={{ height: "5px" }}>
+            {formik.touched.email && formik.errors.email ? (
+              <div
+                style={{
+                  marginTop: "-10px",
+                  gap: "0px !important",
+                }}
+                className="error-wrap"
+              >
+                <p
+                  style={{
+                    color: "#ff0000",
+                    margin: "0",
+                    fontSize: "12px",
+                    textAlign: "center",
+                  }}
+                >
+                  {formik.errors.email}
+                </p>
+              </div>
+            ) : null}
+          </div>
           <div
             style={{
               textAlign: "center",
@@ -242,11 +324,7 @@ const Register = () => {
               margin: 0,
               padding: 0,
             }}
-          >
-            {formik.touched.email && formik.errors.email ? (
-              <small className="formik-error">{formik.errors.email}</small>
-            ) : null}
-          </div>
+          ></div>
           <div className="form__field">
             <label htmlFor="login__password">
               <svg className="icon">
@@ -276,21 +354,44 @@ const Register = () => {
                 margin: 0,
                 padding: 0,
               }}
-            >
-              {formik.touched.password && formik.errors.password ? (
-                <small className="formik-error">{formik.errors.password}</small>
-              ) : null}
-            </div>
+            ></div>
           </div>
-          <div
-            style={{
-              color: "red",
-              margin: "5px 0 12px 0",
-            }}
-          >
-            {success && success}
-            {error && error}
+          <div style={{ height: "14px" }}>
+            {formik.touched.password && formik.errors.password ? (
+              <div
+                style={{
+                  marginTop: "-10px",
+                  gap: "0px !important",
+                }}
+                className="error-wrap"
+              >
+                <p
+                  style={{
+                    color: "#ff0000",
+                    margin: "0",
+                    fontSize: "12px",
+                    textAlign: "center",
+                  }}
+                >
+                  {formik.errors.password}
+                </p>
+              </div>
+            ) : null}
+              {backRegisterError && (
+              <p
+                style={{
+                  color: "#ff0000",
+                  marginTop: "-9.5px",
+                  fontSize: "12px",
+                  textAlign: "center",
+                  fontWeight: "600",
+                }}
+              >
+                {backRegisterError}
+              </p>
+            )}
           </div>
+          
           <div className="form__field">
             <input
               onKeyDown={(e) => {
@@ -335,7 +436,11 @@ const Register = () => {
         </form>
 
         <p className="text--center">
-          Already have a account ? <Link to="/signin">Sign in now </Link>
+          Already have a account ?{" "}
+          <Link to="/signin">
+            {" "}
+            <br /> Sign in now{" "}
+          </Link>
           <svg className="icon">
             <IoArrowRedo
               style={{

@@ -11,6 +11,7 @@ import BlondeGirl from "../../assets/fondoblonde.jpg";
 import GirlsFriends from "../../assets/fondofriends.jpg";
 import { useNavigate } from "react-router-dom";
 import { IoChatbubbles } from "react-icons/io5";
+import Loader from "../Loader/Loader";
 
 const Home = () => {
   const { users, data, googleUser, foot, setFoot } =
@@ -20,6 +21,10 @@ const Home = () => {
   useEffect(() => {
     setFoot(true);
   }, [foot, setFoot]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   let settings = {
     dots: false,
@@ -37,7 +42,7 @@ const Home = () => {
   };
 
   let settingsV2 = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 2000,
     slidesToShow: 4,
@@ -59,7 +64,7 @@ const Home = () => {
           slidesToScroll: 1,
           infinite: true,
 
-          dots: true,
+          dots: false,
         },
       },
       {
@@ -69,7 +74,7 @@ const Home = () => {
           slidesToScroll: 1,
           infinite: true,
           initialSlide: 2,
-          dots: true,
+          dots: false,
         },
       },
       {
@@ -77,9 +82,8 @@ const Home = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-
           infinite: true,
-          dots: true,
+          dots: false,
         },
       },
       {
@@ -89,6 +93,7 @@ const Home = () => {
           slidesToScroll: 1,
           fade: true,
           initialSlide: 1,
+          dots: false,
         },
       },
       {
@@ -98,6 +103,7 @@ const Home = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           adaptiveHeight: true,
+          dots: false,
         },
       },
     ],
@@ -115,56 +121,57 @@ const Home = () => {
 
   return (
     <>
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={variants}
-        className="slider"
-      >
-        <motion.div initial="hidden" animate="visible" variants={variants}>
-          <Slider {...settings}>
-            <div>
-              <img src={MenPanoram} className="section-1" alt="222" />
-            </div>
-            <div>
-              <img src={BlondeGirl} className="section-1" alt="222" />
-            </div>
-            <div>
-              <img src={Men} className="section-1" alt="222" />
-            </div>
-            <div>
-              <img src={GirlsFriends} className="section-1" alt="222" />
-            </div>
-            <div>
-              <img src={Bags} className="section-1" alt="222" />
-            </div>
-          </Slider>
-        </motion.div>
-      </motion.div>
-      <h2 className="absoluto-user">
-        Welcome, {users?.firstname || googleUser?.user.given_name || "Guest"}
-      </h2>
-      <div className="pic-container"></div>
-      <button onClick={() => navigate("/chat")} className="chat-buton">
-        <IoChatbubbles />
-      </button>
-      <h3 className="home-title txt anim-text-flow">NEW ARRIVALS</h3>
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={variants}
-        className="bodyHome"
-      >
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={variants}
-          className="container"
-        >
-          <Slider {...settingsV2}>
-            {!data
-              ? "Loading..."
-              : data.map((item) => (
+      {data.length > 1 ? (
+        <>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={variants}
+            className="slider"
+          >
+            <motion.div initial="hidden" animate="visible" variants={variants}>
+              <Slider {...settings}>
+                <div>
+                  <img src={MenPanoram} className="section-1" alt="222" />
+                </div>
+                <div>
+                  <img src={BlondeGirl} className="section-1" alt="222" />
+                </div>
+                <div>
+                  <img src={Men} className="section-1" alt="222" />
+                </div>
+                <div>
+                  <img src={GirlsFriends} className="section-1" alt="222" />
+                </div>
+                <div>
+                  <img src={Bags} className="section-1" alt="222" />
+                </div>
+              </Slider>
+            </motion.div>
+          </motion.div>
+          <h2 className="absoluto-user">
+            Welcome,{" "}
+            {users?.firstname || googleUser?.user.given_name || "Guest"}
+          </h2>
+          <div className="pic-container"></div>
+          <motion.button onClick={() => navigate("/chat")} className="chat-buton" initial="hidden" animate="visible" variants={variants}>
+            <IoChatbubbles />
+          </motion.button>
+          <h3 className="home-title txt anim-text-flow">NEW ARRIVALS</h3>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={variants}
+            className="bodyHome"
+          >
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={variants}
+              className="container"
+            >
+              <Slider {...settingsV2}>
+                {data.map((item) => (
                   <motion.div
                     initial="hidden"
                     animate="visible"
@@ -237,10 +244,14 @@ const Home = () => {
                     </motion.div>
                   </motion.div>
                 ))}
-          </Slider>
-        </motion.div>
-      </motion.div>
-      <MenuItem />
+              </Slider>
+            </motion.div>
+          </motion.div>
+          <MenuItem />
+        </>
+      ) : (
+        <Loader />
+      )}
     </>
   );
 };

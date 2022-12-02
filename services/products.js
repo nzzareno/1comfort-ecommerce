@@ -6,7 +6,6 @@ const gettingProducts = () => {
 
 const gettingProduct = (id) => {
   try {
-
     return productsInStorage.find(id);
   } catch (error) {
     return { message: error };
@@ -15,6 +14,10 @@ const gettingProduct = (id) => {
 
 const getProductByTerm = (term) => {
   return productsInStorage.findByTerm(term);
+};
+
+const getProductsByCategories = (category) => {
+  return productsInStorage.findByCategory(category);
 };
 
 const saveProducts = (body) => {
@@ -45,4 +48,5 @@ module.exports = {
   deleteAllProducts,
   deleteOneProduct,
   getProductByTerm,
+  getProductsByCategories,
 };

@@ -10,9 +10,10 @@
   align-content: center;
   align-items: center;
   min-height: 77vh;
-  background-color: #080e33 !important;
+  background: rgb(251, 251, 251);
   overflow-x: hidden;
   text-align: center;
+  padding: 1rem 0;
 }
 
 .containerProductos {
@@ -21,7 +22,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(452px, 1fr));
   z-index: 2;
-  
 }
 
 .container {
@@ -38,10 +38,8 @@
   width: 450px !important;
   background-color: #ffffff;
   height: 700px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  box-shadow: 0 0 0.6px rgba(0, 0, 0, 1);
   
-
 }
 
 .container .card .imgBx {
@@ -64,7 +62,7 @@
   cursor: pointer;
   pointer-events: none;
 }
- 
+
 .container .card .content {
   padding: 10px;
 }

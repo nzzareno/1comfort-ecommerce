@@ -16,6 +16,7 @@ export default function Paypal() {
   );
   const paypal = useRef();
   const navigate = useNavigate();
+
   useEffect(() => {
     const token = googleUser?.token;
     setGoogleUser(JSON.parse(localStorage.getItem("profile")));
@@ -85,6 +86,7 @@ export default function Paypal() {
     removeAllProductsFromLocalStorage,
     users,
     handlerStock,
+    
   ]);
 
   return (

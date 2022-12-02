@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Login.scss";
 import * as Yup from "yup";
 import { useFormik } from "formik";
@@ -13,22 +13,28 @@ import { useDispatch } from "react-redux";
 import jwt_decode from "jwt-decode";
 
 const Login = () => {
-  const { logIn, foot, setFoot } = useContext(ContextOfProduct);
+  const { logIn, foot, setFoot, backError, setBackError } =
+    useContext(ContextOfProduct);
   const dispatch = useDispatch();
 
   useEffect(() => {
     setFoot(false);
   }, [foot, setFoot]);
 
+  useEffect(() => {
+    if (localStorage.getItem("token") || localStorage.getItem("profile")) {
+      setBackError(null);
+      navigate("/");
+    } else {
+      return console.log("no hay token");
+    }
+  }, [localStorage.getItem("token"), localStorage.getItem("profile")]);
+
   const variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
   };
   const navigate = useNavigate();
-
-  if (localStorage.getItem("token") || localStorage.getItem("profile")) {
-    navigate("/");
-  }
 
   const formik = useFormik({
     initialValues: {
@@ -39,17 +45,16 @@ const Login = () => {
       email: Yup.string()
         .email("Must be a valid email")
         .trim()
-        .required("Required"),
-      password: Yup.string().trim().required("Required"),
+        .required("Email is required"),
+      password: Yup.string().trim().required(),
     }),
 
     onSubmit: async (values) => {
       try {
         await logIn(values);
-        navigate("/");
-      } catch (err) {
-        alert("Invalid email or password");
-        console.error(err);
+        return;
+      } catch (error) {
+        console.log(error);
       }
     },
   });
@@ -87,8 +92,8 @@ const Login = () => {
         }}
         className="grid-login"
       >
-        <form onSubmit={formik.handleSubmit} className="form login">
-          <div className="form__field">
+        <form onSubmit={formik.handleSubmit} className="form-signin login">
+          <div className="form__field-login">
             <label htmlFor="login__username">
               <svg className="icon">
                 <FaUser />
@@ -107,16 +112,31 @@ const Login = () => {
               value={formik.values.email}
               onBlur={formik.handleBlur}
             />
-            <div>
-              {formik.touched.firstname && formik.errors.firstname ? (
-                <small className="formik-error">
-                  {formik.errors.firstname}
-                </small>
-              ) : null}
-            </div>
+          </div>{" "}
+          <div style={{ height: "7.4px" }}>
+            {formik.touched.email && formik.errors.email ? (
+              <div
+                style={{
+                  marginTop: "-13px",
+                  gap: "0px !important",
+                }}
+                className="error-wrap"
+              >
+                <p
+                  style={{
+                    color: "#ff0000",
+                    margin: "0",
+                    fontSize: "12px",
+                    textAlign: "center",
+                    fontWeight: "600",
+                  }}
+                >
+                  {formik.errors.email}
+                </p>
+              </div>
+            ) : null}
           </div>
-
-          <div className="form__field">
+          <div className="form__field-login">
             <label htmlFor="login__password">
               <svg className="icon">
                 <FaLock />
@@ -135,12 +155,23 @@ const Login = () => {
               onBlur={formik.handleBlur}
               value={formik.values.password}
             />
-            {formik.touched.password && formik.errors.password ? (
-              <small className="formik-error">{formik.errors.password}</small>
-            ) : null}
           </div>
-
-          <div className="form__field">
+          <div style={{ height: "7px" }}>
+            {backError && (
+              <p
+                style={{
+                  color: "#ff0000",
+                  marginTop: "-6.5px",
+                  fontSize: "12px",
+                  textAlign: "center",
+                  fontWeight: "600",
+                }}
+              >
+                {backError}
+              </p>
+            )}
+          </div>
+          <div className="form__field-login">
             <input
               onKeyDown={(e) => {
                 if (e.key === "13") {
@@ -151,7 +182,6 @@ const Login = () => {
               value="Sign In"
             />
           </div>
-
           <GoogleLogin
             className="loginBtn loginBtn--google"
             onSuccess={async (credentialResponse) => {
@@ -174,11 +204,11 @@ const Login = () => {
                 console.log(error);
               }
             }}
-            onError={() => {
-              console.error("Login Failed");
+            onError={(error) => {
+              console.log(error);
             }}
             type="standard"
-            theme="filled-dark"
+            theme="filled_blue"
             text="signin"
             ux_mode="popup"
             width="100%"
@@ -186,12 +216,7 @@ const Login = () => {
             logo_alignment="center"
           />
         </form>
-        <div
-          style={{
-            color: "red",
-            margin: "5px 0 12px 0",
-          }}
-        ></div>
+
         <p className="text--center">
           Not a member? <Link to="/signup">Sign up now </Link>
           <svg className="icon">

@@ -5,6 +5,7 @@ import { BsCart4 } from "react-icons/bs";
 import { ContextOfProduct } from "../../context/MyContext";
 import { useDispatch } from "react-redux";
 import Logo from "../../assets/v3log.svg";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("token")));
@@ -31,6 +32,12 @@ const Navbar = () => {
     setIsSignedIn(false);
   };
 
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  
+  };
+
   const storageProducts = JSON.parse(localStorage.getItem("products"));
 
   window.addEventListener("scroll", changeBackground);
@@ -38,7 +45,13 @@ const Navbar = () => {
   return (
     <>
       {user || googleUser ? (
-        <div className="contexto-nav">
+        <motion.div
+          className="contexto-nav"
+          variants={variants}
+          initial="hidden"
+          animate= "visible"
+          transition={{ duration: 0.4 }}
+        >
           <header className="header-section d-none d-xl-block">
             <nav className={show ? "navbar active" : "navbar"}>
               <div className="navbar__menu">
@@ -94,7 +107,7 @@ const Navbar = () => {
               </div>
             </nav>
           </header>
-        </div>
+        </motion.div>
       ) : (
         <span></span>
       )}

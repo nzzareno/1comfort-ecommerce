@@ -7,14 +7,29 @@ import {
   IoLogoYoutube,
 } from "react-icons/io";
 import { ContextOfProduct } from "../../context/MyContext";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   const { foot } = useContext(ContextOfProduct);
 
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+
   return (
     <>
-      <footer style={{ display: foot ? "block" : "none" }}>
-        <div className="footer-container">
+      <footer
+        variants={variants}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 3 }}
+        style={{ display: foot ? "block" : "none" }}
+      >
+        <div className="footer-container" variants={variants}
+        initial="hidden"
+        animate="visible"
+        transition={{ duration: 3 }}>
           <div className="footer-content-container">
             <span className="footer-info2">
               We are a team of talented clothes designers and developers who are

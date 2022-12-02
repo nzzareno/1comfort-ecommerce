@@ -9,6 +9,7 @@ const {
   deletingProducts,
   deletingProduct,
   getByTerm,
+  getCategoryByTerm,
 } = require("../controllers/products");
 
 router.get("/", getAllProducts);
@@ -19,7 +20,9 @@ router.delete("/", deletingProducts);
 
 router.get("/:id", getSingleProduct);
 
-router.get("/category|genre/:term", getByTerm);
+router.get("/category/:term", getCategoryByTerm);
+
+router.get("/genre/:term", getByTerm);
 
 router.patch("/:id", updatingProduct);
 

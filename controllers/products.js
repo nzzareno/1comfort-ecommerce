@@ -6,6 +6,7 @@ const {
   deleteAllProducts,
   deleteOneProduct,
   getProductByTerm,
+  getProductsByCategories,
 } = require("../services/products");
 const logger = require("../logs/winston");
 
@@ -33,6 +34,15 @@ const getByTerm = async (req, res) => {
   } catch (error) {
     logger.error(error);
     res.status(404).json({ message: "Product not found" });
+  }
+};
+
+const getCategoryByTerm = async (req, res) => {
+  try {
+    return res.json(await getProductsByCategories(req.params.term));
+  } catch (error) {
+    logger.error(error);
+    res.status(404).json({ message: "Product with that category not found" });
   }
 };
 
@@ -80,4 +90,5 @@ module.exports = {
   deletingProducts,
   creatingProducts,
   getByTerm,
+  getCategoryByTerm,
 };

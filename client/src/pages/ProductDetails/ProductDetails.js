@@ -26,6 +26,10 @@ const ProductDetails = ({ item, getProduct }) => {
   }, [show]);
 
   useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  useEffect(() => {
     setFoot(true);
   }, [foot, setFoot]);
 

@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import axios from "axios";
+
 export const ContextOfProduct = createContext();
 
 export default function ProductContext({ children }) {
@@ -20,6 +21,9 @@ export default function ProductContext({ children }) {
   const [googleUser, setGoogleUser] = useState(
     JSON.parse(localStorage.getItem("profile"))
   );
+  const [categories, setCategories] = useState([]);
+  const [backError, setBackError] = useState(null);
+  const [backRegisterError, setBackRegisterError] = useState(null);
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -33,17 +37,13 @@ export default function ProductContext({ children }) {
     const token = JSON.parse(localStorage.getItem("token"));
 
     if (token) {
-      try {
-        const resp = await axios.get("/api/auth", {
-          headers: {
-            Authorization: `Bearer ${token.token}`,
-          },
-        });
+      const resp = await axios.get("/api/auth", {
+        headers: {
+          Authorization: `Bearer ${token.token}`,
+        },
+      });
 
-        setUsers(resp.data);
-      } catch (err) {
-        console.error(err);
-      }
+      setUsers(resp.data);
     } else {
       delete axios.defaults.headers.common["x-auth-token"];
     }
@@ -89,7 +89,8 @@ export default function ProductContext({ children }) {
       await gettingUser();
       setAuth(true);
     } catch (err) {
-      console.error(err);
+      console.log(err.response.data.message);
+      setBackError(err.response.data.message);
     }
   };
 
@@ -104,7 +105,9 @@ export default function ProductContext({ children }) {
       await gettingUser();
       setAuth(true);
     } catch (err) {
-      console.error(err);
+      setIsSignedUp(false);
+      console.log(err.response.data.message);
+      setBackRegisterError(err.response.data.message);
     }
   };
 
@@ -252,6 +255,11 @@ export default function ProductContext({ children }) {
     localStorage.removeItem("products");
   }
 
+  async function filterProductsByCategory(category) {
+    const response = await axios.get(`/api/productos/category/${category}`);
+    setCategories(response.data);
+  }
+
   return (
     <ContextOfProduct.Provider
       value={{
@@ -291,6 +299,15 @@ export default function ProductContext({ children }) {
         handlerStock,
         foot,
         setFoot,
+        filterProductsByCategory,
+        categories,
+        setCategories,
+        backError,
+        setBackError,
+        setBackRegisterError,
+        backRegisterError,
+        isSignedUp,
+        setIsSignedUp,
       }}
     >
       {children}

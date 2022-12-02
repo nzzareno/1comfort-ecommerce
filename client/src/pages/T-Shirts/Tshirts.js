@@ -1,17 +1,37 @@
-import React, { useContext , useEffect} from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./Tshirts.module.scss";
 import { ContextOfProduct } from "../../context/MyContext";
 import HeaderPic from "../../assets/tshirtheader.jpg";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import GenderFilters from "../../components/GenderFilters/GenderFilters";
+import Loader from '../Loader/Loader'
 
 const Tshirts = () => {
+  let [filteredProducts, setFilteredProducts] = useState([]);
   let { data, foot, setFoot } = useContext(ContextOfProduct);
   const navigate = useNavigate();
 
   useEffect(() => {
-    setFoot(true)    
-   }, [foot, setFoot])
+    setFoot(true);
+  }, [foot, setFoot]);
+
+  useEffect(() => {
+    giveMeAllProducts();
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  async function giveMeAllProducts() {
+    const response = await axios.get("/api/productos");
+    const productsGenreMen = response.data.filter(
+      (product) => product.category === "t-shirts"
+    );
+    setFilteredProducts(productsGenreMen);
+  }
 
   const variants = {
     hidden: { opacity: 0 },
@@ -24,7 +44,10 @@ const Tshirts = () => {
   };
   return (
     <>
-      <motion.header
+    {
+      filteredProducts.length > 1 ? (
+        <>
+             <motion.header
         initial="hidden"
         animate="visible"
         variants={variants}
@@ -37,8 +60,11 @@ const Tshirts = () => {
           alt="header-accessories"
         />
       </motion.header>
+
+      <GenderFilters setFilteredProducts={setFilteredProducts} />
+      
       <div className={styles.containerProductos}>
-        {data.map((item) => {
+        {filteredProducts.map((item) => {
           return (
             item.category === "t-shirts" && (
               <motion.div
@@ -73,7 +99,6 @@ const Tshirts = () => {
                           src={item.image}
                           alt="imagex"
                         />
-                       
                       </div>
 
                       <div className={styles.content}>
@@ -136,6 +161,12 @@ const Tshirts = () => {
           );
         })}
       </div>
+        </>
+      ) : (
+        <Loader/>
+      )
+    }
+ 
     </>
   );
 };

@@ -70,6 +70,13 @@ class ProductsMongoContainer extends Container {
 
     return element.concat(genre);
   }
+
+  async findByCategory (term) {
+    const element = await this.schema.find({
+      category: term,
+    });
+    return element;
+  }
 }
 
 class CartMongoContainer extends Container {

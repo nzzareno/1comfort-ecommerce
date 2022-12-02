@@ -90,8 +90,11 @@ const Cart = () => {
                       <div className="titulo">
                         <h1 className="cart-item-title">
                           {p.title}
-                          <span className="cart-quantity">({p.quantity})</span>
+                          
                         </h1>
+                      </div>
+                      <div className="cart-quantity-wrapper">
+                      <span className="cart-quantity">({p.quantity})</span>
                       </div>
                       <div className="precioxe">
                         <p className="cart-price">${p.price}</p>
