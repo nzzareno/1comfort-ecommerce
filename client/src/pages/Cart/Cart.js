@@ -26,6 +26,10 @@ const Cart = () => {
     setShow(true);
   }, [show]);
 
+  useEffect(() => {
+    addProductsToCart();
+  }, [])
+
   const storageProducts = JSON.parse(localStorage.getItem("products"));
 
   return (
