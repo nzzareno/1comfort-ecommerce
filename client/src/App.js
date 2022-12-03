@@ -23,14 +23,11 @@ import { GoogleOAuthProvider } from "@react-oauth/google";
 import Chat from "./pages/Chat/Chat";
 import io from "socket.io-client";
 import Footer from "./components/Footer/Footer";
-import { Audio } from "react-loader-spinner";
 
 // production route   https://one-comfort.herokuapp.com
 // development route http://localhost:8080
-const socket =
-  process.env.NODE_ENV === "production"
-    ? io("https://onecomfort.up.railway.app")
-    : io("http://localhost:8080");
+const socket = io("https://onecomfort.up.railway.app")
+   
 
 const App = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("token")));

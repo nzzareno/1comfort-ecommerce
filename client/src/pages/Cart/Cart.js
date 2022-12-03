@@ -28,7 +28,13 @@ const Cart = () => {
 
   useEffect(() => {
     addProductsToCart();
-  }, [])
+  }, []);
+  // useEffect checkout setCheckout
+  useEffect(() => {
+    if (checkout) {
+      setCheckOut(true);
+    }
+  }, []);
 
   const storageProducts = JSON.parse(localStorage.getItem("products"));
 
@@ -92,13 +98,10 @@ const Cart = () => {
                     </div>
                     <div className="cart-info">
                       <div className="titulo">
-                        <h1 className="cart-item-title">
-                          {p.title}
-                          
-                        </h1>
+                        <h1 className="cart-item-title">{p.title}</h1>
                       </div>
                       <div className="cart-quantity-wrapper">
-                      <span className="cart-quantity">({p.quantity})</span>
+                        <span className="cart-quantity">({p.quantity})</span>
                       </div>
                       <div className="precioxe">
                         <p className="cart-price">${p.price}</p>
