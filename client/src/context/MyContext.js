@@ -89,7 +89,6 @@ export default function ProductContext({ children }) {
       await gettingUser();
       setAuth(true);
     } catch (err) {
-      console.log(err.response.data.message);
       setBackError(err.response.data.message);
     }
   };
@@ -129,25 +128,30 @@ export default function ProductContext({ children }) {
     const product = JSON.parse(localStorage.getItem("products")).find(
       (p) => p._id === id.toString()
     );
-    const newStock = product.stock;
     const newQuantity = product.quantity;
-    await axios({
-      method: "PATCH",
-      url: `/api/productos/${id}`,
-      data: {
-        stock: newStock,
-        quantity: newQuantity,
-      },
-    });
+    const newStock = product.stock - newQuantity;
 
-    const newProducts = data.map((p) => {
-      if (p._id === id.toString()) {
-        return { ...p, stock: newStock };
-      }
-      return p;
-    });
+    if (newStock < newQuantity) {
+      alert("No hay stock suficiente");
+    } else {
+      await axios({
+        method: "PATCH",
+        url: `/api/productos/${id}`,
+        data: {
+          stock: newStock,
+          quantity: newQuantity,
+        },
+      });
 
-    setData(newProducts);
+      const newProducts = data.map((p) => {
+        if (p._id === id.toString()) {
+          return { ...p, stock: newStock, quantity: newQuantity };
+        }
+        return p;
+      });
+
+      setData(newProducts);
+    }
   };
 
   async function addCartOrder() {
@@ -174,7 +178,7 @@ export default function ProductContext({ children }) {
 
         setCartNumber(0);
       })
-      .catch((err) => console.log("OCURRIO UN ERROR", err));
+      .catch((err) => console.log(err));
   }
 
   const changeBackground = () => {
@@ -308,6 +312,7 @@ export default function ProductContext({ children }) {
         backRegisterError,
         isSignedUp,
         setIsSignedUp,
+    
       }}
     >
       {children}

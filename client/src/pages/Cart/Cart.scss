@@ -1,31 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
-  .container-carro {
-    min-height: 100vh !important;
-    background: rgb(251, 251, 251) !important;
-  }
+.container-carro {
+  min-height: 100vh !important;
+  background: rgb(251, 251, 251) !important;
+}
 
-  .cart-item-title{
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    font-size: 0.9rem !important;
-    color: #000;
-  }
-  .checkout-error-title{
-    font-size: 1.24rem;
-    font-weight: 600;
-    color: #ff0000;
-  }
+.cart-item-title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem !important;
+  color: #000;
+}
+.checkout-error-title {
+  text-align: center !important;
+  font-weight: 600;
+  font-size: 1.3rem !important;
+  color: #121f3d;
+}
 
-  #paypal-button-container::nth-child(1) {
-    display: none;
-    }
- 
+#paypal-button-container::nth-child(1) {
+  display: none;
+}
 
-  .encuadre {
-    min-height: 100vh !important;
-    padding-top:6.5vh;
- 
-  }
+.encuadre {
+  min-height: 100vh !important;
+  padding-top: 6.5vh;
+}
 .disappear {
   font-family: "Open Sans", sans-serif;
   max-width: 680px;
@@ -56,7 +55,7 @@
       display: flex;
       flex-direction: row;
       border-bottom: #e4e3e3 1px solid;
-     
+
       .cart-info {
         display: flex;
         flex-direction: column;
@@ -65,7 +64,6 @@
         padding-top: 20px;
         justify-content: space-between;
         width: 100%;
-        
       }
 
       .cart-img {
@@ -94,7 +92,6 @@
     padding: 16px 10px 0px;
     position: relative;
     border: 1px solid transparent;
-    
   }
 }
 
@@ -132,9 +129,11 @@
 }
 
 .sub-title {
-  font-weight: 600;
+  font-weight: 400;
   font-size: 14px;
   color: #111111;
+  padding-bottom: 45px;
+  padding-left: 28px;
 }
 
 .item-name {
@@ -159,12 +158,10 @@
   color: #00b728;
 }
 
-.cart-quantity{
-   
+.cart-quantity {
   font-weight: bold;
   font-size: 1rem;
   color: #0623ff;
-  
 }
 
 .arrival {
@@ -175,10 +172,10 @@
 }
 
 .checkout {
- 
   padding-top: 20px;
+   
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 
   button {
     padding: 16px;
@@ -194,15 +191,16 @@
 
 .cart-title {
   display: flex;
+
   font-size: 16px !important;
   font-weight: 420 !important;
-  
 }
 
 .total {
   margin-left: auto;
   display: flex;
   flex-direction: column;
+  margin-bottom: 20.5px !important;
 }
 
 .total-amount {
@@ -409,7 +407,6 @@ li.selected.deleted .item {
     z-index: 1;
     background: #fff;
     padding-bottom: 8px;
-     
   }
 
   .total {
@@ -455,7 +452,6 @@ li.selected.deleted .item {
 
   .disappear h1 {
     font-size: 16px;
- 
   }
 
   .checkout {

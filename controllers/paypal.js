@@ -71,7 +71,7 @@ const createPayment = async (req, res) => {
       }
     );
 
-    return res.json(rta.data);
+    return await res.json(rta.data);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -96,7 +96,7 @@ const executePayment = async (req, res) => {
       }
     );
 
-    return res.json(response.data);
+    return await res.json(response.data);
   } catch (error) {
     return res.status(500).json({ message: "Internal Server error" });
   }
@@ -104,7 +104,7 @@ const executePayment = async (req, res) => {
 
 const cancelPayment = async (req, res) => {
   try {
-    return res.redirect("http://localhost:3000/");
+    return await res.redirect("http://localhost:3000/");
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

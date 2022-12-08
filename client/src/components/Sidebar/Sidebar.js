@@ -13,10 +13,9 @@ const Sidebar = ({ auth, setAuth }) => {
   const [sidebar, setSidebar] = React.useState(false);
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("token")));
   const [disableBtn, setDisableBtn] = React.useState(false);
-  let { googleUser, setGoogleUser, show, setShow, setIsSignedIn } =
+  let { googleUser, setGoogleUser, setIsSignedIn } =
     useContext(ContextOfProduct);
   const location = useLocation();
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -31,25 +30,12 @@ const Sidebar = ({ auth, setAuth }) => {
 
   const handleLogOut = async () => {
     dispatch({ type: "LOGOUT" });
-    navigate("/signin");
     setGoogleUser(null);
     setIsSignedIn(false);
   };
 
-  const toggleSidebar = (e) => {
-    setSidebar(!sidebar);
-  };
+  
 
-  const showSidebar = () => {
-    setSidebar(!sidebar);
-  };
-
-  const esconderSidebar = (e) => {
-    if (e.keyCode === 27) {
-      setSidebar(false);
-    }
-  };
-  const storageProducts = JSON.parse(localStorage.getItem("products"));
   return (
     <>
       {user || googleUser ? (
@@ -57,7 +43,7 @@ const Sidebar = ({ auth, setAuth }) => {
           <IconContext.Provider value={{ color: " #fff" }}>
             <div className="navbarr">
               <Link to="#" className="menu-bars">
-                <FaBars onClick={showSidebar} />
+                <FaBars onClick={() => setSidebar(!sidebar)} />
               </Link>
               <Link to="/">
                 <img className="sidebar-logo" src={Logo} alt="LogoOneComfort" />
@@ -65,15 +51,19 @@ const Sidebar = ({ auth, setAuth }) => {
             </div>
 
             <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
-              <ul className="nav-menu-items" onClick={showSidebar}>
+              <ul className="nav-menu-items" onClick={() => setSidebar(!sidebar)} >
                 <li className="navbar-toggle">
-                  <Link to="#" className="menu-bars">
+                  <Link to="/#" className="menu-bars">
                     <AiOutlineClose className="x-sidebar" />
                   </Link>
                 </li>
                 {SidebarData.map((item, index) => {
                   return (
-                    <li key={index} className={item.cName}>
+                    <li
+                      key={index}
+                      className={item.cName}
+                      onClick={() => item.titleAuth === "DISCONNECT" && handleLogOut}
+                    >
                       <Link to={user || googleUser ? item.pathAuth : item.path}>
                         {item.icon}
                         <span className="span-sidebar">

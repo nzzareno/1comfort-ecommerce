@@ -160,16 +160,9 @@
   --anchorColor: rgb(255, 255, 255);
 }
 
-a {
-  color: var(--anchorColor);
-  outline: 0;
-  text-decoration: none;
-}
+ 
 
-a:focus,
-a:hover {
-  text-decoration: underline;
-}
+ 
 
 :root {
   --formGap: 0.875rem;
@@ -286,10 +279,7 @@ input[type="submit"] {
   background-color: var(--loginSubmitHoverBackgroundColor);
 }
 
-p {
-  margin-block: 1.5rem;
-}
-
+ 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -306,6 +296,7 @@ input[type="number"] {
   font-family: "Roboto";
   font-size: 17px !important;
   font-weight: bold;
+  margin-top: .35rem;
 }
 
 .animate-div {

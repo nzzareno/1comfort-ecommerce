@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./CategoryFilter.scss";
 import axios from "axios";
-import {motion} from 'framer-motion'
+import { motion } from "framer-motion";
 
 const CategoryFilters = ({ setFilteredProducts }) => {
   const [clickedShirt, setClickedShirt] = useState(false);
@@ -26,15 +26,18 @@ const CategoryFilters = ({ setFilteredProducts }) => {
   }
 
   const variants = {
-    hidden: {opacity: 0},
-    visible: {opacity: 1},
-  }
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
 
   return (
-    <motion.div className="filter-container" variants={variants}
-    initial="hidden"
-    animate="visible"
-    transition={{ duration: 0.1 }}>
+    <motion.div
+      className="filter-container"
+      variants={variants}
+      initial={{ x: -900, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 1, delay: 0.3, ease: "easeInOut" }}
+    >
       <li>
         <button
           className={

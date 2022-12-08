@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import axios from "axios";
 import Avatar from "react-avatar";
-import "./Chat.scss";
+import styles from "./Chat.module.scss";
 import { AiTwotoneStar } from "react-icons/ai";
 import { HiUser } from "react-icons/hi";
 import moment from "moment";
@@ -77,74 +77,74 @@ const Chat = ({ socket }) => {
   });
 
   return (
-    <div className="chat-container">
+    <div className={styles.chatContainer}>
       <div
-        className="chat"
+        className={styles.chat}
         style={{
           backgroundColor: "#222",
         }}
       >
-        <div className="chat-title">
+        <div className={styles.chatTitle}>
           <h1>ONE COMFORT MESSAGING</h1>
           <h2>🟢 Live</h2>
-          <figure className="avatar-principal">
+          <figure className={styles.avatarPrincipal}>
             <Avatar
               name="ONE COMFORT"
               size="40"
               round={true}
               color="#060b26"
               style={{ marginRight: "10px" }}
-              className="avatar-menu"
+              className={styles.avatarMenu}
             />
           </figure>
         </div>
 
-        <div className="messages" id="messages">
-          <div className="messages-content">
+        <div className={styles.messages} id="messages">
+          <div className={styles.messagesContent}>
             {messages.map((message, idx) => (
               <div
                 key={idx}
                 className={
                   message.type === "user" && message.email === users?.email
-                    ? "message message-personal"
+                    ? styles.message + " " + styles.messagePersonal
                     : message.type !== "user" && message.email === users?.email
-                    ? "message message-personal"
+                    ? styles.message + " " + styles.messagePersonal
                     : message.type === "user" &&
                       message.email === googleUser?.user?.email
-                    ? "message message-personal"
+                    ? styles.message + " " + styles.messagePersonal
                     : message.type !== "user" &&
                       message.email === googleUser?.user?.email
-                    ? "message message-personal"
-                    : "message new"
+                    ? styles.message + " " + styles.messagePersonal
+                    : styles.message + " " + styles.new
                 }
               >
-                <figure className="avatar">
+                <figure className={styles.avatar}>
                   <Avatar
                     name={message.email}
                     size="30"
                     round={true}
                     style={{ marginRight: "30px" }}
-                    className="avatar-chat2"
+                    className={styles.avatarChat2}
                     color={message.type === "user" ? "#343b29" : "gold"}
                   />
                 </figure>
 
-                <div className="message-content">
+                <div className={styles.messsageContent}>
                   <p>{message.message}</p>
                   <p
                     className={
-                      message.type === "user" ? "datetime" : "datetime2"
+                      message.type === "user" ? styles.datetime : styles.datetime2
                     }
                   >
-                    <span className="name-user">
+                    <span className={styles.nameUser}>
                       <strong>{message.email},</strong>
                     </span>{" "}
                     <span>
                       {dateFormatter(message.date)}
                       {message.type === "user" ? (
-                        <HiUser className="user-icon" />
+                        <HiUser className={styles.userIcon} />
                       ) : (
-                        <AiTwotoneStar className="star-admin" />
+                        <AiTwotoneStar className={styles.starAdmin} />
                       )}
                     </span>
                   </p>
@@ -154,7 +154,7 @@ const Chat = ({ socket }) => {
           </div>
         </div>
         <div
-          className="message-box"
+          className={styles.messageBox}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               formik.handleSubmit();
@@ -163,7 +163,7 @@ const Chat = ({ socket }) => {
         >
           <textarea
             type="text"
-            className="message-input"
+            className={styles.messageInput}
             placeholder="Type message here..."
             value={formik.values.message}
             onChange={formik.handleChange}
@@ -173,13 +173,13 @@ const Chat = ({ socket }) => {
           <button
             type="submit"
             onClick={formik.handleSubmit}
-            className="message-submit"
+            className={styles.messageSubmit}
           >
             &#9658;
           </button>
         </div>
       </div>
-      <div className="bg"></div>
+      <div className={styles.bg}></div>
     </div>
   );
 };

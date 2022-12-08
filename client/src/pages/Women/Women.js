@@ -14,7 +14,13 @@ const Women = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    setFoot(true);
+    let timeOut = setTimeout(() => {
+      setFoot(true);
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeOut);
+    };
   }, [foot, setFoot]);
 
   useEffect(() => {
@@ -22,8 +28,8 @@ const Women = () => {
   }, []);
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
 
   const variants = {
     hidden: { opacity: 0 },
@@ -51,6 +57,7 @@ const Women = () => {
             initial="hidden"
             animate="visible"
             variants={variants}
+            transition={{ duration: 1 }}
             className={styles.header}
           >
             <h2 className={styles.title}>Womens</h2>
@@ -61,7 +68,12 @@ const Women = () => {
             />
           </motion.header>
           <CategoryFilters setFilteredProducts={setFilteredProducts} />
-          <div className={styles.containerProductos}>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={variants}
+            className={styles.containerProductos}
+          >
             {filteredProducts.map((item) => {
               return (
                 item.genre === "women" && (
@@ -69,6 +81,7 @@ const Women = () => {
                     initial="hidden"
                     animate="visible"
                     variants={variants}
+                    transition={{ duration: 1.5, delay: 0.3 }}
                     key={item._id}
                     className={styles.bodyHome}
                   >
@@ -160,7 +173,7 @@ const Women = () => {
                 )
               );
             })}
-          </div>
+          </motion.div>
         </>
       ) : (
         <Loader />

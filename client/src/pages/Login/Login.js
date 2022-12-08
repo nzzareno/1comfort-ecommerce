@@ -16,6 +16,7 @@ const Login = () => {
   const { logIn, foot, setFoot, backError, setBackError } =
     useContext(ContextOfProduct);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     setFoot(false);
@@ -25,16 +26,8 @@ const Login = () => {
     if (localStorage.getItem("token") || localStorage.getItem("profile")) {
       setBackError(null);
       navigate("/");
-    } else {
-      return console.log("no hay token");
     }
   }, [localStorage.getItem("token"), localStorage.getItem("profile")]);
-
-  const variants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  };
-  const navigate = useNavigate();
 
   const formik = useFormik({
     initialValues: {
@@ -60,7 +53,19 @@ const Login = () => {
   });
 
   return (
-    <div className="align-login">
+    <motion.div
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+      transition={{
+        delay: 0.1,
+        duration: 2.7,
+      }}
+      className="align-login"
+    >
       <motion.div
         initial={{
           opacity: 0,
@@ -218,17 +223,26 @@ const Login = () => {
         </form>
 
         <p className="text--center">
-          Not a member? <Link to="/signup">Sign up now </Link>
-          <svg className="icon">
-            <IoArrowRedo
-              style={{
-                color: "white",
-              }}
-            />
-          </svg>
+          Not a member?{" "}
+          <Link
+            style={{
+              color: "white",
+              textDecoration: "none",
+            }}
+            to="/signup"
+          >
+            Sign up now{" "}
+            <svg className="icon">
+              <IoArrowRedo
+                style={{
+                  color: "white",
+                }}
+              />
+            </svg>{" "}
+          </Link>
         </p>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

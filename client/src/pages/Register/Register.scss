@@ -157,17 +157,6 @@
   --anchorColor: rgb(255, 255, 255);
 }
 
-a {
-  color: var(--anchorColor);
-  outline: 0;
-  text-decoration: none;
-}
-
-a:focus,
-a:hover {
-  text-decoration: underline;
-}
-
 /* modules/form.css */
 
 :root {
@@ -282,10 +271,6 @@ input[type="submit"] {
 .login input[type="submit"]:focus,
 .login input[type="submit"]:hover {
   background-color: var(--loginSubmitHoverBackgroundColor);
-}
-
-p {
-  margin-block: 1.5rem;
 }
 
 input::-webkit-outer-spin-button,

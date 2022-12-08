@@ -61,7 +61,7 @@ const Navbar = () => {
 
                 <ul className="navbar__ul navbarv2">
                   <li className="navbar--li">
-                    <Link to="/men">MEN</Link>
+                    <Link to="/men">Men</Link>
                   </li>
                   <li
                     className="navbar--li"
@@ -69,7 +69,7 @@ const Navbar = () => {
                       marginLeft: "50px",
                     }}
                   >
-                    <Link to="/women">WOMEN</Link>
+                    <Link to="/women">Women</Link>
                   </li>
                 </ul>
 
@@ -77,9 +77,12 @@ const Navbar = () => {
                   <li
                     onClick={handleLogOut}
                     className={show ? "navbar__li" : "navbar--li"}
+                    style={{
+                      fontWeight: "bold",
+                    }}
                   >
                     <Link to={user || (googleUser && "/signin")}>
-                      {user || googleUser ? "DISCONNECT" : "SIGN IN"}
+                      {user || googleUser ? "Disconnect" : "SIGN IN"}
                     </Link>
                   </li>
                   <li className={show ? "navbar__li" : "navbar--li"}>

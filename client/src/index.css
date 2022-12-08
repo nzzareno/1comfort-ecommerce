@@ -4,15 +4,15 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+ 
 }
 
-body, html {
+body,
+html {
   margin: 0;
   height: 100%;
   width: 100%;
   /* background-color: #080e33 !important; */
   background: rgb(251, 251, 251);
- 
 }
-
- 

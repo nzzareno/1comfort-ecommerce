@@ -7,14 +7,23 @@ const ProductDetailsContainer = () => {
   let { data, addToCart, addProductToCart, foot, setFoot } = useContext(ContextOfProduct);
   const { id } = useParams();
 
+ 
   useEffect(() => {
-    setFoot(true)    
-   }, [foot, setFoot])
+    let timeOut = setTimeout(() => {
+      setFoot(true);
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeOut);
+    };
+  }, [foot, setFoot]);
 
   function getProduct(id) {
     let product = data.find((product) => product._id === id);
     return console.log(product);
   }
+
+
 
   return (
     <>

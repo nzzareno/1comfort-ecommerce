@@ -377,7 +377,7 @@ const Register = () => {
                 </p>
               </div>
             ) : null}
-              {backRegisterError && (
+            {backRegisterError && (
               <p
                 style={{
                   color: "#ff0000",
@@ -391,7 +391,7 @@ const Register = () => {
               </p>
             )}
           </div>
-          
+
           <div className="form__field">
             <input
               onKeyDown={(e) => {
@@ -437,17 +437,24 @@ const Register = () => {
 
         <p className="text--center">
           Already have a account ?{" "}
-          <Link to="/signin">
-            {" "}
-            <br /> Sign in now{" "}
-          </Link>
-          <svg className="icon">
+          <Link
+            style={{
+              color: "white",
+              textDecoration: "none",
+              marginTop: "2rem",
+            }}
+            to="/signin"
+          >
+            <br /> Sign in now  <svg className="icon">
             <IoArrowRedo
               style={{
                 color: "white",
               }}
             />
           </svg>
+
+          </Link>
+         
         </p>
       </motion.div>
     </div>

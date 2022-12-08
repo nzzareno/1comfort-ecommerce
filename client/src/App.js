@@ -4,7 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import React, { useContext, useEffect, useState } from "react";
 import Home from "./pages/Home/Home";
 import NotFound404 from "./pages/NotFound/NotFound404";
-import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Accessories from "./pages/Accessories/Accessories";
 import Tshirts from "./pages/T-Shirts/Tshirts";
@@ -24,20 +24,24 @@ import Chat from "./pages/Chat/Chat";
 import io from "socket.io-client";
 import Footer from "./components/Footer/Footer";
 
-// production route   https://one-comfort.herokuapp.com
-// development route http://localhost:8080
-const socket = io("https://onecomfort.up.railway.app")
-   
+const socket =
+  process.env.NODE_ENV === "production"
+    ? io("https://onecomfort.up.railway.app")
+    : io("http://localhost:8080");
 
 const App = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("token")));
   const [googleUser, setGoogleUser] = useState(
     JSON.parse(localStorage.getItem("profile"))
   );
-  const { isSignedIn, data } = useContext(ContextOfProduct);
+  const { isSignedIn} = useContext(ContextOfProduct);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
-    <GoogleOAuthProvider clientId="1034045335715-rcgadar76fdvc86lu7n8dkj5goh7vbo2.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
       <div className="App">
         <ToastContainer
           position="bottom-right"

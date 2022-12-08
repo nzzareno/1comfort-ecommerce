@@ -2,12 +2,10 @@ import React, { useContext, useState, useEffect, useRef } from "react";
 import { AiOutlineGift } from "react-icons/ai";
 import { ContextOfProduct } from "../../context/MyContext";
 import "./Cart.scss";
-import axios from "axios";
 import { toast } from "react-toastify";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useNavigate } from "react-router-dom";
-import ReactDOM from "react-dom";
 import Paypal from "../../components/Paypal/Paypal";
 
 const Cart = () => {
@@ -18,23 +16,23 @@ const Cart = () => {
     setShow,
     show,
     removeProductFromLocalStorage,
+    foot,
+    setFoot,
   } = useContext(ContextOfProduct);
-
-  const navigate = useNavigate();
 
   useEffect(() => {
     setShow(true);
   }, [show]);
 
   useEffect(() => {
-    addProductsToCart();
-  }, []);
-  // useEffect checkout setCheckout
-  useEffect(() => {
-    if (checkout) {
-      setCheckOut(true);
-    }
-  }, []);
+    let timeOut = setTimeout(() => {
+      setFoot(true);
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeOut);
+    };
+  }, [foot, setFoot]);
 
   const storageProducts = JSON.parse(localStorage.getItem("products"));
 
@@ -75,7 +73,7 @@ const Cart = () => {
                     <span className="total-amount">
                       $
                       {storageProducts
-                        .map((item) => item.price * item.quantity) // he aqui el error !!!
+                        .map((item) => item.price * item.quantity)
                         .reduce((a, b) => a + b)}
                     </span>
                   ) : (
@@ -150,7 +148,7 @@ const Cart = () => {
               </>
             ) : (
               <h3 className="checkout-error-title">
-                The cart is empty, go through our catalog and come back later
+                Your cart is empty, add some products
               </h3>
             )}
           </div>

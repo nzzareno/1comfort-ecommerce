@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import { ContextOfProduct } from "../../context/MyContext";
+import {motion} from 'framer-motion'
 import "./Success.scss";
 
 const Success = () => {
@@ -12,8 +13,13 @@ const Success = () => {
     setShow(true);
   }, [show, setShow]);
 
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  }
+
   return (
-    <div className="container-success">
+  <motion.div variants={variants} initial="hidden" animate="visible" className="container-success">
       <div className="actionS">
         <div className="trophy">
           <svg fill="#FFD600" width="100%" height="100%" viewBox="0 0 24 24">
@@ -47,7 +53,7 @@ const Success = () => {
       <div className="hope">
         <span>Thank you for your purchase. We hope to see you again soon.</span>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

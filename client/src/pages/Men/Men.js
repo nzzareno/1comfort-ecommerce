@@ -14,7 +14,13 @@ const Men = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    setFoot(true);
+    let timeOut = setTimeout(() => {
+      setFoot(true);
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeOut);
+    };
   }, [foot, setFoot]);
 
   useEffect(() => {
@@ -22,8 +28,8 @@ const Men = () => {
   }, []);
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
 
   async function giveMeAllProducts() {
     const response = await axios.get("/api/productos");
@@ -51,6 +57,7 @@ const Men = () => {
             initial="hidden"
             animate="visible"
             variants={variants}
+            transition={{ duration: 1}}
             className={styles.header}
           >
             <h2 className={styles.title}>Mens</h2>
@@ -61,7 +68,12 @@ const Men = () => {
             />
           </motion.header>
           <CategoryFilters setFilteredProducts={setFilteredProducts} />
-          <div className={styles.containerProductos}>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={variants}
+            className={styles.containerProductos}
+          >
             {filteredProducts ? (
               filteredProducts.map((item) => {
                 return (
@@ -70,6 +82,7 @@ const Men = () => {
                       initial="hidden"
                       animate="visible"
                       variants={variants}
+                      transition={{ duration: 1.5, delay: 0.3}}
                       key={item._id}
                       className={styles.bodyHome}
                     >
@@ -166,7 +179,7 @@ const Men = () => {
             ) : (
               <Loader />
             )}
-          </div>
+          </motion.div>
         </>
       ) : (
         <Loader />

@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import GenderFilters from "../../components/GenderFilters/GenderFilters";
-import Loader from '../Loader/Loader'
+import Loader from "../Loader/Loader";
 
 const Tshirts = () => {
   let [filteredProducts, setFilteredProducts] = useState([]);
@@ -14,7 +14,13 @@ const Tshirts = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    setFoot(true);
+    let timeOut = setTimeout(() => {
+      setFoot(true);
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeOut);
+    };
   }, [foot, setFoot]);
 
   useEffect(() => {
@@ -22,8 +28,8 @@ const Tshirts = () => {
   }, []);
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
 
   async function giveMeAllProducts() {
     const response = await axios.get("/api/productos");
@@ -44,129 +50,135 @@ const Tshirts = () => {
   };
   return (
     <>
-    {
-      filteredProducts.length > 1 ? (
+      {filteredProducts.length > 1 ? (
         <>
-             <motion.header
-        initial="hidden"
-        animate="visible"
-        variants={variants}
-        className={styles.header}
-      >
-        <h2 className={styles.title}>T-shirts and jumpers</h2>
-        <img
-          src={HeaderPic}
-          className={styles.headerImg}
-          alt="header-accessories"
-        />
-      </motion.header>
+          <motion.header
+            initial="hidden"
+            animate="visible"
+            variants={variants}
+            className={styles.header}
+            transition={{ duration: 1 }}
+          >
+            <h2 className={styles.title}>T-shirts and jumpers</h2>
+            <img
+              src={HeaderPic}
+              className={styles.headerImg}
+              alt="header-accessories"
+            />
+          </motion.header>
 
-      <GenderFilters setFilteredProducts={setFilteredProducts} />
-      
-      <div className={styles.containerProductos}>
-        {filteredProducts.map((item) => {
-          return (
-            item.category === "t-shirts" && (
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                variants={variants}
-                className={styles.bodyHome}
-                key={item._id}
-              >
-                <motion.div
-                  initial="hidden"
-                  animate="visible"
-                  variants={variants}
-                  className={styles.container}
-                >
+          <GenderFilters setFilteredProducts={setFilteredProducts} />
+
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={variants}
+            className={styles.containerProductos}
+          >
+            {filteredProducts.map((item) => {
+              return (
+                item.category === "t-shirts" && (
                   <motion.div
                     initial="hidden"
                     animate="visible"
                     variants={variants}
-                    key={item.id}
-                    className={styles.card}
+                    transition={{ duration: 1.5, delay: 0.3 }}
+                    className={styles.bodyHome}
+                    key={item._id}
                   >
                     <motion.div
                       initial="hidden"
                       animate="visible"
                       variants={variants}
-                      key={item.id}
+                      className={styles.container}
                     >
-                      <div className={styles.imgBx}>
-                        <img
-                          className={styles.imagez}
-                          src={item.image}
-                          alt="imagex"
-                        />
-                      </div>
-
-                      <div className={styles.content}>
-                        <div className={styles.productName}>
-                          <h3>{item.title}</h3>
-                        </div>
-
-                        <div
-                          className={styles.price_rating}
-                          style={{
-                            textAlign: "center",
-                            display: "flex",
-                            flexDirection: "row",
-                            justifyContent: "space-between",
-                            alignItems: "center",
-                          }}
+                      <motion.div
+                        initial="hidden"
+                        animate="visible"
+                        variants={variants}
+                        key={item.id}
+                        className={styles.card}
+                      >
+                        <motion.div
+                          initial="hidden"
+                          animate="visible"
+                          variants={variants}
+                          key={item.id}
                         >
-                          <h2 className={styles.precio}>
-                            <span>$</span>
-                            {item.price}
-                          </h2>
+                          <div className={styles.imgBx}>
+                            <img
+                              className={styles.imagez}
+                              src={item.image}
+                              alt="imagex"
+                            />
+                          </div>
 
-                          <img
-                            className={styles.logoImg}
-                            src={item.logo}
-                            alt="logox"
-                          />
-                          <small
-                            className={styles.codeSmall}
-                            style={{ fontWeight: "lighter" }}
-                          >
-                            {item.code}
-                          </small>
-                          <small
-                            className={styles.dateSmall}
-                            style={{ fontWeight: "lighter" }}
-                          >
-                            {dateFormatter(item.date)}
-                          </small>
-                          <h3 className={styles.stock}>Stock: {item.stock}</h3>
-                          <button
-                            onClick={() => navigate(`/details/${item._id}`)}
-                            className={styles.btn_product_home}
-                          >
-                            SHOP NOW
-                          </button>
-                        </div>
-                        <div className={styles.cuotasContainer}>
-                          <h4 className={styles.cuotesHome}>
-                            Or 6 installments of $
-                            {parseFloat(item.price / 6).toFixed(2)}
-                          </h4>
-                        </div>
-                      </div>
+                          <div className={styles.content}>
+                            <div className={styles.productName}>
+                              <h3>{item.title}</h3>
+                            </div>
+
+                            <div
+                              className={styles.price_rating}
+                              style={{
+                                textAlign: "center",
+                                display: "flex",
+                                flexDirection: "row",
+                                justifyContent: "space-between",
+                                alignItems: "center",
+                              }}
+                            >
+                              <h2 className={styles.precio}>
+                                <span>$</span>
+                                {item.price}
+                              </h2>
+
+                              <img
+                                className={styles.logoImg}
+                                src={item.logo}
+                                alt="logox"
+                              />
+                              <small
+                                className={styles.codeSmall}
+                                style={{ fontWeight: "lighter" }}
+                              >
+                                {item.code}
+                              </small>
+                              <small
+                                className={styles.dateSmall}
+                                style={{ fontWeight: "lighter" }}
+                              >
+                                {dateFormatter(item.date)}
+                              </small>
+                              <h3 className={styles.stock}>
+                                Stock: {item.stock}
+                              </h3>
+                              <button
+                                onClick={() => navigate(`/details/${item._id}`)}
+                                className={styles.btn_product_home}
+                              >
+                                SHOP NOW
+                              </button>
+                            </div>
+                            <div className={styles.cuotasContainer}>
+                              <h4 className={styles.cuotesHome}>
+                                Or 6 installments of $
+                                {parseFloat(item.price / 6).toFixed(2)}
+                              </h4>
+                            </div>
+                          </div>
+                        </motion.div>
+                      </motion.div>
                     </motion.div>
                   </motion.div>
-                </motion.div>
-              </motion.div>
-            )
-          );
-        })}
-      </div>
+                )
+              );
+            })}
+          </motion.div>
         </>
       ) : (
-        <Loader/>
-      )
-    }
- 
+        <Loader />
+      )}
     </>
   );
 };

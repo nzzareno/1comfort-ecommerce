@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import "./Home.scss";
 import MenuItem from "../../components/Menu-Item/MenuItem";
 import { motion } from "framer-motion";
@@ -14,17 +14,47 @@ import { IoChatbubbles } from "react-icons/io5";
 import Loader from "../Loader/Loader";
 
 const Home = () => {
-  const { users, data, googleUser, foot, setFoot } =
+  const { users, data, googleUser, foot, setFoot, setData } =
     useContext(ContextOfProduct);
   const navigate = useNavigate();
+  const [lastYPos, setLastYPos] = useState(0);
+  const [shouldShowActions, setShouldShowActions] = useState(false);
 
   useEffect(() => {
-    setFoot(true);
+    let timeOut = setTimeout(() => {
+      setFoot(true);
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeOut);
+    };
   }, [foot, setFoot]);
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    function handleScroll() {
+      const yPos = window.scrollY;
+      const isScrollingDown = yPos > lastYPos;
+      setShouldShowActions(isScrollingDown);
+      setLastYPos(yPos);
+    }
+    window.addEventListener("scroll", handleScroll, false);
+
+    return () => window.removeEventListener("scroll", handleScroll, false);
+  }, [lastYPos]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return <div className={className} style={{ ...style }} onClick={onClick} />;
+  }
+
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return <div className={className} style={{ ...style }} onClick={onClick} />;
+  }
 
   let settings = {
     dots: false,
@@ -43,6 +73,7 @@ const Home = () => {
 
   let settingsV2 = {
     dots: false,
+    arrows: true,
     infinite: true,
     speed: 2000,
     slidesToShow: 4,
@@ -55,6 +86,8 @@ const Home = () => {
     autoplay: true,
     autoplaySpeed: 2000,
     cssEase: "linear",
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
 
     responsive: [
       {
@@ -120,7 +153,7 @@ const Home = () => {
   };
 
   return (
-    <>
+    <div>
       {data.length > 1 ? (
         <>
           <motion.div
@@ -149,15 +182,63 @@ const Home = () => {
               </Slider>
             </motion.div>
           </motion.div>
-          <h2 className="absoluto-user">
-            Welcome,{" "}
-            {users?.firstname || googleUser?.user.given_name || "Guest"}
-          </h2>
+
           <div className="pic-container"></div>
-          <motion.button onClick={() => navigate("/chat")} className="chat-buton" initial="hidden" animate="visible" variants={variants}>
+          <motion.button
+            onClick={() => navigate("/chat")}
+            className="chat-buton"
+            initial="hidden"
+            animate="visible"
+            variants={variants}
+          >
             <IoChatbubbles />
           </motion.button>
-          <h3 className="home-title txt anim-text-flow">NEW ARRIVALS</h3>
+
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={variants}
+            className="wrapper-arrivals"
+          >
+            <motion.div className="home-title">
+              <motion.span
+                initial={{ x: -2000, opacity: 0 }}
+                animate={
+                  shouldShowActions && {
+                    opacity: 1,
+                    x: 0,
+                    transition: {
+                      duration: .7,
+                      ease: [0.6, 0.05, -0.01, 0.9],
+                      
+                    },
+                  }
+                }
+                id="our__last"
+              >
+                Our last products for you, 
+              </motion.span>
+              <motion.span
+                initial={{ x: 2000, opacity: 0 }}
+                animate={
+                  shouldShowActions && {
+                    opacity: 1,
+                    x: 0,
+                    transition: {
+                      duration: .7,
+                      ease: [0.6, 0.05, -0.01, 0.9],
+                      
+                    },
+                  }
+                }
+                id="txt"
+                className="anim-text-flow"
+              >
+                {users?.firstname || googleUser?.user.given_name || "Guest"}
+              </motion.span>
+            </motion.div>
+          </motion.div>
+
           <motion.div
             initial="hidden"
             animate="visible"
@@ -252,7 +333,7 @@ const Home = () => {
       ) : (
         <Loader />
       )}
-    </>
+    </div>
   );
 };
 

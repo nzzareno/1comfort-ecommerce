@@ -23,14 +23,20 @@ const ProductDetails = ({ item, getProduct }) => {
 
   useEffect(() => {
     setShow(true);
-  }, [show]);
+  }, [show, setShow]);
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
+    window.scrollTo(0, 0);
+  }, []);
 
   useEffect(() => {
-    setFoot(true);
+    let timeOut = setTimeout(() => {
+      setFoot(true);
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeOut);
+    };
   }, [foot, setFoot]);
 
   const onAdd = (cantidadCarro) => {

@@ -201,8 +201,9 @@
 .codeSmall {
   position: absolute;
   bottom: 0;
-  margin-left: 380px;
-  margin-bottom: 12px;
+  margin-left: 370px;
+  margin-bottom: 10px;
+  font-weight: 300 !important;
 }
 
 .btn_product_home {
@@ -240,14 +241,16 @@
   position: absolute;
   bottom: 0;
   margin: 10px 155px;
+  margin-left: 168px;
+  font-weight: 300 !important;
 }
 
 .cuotesHome {
   text-align: left;
   bottom: 0;
   color: #004c87;
-  font-weight: bold;
   margin: 0 2px;
+  font-weight: 600 !important;
   font-size: 17px;
 }
 

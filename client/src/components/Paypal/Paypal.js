@@ -10,6 +10,8 @@ export default function Paypal() {
     removeAllFromCart,
     users,
     handlerStock,
+    data,
+    setData,
   } = useContext(ContextOfProduct);
   const [googleUser, setGoogleUser] = useState(
     JSON.parse(localStorage.getItem("profile"))
@@ -25,10 +27,11 @@ export default function Paypal() {
         style: {
           layout: "vertical",
           color: "blue",
-          shape: "rect",
-          label: "paypal",
-          width: "100%",
-          height: 50,
+          shape: "pill",
+          label: "checkout",
+          height: 40,
+
+
         },
         createOrder: async () => {
           const createPay = await axios.post("/api/paypal/create-payment", {});
@@ -46,7 +49,7 @@ export default function Paypal() {
           const itemsInOrder = cart[cart.length - 1];
           const productsInCart = itemsInOrder.products;
 
-          productsInCart.map((p) => {
+          await productsInCart.map((p) => {
             return handlerStock(p._id);
           });
 
@@ -59,8 +62,8 @@ export default function Paypal() {
                 qtyProducts: productsInCart.length,
                 currency_type: "USD",
                 email: localStorage.getItem("profile")
-                  ? googleUser.user.email
-                  : users.email,
+                  ? googleUser?.user.email
+                  : users?.email,
                 history: [details],
               })
               .then((res) => {
@@ -75,19 +78,11 @@ export default function Paypal() {
           await removeAllFromCart();
         },
         onError: (err) => {
-          console.error(err);
+          console.error(err.message);
         },
       })
       .render(paypal.current);
-  }, [
-    googleUser,
-    navigate,
-    removeAllFromCart,
-    removeAllProductsFromLocalStorage,
-    users,
-    handlerStock,
-    
-  ]);
+  }, []);
 
   return (
     <div

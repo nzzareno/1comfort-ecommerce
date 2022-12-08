@@ -15,7 +15,7 @@ const orderUserNodemailer = async (order) => {
       },
     }
   );
-  const user = users.data;
+  const user = users?.data;
   const transporter = nodemailer.createTransport({
     service: "gmail",
     secure: true,

@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import "./Loader.scss";
 import { Dna } from "react-loader-spinner";
+import { ContextOfProduct } from "../../context/MyContext";
 
 const Loader = () => {
+  let { foot, setFoot } = useContext(ContextOfProduct);
+
+  useEffect(() => {
+    setFoot(false);
+  }, [foot, setFoot]);
   return (
     <div className="container__loader-spinner">
       <div className="absolute-loader">

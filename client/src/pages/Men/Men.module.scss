@@ -39,7 +39,6 @@
   background-color: #ffffff;
   height: 700px;
   box-shadow: 0 0 0.6px rgba(0, 0, 0, 1);
-  
 }
 
 .container .card .imgBx {
@@ -191,17 +190,8 @@
 .logoImg {
   position: absolute;
   bottom: 0;
-
   height: 40px;
-
   object-fit: contain;
-}
-
-.codeSmall {
-  position: absolute;
-  bottom: 0;
-  margin-left: 380px;
-  margin-bottom: 12px;
 }
 
 .btn_product_home {
@@ -239,13 +229,23 @@
   position: absolute;
   bottom: 0;
   margin: 10px 155px;
+  margin-left: 168px;
+  font-weight: 300 !important;
+}
+
+.codeSmall {
+  position: absolute;
+  bottom: 0;
+  margin-left: 370px;
+  margin-bottom: 10px;
+  font-weight: 300 !important;
 }
 
 .cuotesHome {
   text-align: left;
   bottom: 0;
   color: #004c87;
-  font-weight: bold;
+  font-weight: 600 !important;
   margin: 0 2px;
   font-size: 17px;
 }
