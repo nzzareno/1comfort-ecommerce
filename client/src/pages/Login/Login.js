@@ -25,7 +25,6 @@ const Login = () => {
   useEffect(() => {
     if (localStorage.getItem("token") || localStorage.getItem("profile")) {
       setBackError(null);
-      navigate("/");
     }
   }, [localStorage.getItem("token"), localStorage.getItem("profile")]);
 
