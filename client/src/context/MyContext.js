@@ -88,6 +88,7 @@ export default function ProductContext({ children }) {
       localStorage.setItem("token", JSON.stringify(resp.data));
       await gettingUser();
       setAuth(true);
+      
     } catch (err) {
       setBackError(err.response.data.message);
     }

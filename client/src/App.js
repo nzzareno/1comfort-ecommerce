@@ -34,7 +34,7 @@ const App = () => {
   const [googleUser, setGoogleUser] = useState(
     JSON.parse(localStorage.getItem("profile"))
   );
-  const { isSignedIn} = useContext(ContextOfProduct);
+  const { isSignedIn } = useContext(ContextOfProduct);
 
   useEffect(() => {
     window.scrollTo(0, 0);
