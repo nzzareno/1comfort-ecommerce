@@ -22,12 +22,6 @@ const Login = () => {
     setFoot(false);
   }, [foot, setFoot]);
 
-  useEffect(() => {
-    if (localStorage.getItem("token") || localStorage.getItem("profile")) {
-      setBackError(null);
-    }
-  }, [localStorage.getItem("token"), localStorage.getItem("profile")]);
-
   const formik = useFormik({
     initialValues: {
       email: "",
