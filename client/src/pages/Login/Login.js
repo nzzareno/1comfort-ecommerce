@@ -22,6 +22,13 @@ const Login = () => {
     setFoot(false);
   }, [foot, setFoot]);
 
+  useEffect(() => {
+    if (localStorage.getItem("token") || localStorage.getItem("profile")) {
+      setBackError(null);
+      navigate("/");
+    }
+  }, [backError, setBackError]);
+
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -190,14 +197,11 @@ const Login = () => {
 
               try {
                 dispatch({ type: "AUTH", data: { client, token, user } });
-                await axios
-                  .post("/api/auth/google", {
-                    token,
-                    user,
-                  })
-                  .then(() => {
-                    navigate("/");
-                  });
+                await axios.post("/api/auth/google", {
+                  token,
+                  user,
+                });
+                navigate("/");
               } catch (error) {
                 console.log(error);
               }
