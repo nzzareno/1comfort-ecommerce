@@ -17,17 +17,19 @@ const Login = () => {
     useContext(ContextOfProduct);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const myToken = localStorage.getItem("token");
+  const myProfileG = localStorage.getItem("profile");
 
   useEffect(() => {
     setFoot(false);
   }, [foot, setFoot]);
 
   useEffect(() => {
-    if (localStorage.getItem("token") || localStorage.getItem("profile")) {
+    if (myToken || myProfileG) {
       setBackError(null);
       navigate("/");
     }
-  }, [backError, setBackError, navigate, ]);
+  }, [backError, setBackError, navigate, myToken, myProfileG]);
 
   const formik = useFormik({
     initialValues: {
