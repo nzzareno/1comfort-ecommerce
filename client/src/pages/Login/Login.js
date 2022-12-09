@@ -27,7 +27,7 @@ const Login = () => {
       setBackError(null);
       navigate("/");
     }
-  }, [backError, setBackError]);
+  }, [backError, setBackError, navigate, ]);
 
   const formik = useFormik({
     initialValues: {
