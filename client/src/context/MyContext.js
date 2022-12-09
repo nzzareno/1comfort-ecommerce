@@ -42,7 +42,6 @@ export default function ProductContext({ children }) {
           Authorization: `Bearer ${token.token}`,
         },
       });
-
       setUsers(resp.data);
     } else {
       delete axios.defaults.headers.common["x-auth-token"];
@@ -76,8 +75,6 @@ export default function ProductContext({ children }) {
       })
       .catch((err) => console.log(err));
   }, []);
-
-  
 
   const logIn = async (user) => {
     const config = {
@@ -183,14 +180,6 @@ export default function ProductContext({ children }) {
       .catch((err) => console.log(err));
   }
 
-  const changeBackground = () => {
-    if (window.scrollY >= 100) {
-      setShow(true);
-    } else {
-      setShow(false);
-    }
-  };
-
   const dateFormatter = (date) => {
     const newDate = new Date(date);
     return newDate.toLocaleDateString();
@@ -285,7 +274,7 @@ export default function ProductContext({ children }) {
         addProductsToCart,
         it,
         setIt,
-        changeBackground,
+
         show,
         setShow,
         addCartOrder,
