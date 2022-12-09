@@ -47,8 +47,8 @@ const Login = () => {
     onSubmit: async (values) => {
       try {
         await logIn(values);
-        navigate("/");
-        return;
+       
+        
       } catch (error) {
         console.log(error);
       }
