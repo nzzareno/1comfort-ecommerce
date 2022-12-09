@@ -1,6 +1,5 @@
 import { createContext, useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 export const ContextOfProduct = createContext();
 
@@ -25,7 +24,6 @@ export default function ProductContext({ children }) {
   const [categories, setCategories] = useState([]);
   const [backError, setBackError] = useState(null);
   const [backRegisterError, setBackRegisterError] = useState(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -92,7 +90,6 @@ export default function ProductContext({ children }) {
       localStorage.setItem("token", JSON.stringify(resp.data));
       await gettingUser();
       setAuth(true);
-      navigate("/");
     } catch (err) {
       setBackError(err.response.data.message);
     }
