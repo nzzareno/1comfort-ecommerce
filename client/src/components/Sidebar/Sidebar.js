@@ -8,6 +8,7 @@ import { IconContext } from "react-icons";
 import { ContextOfProduct } from "../../context/MyContext";
 import { useDispatch } from "react-redux";
 import Logo from "../../assets/v3log.svg";
+import { motion } from "framer-motion";
 
 const Sidebar = ({ auth, setAuth }) => {
   const [sidebar, setSidebar] = React.useState(false);
@@ -34,24 +35,49 @@ const Sidebar = ({ auth, setAuth }) => {
     setIsSignedIn(false);
   };
 
-  
+  const variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
 
   return (
     <>
       {user || googleUser ? (
-        <div className="contexto-side">
+        <div
+         
+          className="contexto-side"
+        >
           <IconContext.Provider value={{ color: " #fff" }}>
-            <div className="navbarr">
+            <motion.div
+              variants={variants}
+              initial="hidden"
+              animate="visible"
+              transition={{
+                duration: 1,
+              }}
+              className="navbarr"
+            >
               <Link to="#" className="menu-bars">
                 <FaBars onClick={() => setSidebar(!sidebar)} />
               </Link>
               <Link to="/">
                 <img className="sidebar-logo" src={Logo} alt="LogoOneComfort" />
               </Link>
-            </div>
+            </motion.div>
 
-            <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
-              <ul className="nav-menu-items" onClick={() => setSidebar(!sidebar)} >
+            <motion.nav
+              variants={variants}
+              initial="hidden"
+              animate="visible"
+              transition={{
+                duration: 2,
+              }}
+              className={sidebar ? "nav-menu active" : "nav-menu"}
+            >
+              <ul
+                className="nav-menu-items"
+                onClick={() => setSidebar(!sidebar)}
+              >
                 <li className="navbar-toggle">
                   <Link to="/#" className="menu-bars">
                     <AiOutlineClose className="x-sidebar" />
@@ -62,7 +88,9 @@ const Sidebar = ({ auth, setAuth }) => {
                     <li
                       key={index}
                       className={item.cName}
-                      onClick={() => item.titleAuth === "DISCONNECT" && handleLogOut}
+                      onClick={() =>
+                        item.titleAuth === "Disconnect" && handleLogOut()
+                      }
                     >
                       <Link to={user || googleUser ? item.pathAuth : item.path}>
                         {item.icon}
@@ -74,7 +102,7 @@ const Sidebar = ({ auth, setAuth }) => {
                   );
                 })}
               </ul>
-            </nav>
+            </motion.nav>
           </IconContext.Provider>
         </div>
       ) : (

@@ -18,7 +18,7 @@
   right: 0;
   left: 0;
   width: 100%;
-  transition: 500ms;
+  
 }
 
 .slider {
@@ -79,7 +79,7 @@
   left: 0;
   width: 100%;
   background-color: transparent;
-  transition: 777ms;
+ 
   color: white;
 }
 
@@ -91,7 +91,7 @@
   z-index: 999;
   color: white;
   background: #121f3d;
-  animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+  
   padding-top: 0px;
   padding-bottom: 0px;
   box-shadow: 0 2px 4px 0 rgb(0 0 0 / 25%);
@@ -184,6 +184,7 @@
 .carritox {
   font-size: 1.4rem;
   margin-top: 0.1rem;
+  
 }
 
 .carrito-span {
@@ -211,7 +212,7 @@
   justify-content: start;
   align-items: center;
   position: fixed;
-  z-index: 99999999;
+  z-index: 999;
   width: 100%;
 }
 
@@ -232,13 +233,13 @@
   position: fixed;
   top: 0;
   left: -100%;
-  transition: 850ms;
+  transition: 300ms;
 }
 
 .nav-menu.active {
   left: 0;
   z-index: 99999;
-  transition: 350ms;
+  transition: 300ms;
 }
 
 .nav-text {
@@ -277,8 +278,9 @@
 }
 
 .x-sidebar {
-  font-size: 3.5rem;
-  background-color: red;
+  font-size: 3.6rem;
+   
+  z-index: 9999999999
 }
 
 .navbar-toggle {

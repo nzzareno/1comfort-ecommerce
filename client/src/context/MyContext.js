@@ -77,6 +77,8 @@ export default function ProductContext({ children }) {
       .catch((err) => console.log(err));
   }, []);
 
+  
+
   const logIn = async (user) => {
     const config = {
       headers: { "Content-Type": "application/json" },
@@ -88,7 +90,6 @@ export default function ProductContext({ children }) {
       localStorage.setItem("token", JSON.stringify(resp.data));
       await gettingUser();
       setAuth(true);
-      
     } catch (err) {
       setBackError(err.response.data.message);
     }
@@ -183,7 +184,7 @@ export default function ProductContext({ children }) {
   }
 
   const changeBackground = () => {
-    if (window.scrollY >= 101) {
+    if (window.scrollY >= 100) {
       setShow(true);
     } else {
       setShow(false);
@@ -313,7 +314,6 @@ export default function ProductContext({ children }) {
         backRegisterError,
         isSignedUp,
         setIsSignedUp,
-    
       }}
     >
       {children}
