@@ -19,6 +19,7 @@ const Home = () => {
   const navigate = useNavigate();
   const [lastYPos, setLastYPos] = useState(0);
   const [shouldShowActions, setShouldShowActions] = useState(false);
+  const [username, setUsername] = useState("");
 
   useEffect(() => {
     let timeOut = setTimeout(() => {
@@ -29,6 +30,17 @@ const Home = () => {
       clearTimeout(timeOut);
     };
   }, [foot, setFoot]);
+
+  useEffect(() => {
+    const usernameToken = users?.firstname;
+    const googleUsername = googleUser?.user.given_name;
+
+    if (localStorage.getItem("token")) {
+      setUsername(usernameToken);
+    } else {
+      setUsername(googleUsername);
+    }
+  }, [users, googleUser, username, setUsername, localStorage.getItem("token")]);
 
   useEffect(() => {
     function handleScroll() {
@@ -45,6 +57,8 @@ const Home = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {}, []);
 
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -77,7 +91,7 @@ const Home = () => {
     infinite: true,
     speed: 1000,
     slidesToScroll: 1,
-    slidesToShow: 4 ,
+    slidesToShow: 4,
     swipeToSlide: true,
     initialSlide: 0,
     pauseOnFocus: true,
@@ -207,7 +221,7 @@ const Home = () => {
                     opacity: 1,
                     x: 0,
                     transition: {
-                      duration: .7,
+                      duration: 0.7,
                       ease: [0.6, 0.05, -0.01, 0.9],
                     },
                   }
@@ -223,16 +237,15 @@ const Home = () => {
                     opacity: 1,
                     x: 0,
                     transition: {
-                      duration: .7,
+                      duration: 0.7,
                       ease: [0.6, 0.05, -0.01, 0.9],
-                      
                     },
                   }
                 }
                 id="txt"
                 className="anim-text-flow"
               >
-                {users?.firstname || googleUser?.user.given_name || "Guest"}
+                {username || "Guest"}
               </motion.span>
             </motion.div>
           </motion.div>

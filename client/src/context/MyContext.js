@@ -28,12 +28,11 @@ export default function ProductContext({ children }) {
   useEffect(() => {
     if (localStorage.getItem("token")) {
       gettingUser();
+    } else {
+      const tokenGoogle = googleUser?.token;
+      setGoogleUser(JSON.parse(localStorage.getItem("profile")));
     }
-    const tokenGoogle = googleUser?.token;
-    setGoogleUser(JSON.parse(localStorage.getItem("profile")));
-  }, []);
-
-
+  }, [googleUser?.token, users]);
 
   useEffect(() => {
     axios
@@ -77,7 +76,6 @@ export default function ProductContext({ children }) {
       delete axios.defaults.headers.common["x-auth-token"];
     }
   }
-
 
   const logIn = async (user) => {
     const config = {
