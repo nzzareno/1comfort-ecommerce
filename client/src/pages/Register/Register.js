@@ -16,7 +16,7 @@ import { ContextOfProduct } from "../../context/MyContext";
 import { GoogleLogin } from "@react-oauth/google";
 import { useDispatch } from "react-redux";
 import jwt_decode from "jwt-decode";
-import axios from 'axios'
+import axios from "axios";
 
 const Register = () => {
   const [data, setData] = useState({});
@@ -41,9 +41,8 @@ const Register = () => {
   useEffect(() => {
     if (myToken) {
       setBackRegisterError(null);
-      navigate("/signin");
-    } 
-    
+    }
+
     if (myProfileG) {
       setBackRegisterError(null);
       navigate("/");
@@ -87,6 +86,9 @@ const Register = () => {
     onSubmit: async (values) => {
       try {
         await register(values);
+        if (myToken) {
+          navigate("/signin");
+        }
       } catch (err) {
         console.log(err);
       }
@@ -419,7 +421,7 @@ const Register = () => {
               const user = await jwt_decode(token);
 
               try {
-                setIsSignedIn(true)
+                setIsSignedIn(true);
                 dispatch({ type: "AUTH", data: { client, token, user } });
 
                 await axios.post("/api/auth/google", {
