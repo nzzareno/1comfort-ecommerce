@@ -10,11 +10,21 @@ import { HiUser } from "react-icons/hi";
 import moment from "moment";
 
 const Chat = ({ socket }) => {
-  let { show, setShow, users } = useContext(ContextOfProduct);
+  let { show, setShow, users, googleUser } = useContext(ContextOfProduct);
   const [messages, setMessages] = useState([]);
-  const [googleUser, setGoogleUser] = useState(
-    JSON.parse(localStorage.getItem("profile"))
-  );
+  const [username, setUsername] = useState("");
+
+  useEffect(() => {
+    const usernameToken = users?.email;
+    const googleUsername = googleUser?.user?.email;
+
+    if (localStorage.getItem("token")) {
+      setUsername(usernameToken);
+    } else {
+      setUsername(googleUsername);
+    }
+  }, [users, googleUser, username, setUsername, localStorage.getItem("token")]);
+
   useEffect(() => {
     setShow(true);
   }, [show, setShow]);
@@ -61,12 +71,8 @@ const Chat = ({ socket }) => {
         const chatData = await axios.post("/api/chat", {
           message: values.message,
           date: values.date,
-          email: users?.email || googleUser?.user?.email,
-          type:
-            (users?.email || googleUser?.user?.email) ===
-            "onecomfortclothes@gmail.com"
-              ? "admin"
-              : "user",
+          email: username,
+          type: username === "onecomfortclothes@gmail.com" ? "admin" : "user",
         });
         await socket.emit("send_message", chatData);
         values.message = "";
@@ -105,15 +111,13 @@ const Chat = ({ socket }) => {
               <div
                 key={idx}
                 className={
-                  message.type === "user" && message.email === users?.email
+                  message.type === "user" && message.email === username
                     ? styles.message + " " + styles.messagePersonal
-                    : message.type !== "user" && message.email === users?.email
+                    : message.type !== "user" && message.email === username
                     ? styles.message + " " + styles.messagePersonal
-                    : message.type === "user" &&
-                      message.email === googleUser?.user?.email
+                    : message.type === "user" && message.email === username
                     ? styles.message + " " + styles.messagePersonal
-                    : message.type !== "user" &&
-                      message.email === googleUser?.user?.email
+                    : message.type !== "user" && message.email === username
                     ? styles.message + " " + styles.messagePersonal
                     : styles.message + " " + styles.new
                 }
@@ -133,7 +137,9 @@ const Chat = ({ socket }) => {
                   <p>{message.message}</p>
                   <p
                     className={
-                      message.type === "user" ? styles.datetime : styles.datetime2
+                      message.type === "user"
+                        ? styles.datetime
+                        : styles.datetime2
                     }
                   >
                     <span className={styles.nameUser}>

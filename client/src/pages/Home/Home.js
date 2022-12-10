@@ -58,8 +58,6 @@ const Home = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  useEffect(() => {}, []);
-
   function SampleNextArrow(props) {
     const { className, style, onClick } = props;
     return <div className={className} style={{ ...style }} onClick={onClick} />;
