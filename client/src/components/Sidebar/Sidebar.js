@@ -52,9 +52,6 @@ const Sidebar = ({ auth, setAuth }) => {
               variants={variants}
               initial="hidden"
               animate="visible"
-              transition={{
-                duration: 1,
-              }}
               className="navbarr"
             >
               <Link to="#" className="menu-bars">

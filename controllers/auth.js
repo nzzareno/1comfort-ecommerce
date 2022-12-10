@@ -6,16 +6,17 @@ const authLogin = async (req, res) => {
   const { email, password } = req.body;
   try {
     const user = await UserModel.findOne({ email });
-    if (!user) return res.status(400).json({ message: "User not found" });
+    if (!user) return res.status(400).send({ message: "User not found" });
     const isMatch = comparePassword(user.password, password);
-    if (!isMatch) res.status(409).json({ message: "Invalid user or password" });
+    if (!isMatch) return res.status(409).send({ message: "Invalid user or password" });
     const token = await generateAuthToken(user);
     localStorage.setItem("tokenaso", token);
     return res.status(201).json({
       token,
+      user,
     });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+   return res.status(500).json({ message: error.message });
   }
 };
 

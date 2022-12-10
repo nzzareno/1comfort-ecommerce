@@ -50,9 +50,7 @@ const Navbar = () => {
          
         >
           <header className="header-section d-none d-xl-block">
-            <motion.nav variants={variants} initial="hidden" animate="visible" transition={{
-              duration: 2
-            }} className={show ? "navbar active" : "navbar"}>
+            <motion.nav variants={variants} initial="hidden" animate="visible"  className={show ? "navbar active" : "navbar"}>
               <div className="navbar__menu">
                 <Link to="/">
                   <img className="nav-logo" src={Logo} alt="LogoOneComfort" />
@@ -95,9 +93,7 @@ const Navbar = () => {
                           color: "white",
                         }}
                       >
-                        <BsCart4 className="carritox" style={
-                          show ? {color: "white"} : {color: "black"}
-                        } />
+                        <BsCart4 className="carritox" />
                         <span className="carrito-span">
                           {storageProducts
                             ? JSON.parse(localStorage.getItem("products"))

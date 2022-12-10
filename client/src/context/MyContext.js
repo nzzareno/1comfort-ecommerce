@@ -33,20 +33,7 @@ export default function ProductContext({ children }) {
     setGoogleUser(JSON.parse(localStorage.getItem("profile")));
   }, []);
 
-  async function gettingUser() {
-    const token = JSON.parse(localStorage.getItem("token"));
 
-    if (token) {
-      const resp = await axios.get("/api/auth", {
-        headers: {
-          Authorization: `Bearer ${token.token}`,
-        },
-      });
-      setUsers(resp.data);
-    } else {
-      delete axios.defaults.headers.common["x-auth-token"];
-    }
-  }
 
   useEffect(() => {
     axios
@@ -76,18 +63,36 @@ export default function ProductContext({ children }) {
       .catch((err) => console.log(err));
   }, []);
 
+  async function gettingUser() {
+    const token = JSON.parse(localStorage.getItem("token"));
+
+    if (token) {
+      const resp = await axios.get("/api/auth", {
+        headers: {
+          Authorization: `Bearer ${token.token}`,
+        },
+      });
+      setUsers(resp.data);
+    } else {
+      delete axios.defaults.headers.common["x-auth-token"];
+    }
+  }
+
+
   const logIn = async (user) => {
     const config = {
       headers: { "Content-Type": "application/json" },
     };
     const body = JSON.stringify(user);
     try {
+      setBackError(null);
       const resp = await axios.post("/api/auth", body, config);
       setIsSignedIn(true);
       localStorage.setItem("token", JSON.stringify(resp.data));
       await gettingUser();
       setAuth(true);
     } catch (err) {
+      console.log(err.response.data.message);
       setBackError(err.response.data.message);
     }
   };
@@ -98,12 +103,13 @@ export default function ProductContext({ children }) {
     };
     const body = JSON.stringify(user);
     try {
-      await axios.post("/api/users", body, config);
+      setBackRegisterError(null);
+      const resp = await axios.post("/api/users", body, config);
       setIsSignedUp(true);
+      localStorage.setItem("token_register", JSON.stringify(resp.data));
       await gettingUser();
       setAuth(true);
     } catch (err) {
-      setIsSignedUp(false);
       console.log(err.response.data.message);
       setBackRegisterError(err.response.data.message);
     }
@@ -301,6 +307,7 @@ export default function ProductContext({ children }) {
         setBackError,
         setBackRegisterError,
         backRegisterError,
+        setBackRegisterError,
         isSignedUp,
         setIsSignedUp,
       }}

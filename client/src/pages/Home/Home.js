@@ -75,14 +75,13 @@ const Home = () => {
     dots: false,
     arrows: true,
     infinite: true,
-    speed: 2000,
-    slidesToShow: 4,
+    speed: 1000,
     slidesToScroll: 1,
+    slidesToShow: 4 ,
     swipeToSlide: true,
     initialSlide: 0,
     pauseOnFocus: true,
     pauseOnHover: true,
-    adaptiveHeight: true,
     autoplay: true,
     autoplaySpeed: 2000,
     cssEase: "linear",
@@ -210,7 +209,6 @@ const Home = () => {
                     transition: {
                       duration: .7,
                       ease: [0.6, 0.05, -0.01, 0.9],
-                      
                     },
                   }
                 }

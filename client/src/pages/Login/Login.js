@@ -13,8 +13,15 @@ import { useDispatch } from "react-redux";
 import jwt_decode from "jwt-decode";
 
 const Login = () => {
-  const { logIn, foot, setFoot, backError, setBackError, isSignedIn,setIsSignedIn } =
-    useContext(ContextOfProduct);
+  const {
+    logIn,
+    foot,
+    setFoot,
+    backError,
+    setBackError,
+    isSignedIn,
+    setIsSignedIn,
+  } = useContext(ContextOfProduct);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const myToken = localStorage.getItem("token");
@@ -47,8 +54,6 @@ const Login = () => {
     onSubmit: async (values) => {
       try {
         await logIn(values);
-       
-        
       } catch (error) {
         console.log(error);
       }
@@ -187,9 +192,7 @@ const Login = () => {
                 }
               }}
               type="submit"
-              value={
-               isSignedIn ? "Entering..." : "Sign in"
-              }
+              value={isSignedIn ? "Entering..." : "Sign in"}
             />
           </div>
           <GoogleLogin
@@ -206,9 +209,7 @@ const Login = () => {
                 await axios.post("/api/auth/google", {
                   token,
                   user,
-                }) 
-                
-                
+                });
 
                 navigate("/");
               } catch (error) {

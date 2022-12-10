@@ -16,6 +16,7 @@ import { ContextOfProduct } from "../../context/MyContext";
 import { GoogleLogin } from "@react-oauth/google";
 import { useDispatch } from "react-redux";
 import jwt_decode from "jwt-decode";
+import axios from 'axios'
 
 const Register = () => {
   const [data, setData] = useState({});
@@ -25,24 +26,34 @@ const Register = () => {
     setFoot,
     backRegisterError,
     setBackRegisterError,
-    isSignedUp,
-    setIsSignedUp,
+    isSignedIn,
+    setIsSignedIn,
   } = useContext(ContextOfProduct);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const myProfileG = localStorage.getItem("profile");
+  const myToken = localStorage.getItem("token_register");
 
   useEffect(() => {
     setFoot(false);
   }, [foot, setFoot]);
 
+  useEffect(() => {
+    if (myToken) {
+      setBackRegisterError(null);
+      navigate("/signin");
+    } 
+    
+    if (myProfileG) {
+      setBackRegisterError(null);
+      navigate("/");
+    }
+  }, [backRegisterError, setBackRegisterError, navigate, myToken, myProfileG]);
+
   const variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
   };
-
-  if (localStorage.getItem("token") || localStorage.getItem("profile")) {
-    navigate("/");
-  }
 
   const formik = useFormik({
     initialValues: {
@@ -62,25 +73,20 @@ const Register = () => {
         .required("Password is required")
         .min(5, "Password must be at least 5 characters"),
       firstname: Yup.string()
-        .min(4, "Four letters at least")
+        .min(3, "Three letters at least")
         .required("First name is required")
         .trim()
         .matches(/^[aA-zZ\s]+$/, "Is not in correct format"),
       lastname: Yup.string()
-        .min(4, "Four letters at least")
+        .min(3, "Three letters at least")
         .required("Last name is required")
         .trim()
         .matches(/^[aA-zZ\s]+$/, "Is not in correct format"),
-      phone: Yup.string().trim().required("Required"),
+      phone: Yup.string().trim().required("<Ph></Ph>one is required"),
     }),
     onSubmit: async (values) => {
       try {
         await register(values);
-        if (isSignedUp) {
-          navigate("/signin");
-        } else {
-          return;
-        }
       } catch (err) {
         console.log(err);
       }
@@ -406,22 +412,27 @@ const Register = () => {
 
           <GoogleLogin
             className="loginBtn loginBtn--google"
-            onSuccess={(credentialResponse) => {
+            onSuccess={async (credentialResponse) => {
               const client = credentialResponse?.clientId;
               const token = credentialResponse?.credential;
 
-              const user = jwt_decode(token);
-              console.log(user);
+              const user = await jwt_decode(token);
 
               try {
+                setIsSignedIn(true)
                 dispatch({ type: "AUTH", data: { client, token, user } });
+
+                await axios.post("/api/auth/google", {
+                  token,
+                  user,
+                });
                 navigate("/");
               } catch (error) {
                 console.log(error);
               }
             }}
-            onError={() => {
-              console.log("Login Failed");
+            onError={(error) => {
+              console.log(error);
             }}
             type="standard"
             theme="filled_blue"
@@ -445,16 +456,15 @@ const Register = () => {
             }}
             to="/signin"
           >
-            <br /> Sign in now  <svg className="icon">
-            <IoArrowRedo
-              style={{
-                color: "white",
-              }}
-            />
-          </svg>
-
+            <br /> Sign in now{" "}
+            <svg className="icon">
+              <IoArrowRedo
+                style={{
+                  color: "white",
+                }}
+              />
+            </svg>
           </Link>
-         
         </p>
       </motion.div>
     </div>

@@ -4,7 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import React, { useContext, useEffect, useState } from "react";
 import Home from "./pages/Home/Home";
 import NotFound404 from "./pages/NotFound/NotFound404";
-import { Routes, Route, useLocation, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Accessories from "./pages/Accessories/Accessories";
 import Tshirts from "./pages/T-Shirts/Tshirts";
